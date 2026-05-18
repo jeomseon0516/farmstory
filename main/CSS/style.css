@@ -88,6 +88,7 @@ main > div {
     box-sizing: border-box;
     margin-bottom: 10px;
 }
+
 main > div:nth-child(1) {height: 312px;}
 main > div:nth-child(2) {height: 286px;}
 main > div:nth-child(3) {height:  74px;}
@@ -95,6 +96,51 @@ main > div:nth-child(4) {height: 186px;}
 main > div:nth-child(5) {height: 154px;}
 
 /* 슬라이더  */
+.slider { 
+    position: relative;
+    background-image: url("../../images/main_slide_img1.jpg");
+}
+
+.slider > div { 
+    position: relative;
+    width: 230px;
+    height: 312px;
+    left: 750px;
+    background-image: url("../../images/main_banner_bg.jpg");
+    background-repeat: no-repeat;
+}
+
+.slider > div > img:nth-child(1) {
+    position: absolute;
+    width: 55px;
+    height: 31px;
+    left: 165px;
+    top: 10px;
+}
+
+.slider > div > img:nth-child(2) {
+    position: absolute;
+    width: 200px;
+    height: 140px;
+    top: 31px;
+    left: 10px;
+}
+
+.slider > div > img:nth-child(3) {
+    position: absolute;
+    width: 197px;
+    height:129px;
+    top: 175px;
+    left: 10px;
+}
+
+.slider > img {
+    position: absolute;
+    width: 330px;
+    height: 63px;
+    top: 40px;
+    left: 40px;
+}
 
 /* 장보기 배너 */
 
