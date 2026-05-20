@@ -1,63 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>farmstory::story/story-list</title>
+    </head>
+    <link rel="stylesheet" href="/global-style/reset.css">
+    <link rel="stylesheet" href="/global-style/global-header.css">
+    <link rel="stylesheet" href="/global-style/global-footer.css">
+    <link rel="stylesheet" href="./story-list.css">
+    <link rel="stylesheet" href="/global-style/global-main-style.css">
 
-<head>
-    <meta charset="UTF-8">
-    <title>farmstory::story/story-list</title>
-</head>
-<link rel="stylesheet" href="/global-style/reset.css">
-<link rel="stylesheet" href="/global-style/global-header.css">
-<link rel="stylesheet" href="/global-style/global-footer.css">
-<link rel="stylesheet" href="./story-list.css">
+    <body>
+        <div id="container">
+            <header>
+                <!-- 로고 -->
+                <a href="#" class="logo"><img src="/images/logo.png" alt="메인로고"></a>
+                <!-- 오른쪽 상단 메뉴 -->
+                <p>
+                    <a href="#">HOME</a>
+                    |
+                    <a href="#">로그인</a>
+                    |
+                    <a href="#">회원가입</a>
+                    |
+                    <a href="#">관리자</a>
+                    |
+                    <a href="#">고객센터</a>
+                </p>
 
-<body>
-    <div id="container">
-        <header>
-            <!-- 로고 -->
-            <a href="#" class="logo"><img src="/images/logo.png" alt="메인로고"></a>
-            <!-- 오른쪽 상단 메뉴 -->
-            <p>
-                <a href="#">HOME</a>
-                |
-                <a href="#">로그인</a>
-                |
-                <a href="#">회원가입</a>
-                |
-                <a href="#">관리자</a>
-                |
-                <a href="#">고객센터</a>
-            </p>
+                <!-- 오른쪽 테스트 배너 -->
+                <img class="text" src="/images/head_txt_img.png" alt="3만원이상 무료배송">
 
-            <!-- 오른쪽 테스트 배너 -->
-            <img class="text" src="/images/head_txt_img.png" alt="3만원이상 무료배송">
+                <!-- 메인 메뉴(GNB) -->
+                <ul class="gnb">
+                    <li><a href="#">팜스토리소개</a></li>
+                    <li><a href="#">장보기</a></li>
+                    <li><a href="#">농작물이야기</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                </ul>
 
-            <!-- 메인 메뉴(GNB) -->
-            <ul class="gnb">
-                <li><a href="#">팜스토리소개</a></li>
-                <li><a href="#">장보기</a></li>
-                <li><a href="#">농작물이야기</a></li>
-                <li><a href="#">이벤트</a></li>
-                <li><a href="#">커뮤니티</a></li>
-            </ul>
-
-        </header>
-        <background class="content-banner">
-            background
-        </background>
-        <main>
-            
-            <section>
-                <aside class="sub-sidebar">
-                    <div class="sidebar-title">
-                        <img src="/images/sub_aside_cate3_tit.png" alt="Crop Talk 농작물 이야기">
-                    </div>
+            </header>
+    
+            <main>
+                <section class="content-banner">
+                    background
+                </section>
+                <aside class="sub-sidebar-aside">
+                    <section class="sub-sidebar">
+                        <div class="sidebar-title">
+                            <img src="/images/sub_aside_cate3_tit.png" alt="Crop Talk 농작물 이야기">
+                        </div>
+                    </section>
                 </aside>
-            </section>
-        </main>
-        <footer>
+                <article class="main-content">
+                    <header class="main-content-header">
+                        <img src="/images/sub_page_nav_ico.gif" alt="텃밭가꾸기">
+                        <section class="sub_nav_tit">
+                            <nav>
+                                HOME > 농작물이야기 > 
+                                <span>텃밭가꾸기</span>
+                            </nav>
+                        </section>
+                    </header>
+                    <section>
+                        <div>글목록</div>
+                        <form action="#">
+                            <input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색">
+                            <button>검색</button>
+                        </form>
+                        <table border="0">
+                            <tr>
+                                <td>번호</td>
+                                <td>제목</td>
+                                <td>글쓴이</td>
+                                <td>날짜</td>
+                                <td>조회</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><a href="#">공지사항 게시물입니다.[3]</a></td>
+                                <td>길동이</td>
+                                <td>20-05-12</td>
+                                <td>12</td>
+                            </tr>
+                        </table>
+                        <div class="paginaiton">
+                            <a href="#">이전</a>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">다음</a>
+                        </div>
+                        <a href="#">글쓰기</a>
+                    </section>
+                </article>
+            </main>
+            <footer>
 
-        </footer>
-    </div>
-</body>
-
+            </footer>
+        </div>
+    </body>
 </html>

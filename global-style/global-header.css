@@ -4,7 +4,6 @@ header {
     width: 100%;
     height: 142px;
     background: url('../../images/head_top_line.png') no-repeat;            
-    margin-bottom: 10px;
 }
 
 header > .logo {
@@ -16,12 +15,12 @@ header > .logo {
 
 header > p {
     float: right;
-    margin-top: 16px;
+    margin-top: 17px;
 }
 header > .text {
     float: right;
     clear: both;
-    margin-top: 10px;
+    margin-top: 28px;
 }
 header > .gnb {
     position: absolute;
@@ -43,7 +42,7 @@ header > .gnb > li > a {
     width: 100%;
     height: 100%;
     font-size: 0;
-    background-position: 0 8px;
+    background-position: 0 6px;
     background-repeat: no-repeat;
 }
 header > .gnb > li:nth-child(1) > a { background-image: url('../../images/head_menu1.png'); }
