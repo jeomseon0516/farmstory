@@ -14,6 +14,8 @@ input, textarea {outline: none;}
     margin: 0 auto;
 }
 
+
+
 /* 헤더 */
 header {
     position: relative;
@@ -157,6 +159,7 @@ main > div:nth-of-type(5) {height: 154px;}
 }
 
 .market > article {
+    position: relative;
     float: left;
     width: 160px;
     height: 236px;
@@ -176,6 +179,56 @@ main > div:nth-of-type(5) {height: 154px;}
     height: 120px;
     top: 11px;
     left: 20px;
+}
+
+.market > article > h1 {
+    position: absolute;
+    top: 142px;
+    left: 68px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    color: #777777;
+}
+
+.market > article > h2 {
+    position: absolute;
+    top : 165px;
+    left: 54.5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    color: #000000;
+}
+
+.market > article > p {
+    position: absolute;
+    top: 181px;
+    left: 51px;
+    line-height: 100%;
+    text-align: center;    
+    font-weight: 400;
+    font-style: normal;
+    font-size: 9.75px;
+
+}
+
+.market > article > p > span:nth-of-type(2) {
+    color: #ff0000;
+}
+
+.market > article > h3 {
+    position: absolute;
+    top: 202px;
+    left: 11px;
+    width: 138px;
+    height: 17px;
+    text-align: center;
+    line-height: 100%;
+    font-weight: 700;
+    font-size: 12px;
 }
 
 
