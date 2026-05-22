@@ -80,14 +80,10 @@ header > .gnb > li:nth-child(5) > a:hover { background-image: url('../../images/
 main {
     width: 100%;
     min-height: 500px;
-    border: 1px solid blue;
-    box-sizing: border-box;
 }
 
 main > div {
     width: 100%;
-    border: 1px solid green;
-    box-sizing: border-box;
     margin-bottom: 10px;
 }
 
@@ -273,12 +269,6 @@ main > div:nth-of-type(5) {height: 154px;}
     color: #6a6a6a;
 }
 
-.latest > article > table tr {
-    
-}
-
-.latest > article > table tr > td {            
-}
 .latest > article > table tr > td:nth-child(2) {
     display: block;
     width: 140px;
@@ -292,22 +282,191 @@ main > div:nth-of-type(5) {height: 154px;}
 /* 기타 정보 안내  */
 .info {
     display: flex;
+    border-top: 2px solid #756C65;
+    box-sizing: border-box;
 }
 
 .info > article {
     width: 100%;
-    border: 1px solid orange;
-    box-sizing: border-box;
+    position: relative;
 }
 
-.info > article:nth-child(2) {
-    width: 70%;
+.info > article > img:nth-of-type(1) {
+    position: absolute;
+    top: 18px;
+}
+
+.info > article > div:nth-of-type(1) {
+    position: absolute;
+    width: 386px;
+    height: 54px;
+    top: 48px;
+}
+
+.info > article > div:nth-of-type(1) > img:nth-of-type(2) {
+    position: absolute;
+    left: 61px;
+}
+
+.info > article > div:nth-of-type(1) > p {
+    display: inline-block;
+    position:absolute;
+    top: 2px;
+    left: 198px;
+    font-family: Inter;
+    font-size: 10.69px;
+    line-height: 18px;
+    align-items: center;
+    color: #666666;
+}
+
+.info > article> a:nth-of-type(1) {
+    position: absolute;
+    top: 118px;
+    padding-right: 3px;
+}
+
+.info > article > a:nth-of-type(2) {
+    position: absolute;
+    top: 118px;
+    left: 126px;
+    padding-right: 3px;
+}
+
+.info > article > a:nth-of-type(3) {
+    position: absolute;
+    top: 118px;
+    left: 252px;
+}
+
+.info > article > div:nth-of-type(2) {
+    display: inline-block;
+    position: absolute;
+    width: 230px;
+    height: 132px;
+    top: 12px;
+    left: 386px;
+    border-left: 1px solid #D7D7D7;
+    border-right: 1px solid #D7D7D7;
+}
+
+.info > article > div:nth-of-type(2) > img {
+    position: absolute;
+    top: 6px;
+    left: 17px;
+}
+
+.info > article > div:nth-of-type(2) > p {
+    position: absolute;
+    top: 38px;
+    left: 17px;
+    font-family: Inter;
+    font-size: 10.5px;
+    line-height: 18px;
+    align-items: center;
+    color: #666666;
+
+}
+
+.info > article > img:nth-of-type(2) {
+    position: absolute;
+    top: 18px;
+    left: 626px;
+}
+
+.info > article > table {
+    position: absolute;
+    top: 50px;
+    left: 634px;
+    width: 305px;
+    height: 88px;
+}
+
+.info > article > table > tbody > tr {
+    padding: 1px;
+}
+.info > article > table > tbody > tr > td:nth-of-type(1) {
+    position: absolute;
+    font-family: Inter;
+    color: #6A6A6A;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.info > article > table > tbody > tr > td:nth-of-type(2) {
+    position: absolute;
+    left: 9px;
+    display: block;
+    width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 16px;
+}
+
+.info > article > table > tbody > tr > td:nth-of-type(2) > a {
+    font-family: Inter;
+    color: #6A6A6A;
+    font-size: 12px;
+}
+
+
+.info > article > table > tbody > tr > td:nth-of-type(3) {
+    position: absolute;
+    left: 261px;
+    font-family: Inter;
+    color:#6A6A6A;
+    font-size: 9.94px;
+    line-height: 16px;
 }
 
 /* 푸터 */
 footer {
+    position: relative;
     width: 100%;
     height: 120px;
-    border: 1px solid blue;
+    border-top: 1px solid #D1CAB2;
     box-sizing: border-box;
+}
+
+footer > img {
+    position: absolute;
+    width: 174px;
+    height: 64px;
+    top: 1px;
+    left: 0px;
+}
+
+footer > div {
+    position: absolute;
+    width: 709.48px;
+    height: 71px;
+    top: 27px;
+    left: 254.52px;
+}
+
+footer > div > p:nth-of-type(1) {
+    font-family: Inter;
+    font-size: 10.31px;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: #585858;
+}
+
+footer > div > p:nth-of-type(2) {
+    font-family: Inter;
+    font-size: 11.06px;
+    line-height: 100%;
+    color: #888888;
+}
+
+footer > div > p:nth-of-type(3) {
+    position: absolute;
+    top: 54px;
+    left: 620px;
+    font-family: Inter;
+    font-size: 10.60px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #888888;
 }
