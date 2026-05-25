@@ -21,8 +21,8 @@ main {
 .sub-sidebar-aside {
     position: relative;
     width: 176px;
-    padding-top: 81px;
     min-height: 650px;
+    padding-top: 81px;
     background-image: url('/images/sub_aside_bg_line.png');
     background-repeat: no-repeat;
     background-position: right center;
@@ -56,5 +56,48 @@ main {
 }
 
 .main-content {
+    width: 802px;
+    min-height: 650px;
 }
 
+.main-content-header {
+    position: relative;
+    float: right;
+    width: 762px;
+    height: 72px;
+    border-bottom: 1px solid #C2C2C2;
+    box-sizing: border-box;
+}
+
+.main-content-header > img {
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+}
+
+.sub_nav_tit {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    background-image: url('/images/sub_page_nav_ico.gif');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.sub_nav_tit > nav {
+    margin-left: 20px;
+    margin-bottom: 3px;
+}
+
+.sub_nav_tit > nav > span:nth-child(1) {
+    color: #8C8C8C;
+}
+
+.sub_nav_tit > nav > .sub_nav_select {
+    color: #91BA15;
+}
+
+.main-content > section {
+    margin-top: 112px;
+    margin-left: 40px;
+}
