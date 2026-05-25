@@ -58,16 +58,16 @@
             </aside>
             <article class="main-content">
                 <header class="main-content-header">
-                    <img src="/images/sub_page_nav_ico.gif" alt="텃밭가꾸기">
+                    <img src="/images/sub_nav_tit_cate3_tit1.png" alt="농작물이야기">
                     <section class="sub_nav_tit">
                         <nav>
-                            HOME > 농작물이야기 >
-                            <span>텃밭가꾸기</span>
+                            <span>HOME > 농작물이야기 ></span>
+                            <span class="sub_nav_select">농작물이야기</span>
                         </nav>
                     </section>
                 </header>
                 <section>
-                    <div>글목록</div>
+                    <span class="post-list-header-text">글목록</span>
                     <form action="#">
                         <input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색">
                         <button>검색</button>
@@ -82,20 +82,24 @@
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td><a href="#">공지사항 게시물입니다.[3]</a></td>
+                            <td id="post-title"><a href="#">공지사항 게시물입니다.[3]</a></td>
                             <td>길동이</td>
                             <td>20-05-12</td>
                             <td>12</td>
                         </tr>
                     </table>
-                    <div class="paginaiton">
-                        <a href="#">이전</a>
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">다음</a>
-                    </div>
-                    <a href="#">글쓰기</a>
+                    <div>
+                        <div class="pagination">
+                            <a href="#" class="button-edge">이전</a>
+                            <a href="#" class="button-number selected">1</a>
+                            <a href="#" class="button-number">2</a>
+                            <a href="#" class="button-number">3</a>
+                            <a href="#" class="button-edge">다음</a>
+                        </div>
+                        <div class="button-wrap">
+                            <a href="#">글쓰기</a>
+                        </div>
+                     </div>
                 </section>
             </article>
         </main>
