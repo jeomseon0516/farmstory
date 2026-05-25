@@ -1,0 +1,23 @@
+
+.sub-sidebar-aside > ul > li:nth-child(1) > a {
+    background-image: url('/images/sub_cate3_lnb1_ov.png');
+}
+
+.sub-sidebar-aside > ul > li:nth-child(2) > a {
+    background-image: url('/images/sub_cate3_lnb2.png');
+}
+
+.sub-sidebar-aside > ul > li:nth-child(3) > a {
+    background-image: url('/images/sub_cate3_lnb3.png');
+}
+
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

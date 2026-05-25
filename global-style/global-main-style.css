@@ -1,0 +1,60 @@
+
+.sub-banner {
+    position: relative;
+    width: 100%;
+    height: 184px;
+    background-image: url('/images/sub_top_bg.jpg');
+}
+
+.sub-banner > img:first-child {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 270px;
+    height: 37px;
+}
+
+main {
+    display: flex;
+}
+
+.sub-sidebar-aside {
+    position: relative;
+    width: 176px;
+    padding-top: 81px;
+    min-height: 650px;
+    background-image: url('/images/sub_aside_bg_line.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.sub-sidebar-aside > img {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
+.sub-sidebar-aside > ul {
+    width: 100%;
+    min-height: 233px;
+    background-image: url('/images/sub_aside_bg_lnb.png');
+    background-repeat: no-repeat;
+    padding-top: 26px;
+    padding-bottom: 26px;
+}
+
+.sub-sidebar-aside > ul > li {
+    width: 100%;
+    height: 29px;
+    margin-bottom: 6px;
+}
+
+.sub-sidebar-aside a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.main-content {
+}
+
