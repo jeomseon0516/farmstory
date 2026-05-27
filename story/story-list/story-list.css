@@ -27,13 +27,27 @@
 }
 
 .main-content > section > form {
-    float: right;
-    width: 243px;
+    position: relative;
+    width: 100%;
     height: 31px;
     margin-top: -16px;
 }
 
+.main-content > section > form > button {
+    position: absolute;
+    right: 0;
+    width: 38px;
+    height: 31px;
+    padding-bottom: 3px;
+    border: 1px solid #D7D7D7;
+    box-sizing: border-box;
+}
+
 .main-content > section > form > input {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 40px;
     width: 202px;
     height: 28px;
     padding-left: 7px;
@@ -44,17 +58,9 @@
     line-height: 28px;
 }
 
-.main-content > section > form > button {
-    width: 38px;
-    height: 31px;
-    padding-bottom: 3px;
-    border: 1px solid #D7D7D7;
-    box-sizing: border-box;
-}
-
 .main-content > section > .post-list-header-text { 
     display: inline-block;
-    margin-top: 1px;
+    margin-top: 0px;
 }
 
 .main-content > section > table {
