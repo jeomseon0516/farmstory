@@ -74,7 +74,7 @@
     header > .gnb > li:nth-child(4) > a:hover { background-image: url('../../images/head_menu4_ov.png'); }
     header > .gnb > li:nth-child(5) > a:hover { background-image: url('../../images/head_menu5_ov.png'); }
 
-/* 백그라운드 */
+/* 서브 탑 타이틀 */
     section {
         position: relative;
         display: inline-block;
@@ -154,9 +154,81 @@
     }
 
     main > article > div > div {
-        
+        position: absolute;
+        display: inline-block;
+        top: 50px;
+        left: 573.13px;
+        width: 188.88px;
+        height: 17px;
+        background-image: url('../../images/sub_page_nav_ico.gif');
+        background-repeat: no-repeat;
+        background-position-y: center;
     }
 
+    main > article > div > div > div {
+        position: absolute;
+        left: 10px;
+        top: 2px;
+    }
+
+    main > article > div > div > div > span {
+        color: #8C8C8C;
+    }
+
+    main > article > div > div > div > span > span {
+        font-weight: 700;
+        color: #91BA15;
+    }
+
+    main > article > img {
+        position: absolute;
+        top: 112px;
+        left: 40px;
+    }
+
+    main > article > p:nth-of-type(1) {
+        position: absolute;
+        top: 288px;
+        left: 40px;
+        color: #666666;
+    }
+
+    main > article > p:nth-of-type(2) {
+        position: absolute;
+        top: 348px;
+        left: 40px;
+        color: #666666;
+    }
+    
+    main > article > p:nth-of-type(3) {
+        position: absolute;
+        top: 431px;
+        left: 40px;
+        font-weight: 700;
+        color: #91BA15;
+    }
+
+    main > article > p:nth-of-type(4) {
+        position: absolute;
+        top: 448px;
+        left: 40px;
+        color: #666666;
+    }
+
+    main > article > p:nth-of-type(5) {
+        position: absolute;
+        top: 491px;
+        left: 40px;
+        font-weight: 700;
+        color: #91BA15;
+    }
+
+    main > article > p:nth-of-type(6) {
+        position: absolute;
+        top: 508px;
+        left: 40px;
+        color: #666666;
+    }
 
 /* 푸터 */
     footer {
