@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>farmstory::story/story-list</title>
+</head>
+<link rel="stylesheet" href="/global-style/reset.css">
+<link rel="stylesheet" href="/global-style/global-header.css">
+<link rel="stylesheet" href="/global-style/global-footer.css">
+<link rel="stylesheet" href="/global-style/global-main-style.css">
+<link rel="stylesheet" href="/global-style/global-post-list.css">
+
+<body>
+    <div id="container">
+        <header>
+            <!-- 로고 -->
+            <a href="#" class="logo"><img src="/images/logo.png" alt="메인로고"></a>
+            <!-- 오른쪽 상단 메뉴 -->
+            <p>
+                <a href="#">HOME</a>
+                |
+                <a href="#">로그인</a>
+                |
+                <a href="#">회원가입</a>
+                |
+                <a href="#">관리자</a>
+                |
+                <a href="#">고객센터</a>
+            </p>
+
+            <!-- 오른쪽 테스트 배너 -->
+            <img class="text" src="/images/head_txt_img.png" alt="3만원이상 무료배송">
+
+            <!-- 메인 메뉴(GNB) -->
+            <ul class="gnb">
+                <li><a href="#">팜스토리소개</a></li>
+                <li><a href="#">장보기</a></li>
+                <li><a href="#">농작물이야기</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">커뮤니티</a></li>
+            </ul>
+
+        </header>
+
+        <section class="sub-banner">
+            <img src="/images/sub_top_tit3.png" alt="Community">
+        </section>
+        <main>
+            <aside class="sub-sidebar-aside">
+                <img src="/images/sub_aside_cate3_tit.png" alt="Crop Talk 농작물 이야기">
+
+                <ul>
+                    <li><a href="../story-list/story-list.html"><img src="/images/sub_cate3_lnb1.png" alt="농작물이야기"></a></li>
+                    <li><a href="../gardening/gardening.html"><img src="/images/sub_cate3_lnb2_ov.png" alt="텃밭가꾸기"></a></li>
+                    <li><a href="../farming-school/farming-school.html"><img src="/images/sub_cate3_lnb3.png" alt="텃밭가꾸기"></a></li>
+                </ul>
+            </aside>
+            <article class="main-content">
+                <header class="main-content-header">
+                    <img src="/images/sub_nav_tit_cate3_tit2.png" alt="텃밭가꾸기">
+                    <section class="sub_nav_tit">
+                        <nav>
+                            <span>HOME > 농작물이야기 ></span>
+                            <span class="sub_nav_select">텃밭가꾸기</span>
+                        </nav>
+                    </section>
+                </header>
+                <section>
+                    <span class="post-list-header-text">글목록</span>
+                    <form action="#">
+                        <input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색">
+                        <button>검색</button>
+                    </form>
+                    <table border="0" class="table-post">
+                        <tr>
+                            <td>번호</td>
+                            <td>제목</td>
+                            <td>글쓴이</td>
+                            <td>날짜</td>
+                            <td>조회</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td id="post-title"><a href="#">텃밭가꾸기 게시물입니다.[3]</a></td>
+                            <td>길동이</td>
+                            <td>20-05-12</td>
+                            <td>12</td>
+                        </tr>
+                    </table>
+                    <div>
+                        <div class="pagination">
+                            <a href="#" class="button-edge">이전</a>
+                            <a href="#" class="button-number selected">1</a>
+                            <a href="#" class="button-number">2</a>
+                            <a href="#" class="button-number">3</a>
+                            <a href="#" class="button-edge">다음</a>
+                        </div>
+                        <div class="button-wrap">
+                            <a href="#">글쓰기</a>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
+            <footer>
+                <img src="/images/footer_logo.png">
+                <div>
+                    <p>(주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br>
+                        등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
+                        대표 : 김철학 / 이메일 : chhak0503@gmail.com / 전화 : 01) 234-5678 / 부산광역시 부산진구 부전동 123
+                    </p>
+                    <p>
+                        copyrightⓒ 김철학(개발에반하다) All rights reserved.
+                    </p>
+                    <p>farmstory ver1.0.1</p>
+                </div>
+
+            </footer>
+    </div>
+</body>
+
+</html>
