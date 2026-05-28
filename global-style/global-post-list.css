@@ -1,0 +1,148 @@
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.main-content > section {
+    width: auto;
+    height: auto;
+}
+
+.main-content > section > form {
+    display: flex;
+    float: right;
+    justify-content: flex-end;
+    align-items: center;
+    height: 31px;
+    margin-top: -16px;
+}
+
+.main-content > section > form > button {
+    width: 38px;
+    height: 31px;
+    border: 1px solid #D7D7D7;
+    box-sizing: border-box;
+}
+
+.main-content > section > form > input {
+    width: 202px;
+    height: 28px;
+    margin-right: 2px;
+    padding-left: 7px;
+    border: 1px solid #D7D7D7;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.main-content > section > table {
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 6px;
+    border-spacing: 0;
+    border-top: 1px solid #111111;
+    box-sizing: border-box;
+}
+
+.main-content > section > table > tbody > tr {
+    width: 100%;
+    height: 41.5px;
+}
+
+.main-content > section > table > tbody > tr:nth-child(1) {
+    background-color: #D1DEE2;
+}
+
+.main-content > section > table > tbody > tr > td:nth-child(1), th:nth-child(1) {
+    width: 10%;
+}
+
+.main-content > section > table > tbody > tr > td:nth-child(2), th:nth-child(2) {
+    width: 50%;
+}
+
+.main-content > section > table > tbody > tr > td:nth-child(3), th:nth-child(3) {
+    width: 15%;
+}
+
+.main-content > section > table > tbody > tr > td:nth-child(4), th:nth-child(4) {
+    width: 15%;
+}
+
+.main-content > section > table > tbody > tr > td:nth-child(5), th:nth-child(5) {
+    width: 10%;
+}
+
+.main-content > section > table > tbody > tr > td {
+    text-align: center;
+    border-bottom: 1px solid #E9E9E9;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.main-content > section > table > tbody > tr > #post-title {
+    text-align: left;
+}
+
+.main-content > section > div {
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.main-content > section > div > .pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.main-content > section > div > .pagination > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F2F2F2;
+    border: 1px solid #D7D7D7;
+    box-sizing: border-box;
+}
+
+.main-content > section > div > .pagination > .selected {
+    background-color: #888888;
+    border: 1px solid #6D6D6D;
+    color: #FFFFFF
+}
+
+.main-content > section > div > .pagination > .button-edge {
+    width: 42px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.main-content > section > div > .pagination > .button-number {
+    width: 24px;
+    height: 33px;
+    line-height: 33px;
+}
+
+.main-content > section > div > .button-wrap {
+    float: right;
+}
+
+.main-content > section > div > .button-wrap > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 35px;
+    line-height: 35px;
+    color: #FFFFFF;
+    background-color: #4B545E;
+    border: 1px solid #3B3C3F;
+    box-sizing: border-box;
+}
