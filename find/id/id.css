@@ -1,0 +1,250 @@
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    font: normal 12px '돋움';
+}
+ul, ol {list-style: none;}
+a {text-decoration: none; color: #111;}
+input, textarea {outline: none;}
+
+#container {
+    width: 980px;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+
+/* 헤더 */
+header {
+    position: relative;
+    width: 100%;
+    height: 142px;
+    background: url('../../images/head_top_line.png') no-repeat;            
+    margin-bottom: 10px;
+}
+
+header > .logo {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    margin-left: -95px;
+}
+
+header > p {
+    float: right;
+    margin-top: 16px;
+}
+header > p > a {}
+header > .text {
+    float: right;
+    clear: both;
+    margin-top: 10px;
+}
+header > .gnb {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+header > .gnb > li {  
+    float: left;      
+    width: 20%;
+    height: 100%;
+    background-image: url('../../images/head_menu_line.png');
+    background-repeat: no-repeat;
+    background-position: 0 -7px;
+}
+header > .gnb > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    background-position: 0 8px;
+    background-repeat: no-repeat;
+}
+header > .gnb > li:nth-child(1) > a { background-image: url('../../images/head_menu1.png'); }
+header > .gnb > li:nth-child(2) > a { background-image: url('../../images/head_menu2.png'); }
+header > .gnb > li:nth-child(3) > a { background-image: url('../../images/head_menu3.png'); }
+header > .gnb > li:nth-child(4) > a { background-image: url('../../images/head_menu4.png'); }
+header > .gnb > li:nth-child(5) > a { background-image: url('../../images/head_menu5.png'); }
+header > .gnb > li:nth-child(1) > a:hover { background-image: url('../../images/head_menu1_ov.png'); }
+header > .gnb > li:nth-child(2) > a:hover { background-image: url('../../images/head_menu2_ov.png'); }
+header > .gnb > li:nth-child(3) > a:hover { background-image: url('../../images/head_menu3_ov.png'); }
+header > .gnb > li:nth-child(4) > a:hover { background-image: url('../../images/head_menu4_ov.png'); }
+header > .gnb > li:nth-child(5) > a:hover { background-image: url('../../images/head_menu5_ov.png'); }
+
+
+/* 메인 */
+
+main {
+    width: 100%;
+    height: 430px;
+}
+
+/* 아이디 찾기 영역 */
+
+.find-id-box {
+    width: 600px;
+    margin: 100px auto 0;
+
+    font: normal 12px '돋움';
+    color: #111;
+}
+
+/* 제목 */
+
+.find-id-box h3 {
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 테이블 */
+
+.find-id-box table {
+    width: 600px;
+
+    border-collapse: collapse;
+    border-top: 2px solid #555;
+}
+
+.find-id-box th {
+    width: 120px;
+    height: 48px;
+
+    padding-left: 12px;
+
+    border: 1px solid #e5e5e5;
+
+    text-align: left;
+    vertical-align: middle;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.find-id-box td {
+    padding-left: 12px;
+
+    border: 1px solid #e5e5e5;
+
+    vertical-align: middle;
+}
+
+/* 이메일 줄 높이 */
+
+.find-id-box tr:nth-child(2) th,
+.find-id-box tr:nth-child(2) td {
+    height: 86px;
+}
+
+/* 입력창 */
+
+.find-id-box input {
+    width: 160px;
+    height: 24px;
+
+    margin: 3px 0;
+    padding-left: 8px;
+
+    border: 1px solid #e5e5e5;
+    background: #f7f7f7;
+
+    font: normal 12px '돋움';
+    color: #777;
+
+    box-sizing: border-box;
+}
+
+.find-id-box input::placeholder {
+    color: #999;
+}
+
+/* 버튼 */
+
+.find-id-box button {
+    height: 26px;
+
+    padding: 0 10px;
+
+    border: 1px solid #cfcfcf;
+    background: #f8f8f8;
+
+    font: normal 12px '돋움';
+    color: #111;
+
+    cursor: pointer;
+}
+
+/* 안내 문구 */
+
+.find-id-box .guide {
+    margin-top: 14px;
+
+    font-size: 12px;
+    line-height: 20px;
+
+    font-weight: bold;
+}
+
+/* 하단 버튼 */
+
+.find-id-box .btn-area {
+    margin-top: 25px;
+
+    text-align: right;
+}
+/* 푸터 */
+    footer {
+        position: relative;
+        width: 100%;
+        height: 120px;
+        border-top: 1px solid #D1CAB2;
+        box-sizing: border-box;
+    }
+
+    footer > img {
+        position: absolute;
+        width: 174px;
+        height: 64px;
+        top: 1px;
+        left: 0px;
+    }
+
+    footer > div {
+        position: absolute;
+        width: 709.48px;
+        height: 71px;
+        top: 27px;
+        left: 254.52px;
+    }
+
+    footer > div > p:nth-of-type(1) {
+        font-family: Inter;
+        font-size: 10.31px;
+        line-height: 18px;
+        letter-spacing: 0;
+        color: #585858;
+    }
+
+    footer > div > p:nth-of-type(2) {
+        font-family: Inter;
+        font-size: 11.06px;
+        line-height: 100%;
+        color: #888888;
+    }
+
+    footer > div > p:nth-of-type(3) {
+        position: absolute;
+        top: 54px;
+        left: 620px;
+        font-family: Inter;
+        font-size: 10.60px;
+        line-height: 100%;
+        letter-spacing: 0;
+        color: #888888;
+    }
