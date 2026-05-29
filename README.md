@@ -53,9 +53,9 @@ images/: 프로젝트 전역 공통 이미지 자원
 
 4. 농작물 이야기
 
-📂 story/
+📂 crops-story/
 
-📂 story-list/ ➔ 📄 농작물이야기 > 농작물이야기
+📂 crops-story/ ➔ 📄 농작물이야기 > 농작물이야기
 
 📂 gardening/ ➔ 📄 농작물이야기 > 텃밭가꾸기
 
@@ -71,15 +71,15 @@ images/: 프로젝트 전역 공통 이미지 자원
 
 📂 community/
 
-📂 notice-list/ ➔ 📄 커뮤니티 > 공지사항(글목록)
+📂 notice/ ➔ 📄 커뮤니티 > 공지사항(글목록)
 
-📂 menu-write/ ➔ 📄 커뮤니티 > 오늘의식단(글쓰기)
+📂 menu/ ➔ 📄 커뮤니티 > 오늘의식단(글쓰기)
 
-📂 chef-view/ ➔ 📄 커뮤니티 > 나도요리사(글보기)
+📂 chef/ ➔ 📄 커뮤니티 > 나도요리사(글보기)
 
-📂 qna-modify/ ➔ 📄 커뮤니티 > 고객문의(글수정)
+📂 qna/ ➔ 📄 커뮤니티 > 고객문의(글수정)
 
-📂 faq-list/ ➔ 📄 커뮤니티 > 자주묻는질문(글목록)
+📂 faq/ ➔ 📄 커뮤니티 > 자주묻는질문(글목록)
 
 7. 사용자 계정 및 찾기
 
@@ -127,6 +127,12 @@ images/: 프로젝트 전역 공통 이미지 자원
 
 🛠️ 작업 시 유의사항 (팀 약속)
 파일 명명 규칙
+
+글목록/글쓰기/글보기/글수정 명명 규칙
+
+글목록 ➔ 접미사에 /..-post-list ex) crops-story-post-list.html
+글쓰기/글수정(html 구조가 완전히 같음) ➔ 접미사에 /..-post-form ex) crops-story-post-form.html
+글보기 ➔ 접미사에 /..-post-view ex) crops-story-post-view.html
 
 각 폴더 내의 HTML, CSS 파일명은 해당 폴더명과 동일하게 작성합니다. (main페이지는 예외)
 

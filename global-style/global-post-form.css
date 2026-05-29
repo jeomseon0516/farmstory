@@ -1,0 +1,94 @@
+
+.main-content > section > form {
+    width: 100%;
+    margin-top: 6px;
+}
+
+.main-content > section > form > table {
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0;
+    border-top: 2px solid black;
+    box-sizing: border-box;
+    
+}
+
+.main-content > section > form table th,
+.main-content > section > form table td {
+    border-bottom: 1px solid #E9E9E9;
+    box-sizing: border-box;
+}
+
+.main-content > section > form > table th {
+    width: 14.7%;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #F5F8F9;
+}
+
+.main-content > section > form > table tr:nth-child(1) > th, 
+.main-content > section > form > table tr:nth-child(1) > td {
+    height: 51px;
+}
+
+.main-content > section > form > table tr:nth-child(2) > th, 
+.main-content > section > form > table tr:nth-child(2) > td {
+    height: 305px;
+}
+
+.main-content > section > form > table tr:nth-child(3) > th, 
+.main-content > section > form > table tr:nth-child(3) > td {
+    height: 94px;
+}
+
+.main-content > section > form > table tr td {
+    padding: 10px;
+}
+
+.main-content > section > form > table tr:nth-child(1) > td > input {
+    display: block;
+    width: 400px;
+    height: 24px;
+    border: none;
+}
+
+.main-content > section > form > table tr:nth-child(2) > td > textarea {
+    display: block;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+}
+
+.main-content > section > form > table tr:nth-child(3) > td {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.button-box {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 3px;
+}
+
+.button-box > input {
+    width: 66px;
+    height: 35px;
+
+    color: white;
+    background-color: #3B3C3F;
+    border: 1px solid #4B545E;
+    box-sizing: border-box;
+}
+
+.button-box > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 35px;
+    border: 1px solid #BEBEBE;
+    box-sizing: border-box;
+}

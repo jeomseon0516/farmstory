@@ -9,11 +9,6 @@
     border: 0;
 }
 
-.main-content > section {
-    width: auto;
-    height: auto;
-}
-
 .main-content > section > form {
     display: flex;
     float: right;
