@@ -1,0 +1,158 @@
+/* 서브배너 */
+    .sub-banner > img:first-child {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        width: 186px;
+        height: 37px;
+    }
+
+/* 메인 */
+    main {
+        height: 2095px;
+
+    }
+
+    .sub-sidebar-aside {
+        height: 650px;
+    }
+
+/* 메인 내용 - 내용 */
+
+
+    .main-content {
+        position: relative;
+    }
+
+    .main-content > section > h3:nth-of-type(1) {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    /* 상품정보 */
+    .item_information {
+        position: absolute;
+        width: 762px;
+        top: 143px;
+    }
+
+    .item_information > table {
+        float: right;
+        height: 200px;
+        width:457.19px;
+        border-top: 2px solid #E7E7E7;
+        border-bottom: 2px solid #E7E7E7;
+        box-sizing: border-box;
+        border-collapse: collapse;
+    }
+
+    
+    .item_information > table > tbody > tr > td:nth-of-type(2) {
+        position: relative;
+        left: 20px;
+    }
+
+    .item_information > table > tbody > tr > td > span {
+        color: #8C8C8C;
+    }
+
+    .item_information > table > tbody > tr > td > input {
+        width: 64px;
+    }
+
+    .item_information > table > tbody > tr:nth-of-type(6) > td:nth-of-type(2) {
+        color: #C20A0A;
+        font-weight: 700;
+    }
+
+    .item_information > a:nth-of-type(1) {
+        position: absolute;
+        top: 210px;
+        left: 662px;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        color: #FFFFFF;
+        background-color: #960D1A;
+
+
+    }
+
+    .item_information > a:nth-of-type(2) {
+        position: absolute;
+        top: 210px;
+        left:559px;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        color: #FFFFFF;
+        background-color: #769B0A;
+    }
+
+    .main-content > section > h3:nth-of-type(2) {
+        position: absolute;
+        top: 424px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .main-content > section > img:nth-of-type(1) {
+        position: absolute;
+        top: 454px;
+    }
+
+    .main-content > section > h3:nth-of-type(3) {
+        position: absolute;
+        top: 1856px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .main-content > section > p {
+        position: absolute;
+        top: 1887px;
+    }
+
+    .main-content > section > h3:nth-of-type(4) {
+        position: absolute;
+        top: 1914px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .main-content > section > table {
+        position: absolute;
+        top: 1944.5px;
+        height:150px;
+        border-collapse: collapse;
+    }
+
+    .main-content > section > table > tbody > tr > td:nth-of-type(1) {
+        border-top: 1px solid #CCCCCC;
+        border-right: 1px solid #CCCCCC;
+        border-bottom: 1px solid #CCCCCC;
+        width:217.42px;
+        padding-left: 20px;
+    }
+
+    .main-content > section > table > tbody > tr > td:nth-of-type(2) {
+        border-top: 1px solid #CCCCCC;
+        border-left: 1px solid #CCCCCC;
+        border-bottom: 1px solid #CCCCCC;
+        width:544.58px;
+        padding-left: 20px;
+    }
+
+    .main-content > section > table > tbody > tr:nth-of-type(1) {
+        height: 93px;
+    }
+
+    .main-content > section > table > tbody > tr:nth-of-type(2) {
+        height: 57px;
+    }
+
+
+
+ 
