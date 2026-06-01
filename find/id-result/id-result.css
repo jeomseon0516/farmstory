@@ -1,0 +1,64 @@
+/* 메인 */
+main {
+    min-height: 400px;
+}
+
+.find-result {
+    width: 600px;
+    margin-left: 190px;
+    padding-top: 32px;
+}
+
+.find-result h3 {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.find-result table {
+    width: 600px;
+    height: 170px;
+    border-collapse: collapse;
+    border-top: 2px solid #333;
+}
+
+.find-result th {
+    width: 120px;
+    padding-left: 12px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: normal;
+    border: 1px solid #e5e5e5;
+}
+
+.find-result td {
+    padding-left: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #e5e5e5;
+}
+
+.find-result tr {
+    height: 42px;
+}
+
+.message {
+    margin-top: 14px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-area {
+    margin-top: 26px;
+    text-align: right;
+}
+
+.btn {
+    display: inline-block;
+    height: 35px;
+    padding: 0 15px;
+    line-height: 33px;
+    font-size: 12px;
+    border: 1px solid #cfcfcf;
+    background: #fff;
+}
