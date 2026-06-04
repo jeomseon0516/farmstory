@@ -73,6 +73,12 @@
     width: 10%;
 }
 
+.main-content > section > table > tbody > tr > th {
+    text-align: center;
+    border-bottom: 1px solid #E9E9E9;
+    font-weight: normal;
+}
+
 .main-content > section > table > tbody > tr > td {
     text-align: center;
     border-bottom: 1px solid #E9E9E9;
