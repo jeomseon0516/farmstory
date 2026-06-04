@@ -1,0 +1,50 @@
+
+.post-header-text {
+    margin-bottom: 6px;
+}
+
+.main-content-table {
+    width: 100%;
+    min-height: 415px;
+    table-layout: fixed;
+    border-spacing: 0;
+    border-top: 2px solid black;
+    box-sizing: border-box;
+}
+
+.main-content-table th,
+.main-content-table td {
+    border-bottom: 1px solid #E9E9E9;
+    box-sizing: border-box;
+}
+
+.main-content-table tr:nth-child(3) > td {
+    vertical-align: top;
+}
+
+.main-content-table th {
+    width: 14.7%;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #F5F8F9;
+}
+
+.main-content-table tr {
+    border-bottom: 1px solid #F5F8F9; 
+}
+
+.main-content-table tr:first-child {
+    height: 51.5px;
+}
+
+.main-content-table tr:nth-child(2) {
+    height: 57px;
+}
+
+.main-content-table tr:nth-child(3) {
+    height: 305px;
+}
+
+.main-content-table td {
+    padding: 10px;
+}
