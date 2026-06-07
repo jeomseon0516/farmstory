@@ -87,7 +87,7 @@
     text-overflow: ellipsis;
 }
 
-.main-content > section > table > tbody > tr > #post-title {
+.main-content td.post-title {
     text-align: left;
 }
 
