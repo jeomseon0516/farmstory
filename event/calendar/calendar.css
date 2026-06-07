@@ -1,0 +1,103 @@
+.calender-head-info {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.calendar-button-area {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.today-button {
+    display: flex;
+    width: 42px;
+    height: 30px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    background-color: gray;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.paging-buttons {
+    display: flex;
+    background-color: #353535;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.paging-buttons > a {
+    display: flex;
+    font-size: 18px;
+    padding-top: 2px;
+    width: 30px;
+    height: 31px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+.calendar-header-text {
+    font-weight: 350;
+    font-size: 20px;
+}
+
+.calendar-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 30px;
+}
+
+.calendar-table th,
+.calendar-table td {
+    border: 1px solid silver;
+}
+
+.calendar-table td {
+    height:90px;
+    padding: 2px;
+    vertical-align: top;
+}
+
+.calendar-table td > span:nth-child(1) {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.today {
+    background-color:blanchedalmond;
+}
+
+.chuseok {
+    display: block;
+    color: white;
+    padding-left: 3px;
+    background-color: red;
+    border-radius: 2px;
+}
+
+.project-start {
+    background-color: #D4F4FA;
+}
+
+.project-start > span:nth-of-type(2) {
+    display: block;
+    color: white;
+    padding-left: 3px;
+    background-color: #4374D9;
+    border-radius: 2px; 
+}
+
+.next-month > * {
+    color: silver;
+}

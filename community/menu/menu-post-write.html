@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>farmstory::crops-story/crops-story-post-list</title>
+    <title>farmstory::menu/menu-post-write</title>
 </head>
 <link rel="stylesheet" href="/global-style/reset.css">
 <link rel="stylesheet" href="/global-style/global-header.css">
 <link rel="stylesheet" href="/global-style/global-footer.css">
 <link rel="stylesheet" href="/global-style/global-main-style.css">
-<link rel="stylesheet" href="/global-style/global-post-list.css">
+<link rel="stylesheet" href="/global-style/global-post-form.css">
 
 <body>
     <div id="container">
@@ -44,62 +44,56 @@
         </header>
 
         <section class="sub-banner">
-            <img src="/images/sub_top_tit3.png" alt="Community">
+            <img src="/images/sub_top_tit5.png" alt="Community">
         </section>
         <main>
             <aside class="sub-sidebar-aside">
-                <img src="/images/sub_aside_cate3_tit.png" alt="Crop Talk 농작물 이야기">
+                <img src="/images/sub_aside_cate5_tit.png" alt="Community 커뮤니티">
 
                 <ul>
-                    <li><a href="../crops-story/crops-story-post-list.html"><img src="/images/sub_cate3_lnb1_ov.png" alt="농작물이야기"></a></li>
-                    <li><a href="../gardening/gardening-post-list.html"><img src="/images/sub_cate3_lnb2.png" alt="텃밭가꾸기"></a></li>
-                    <li><a href="../farming-school/farming-school-post-list.html"><img src="/images/sub_cate3_lnb3.png" alt="귀농학교"></a></li>
+                    <li><a href="../notice/notice-post-list.html"><img src="/images/sub_cate5_lnb1.png" alt="공지사항"></a></li>
+                    <li><a href="../menu/menu-post-list.html"><img src="/images/sub_cate5_lnb2_ov.png" alt="오늘의식단"></a></li>
+                    <li><a href="../chef/chef-post-list.html"><img src="/images/sub_cate5_lnb3.png" alt="나도요리사"></a></li>
+                    <li><a href="../qna/qna-post-list.html"><img src="/images/sub_cate5_lnb4.png" alt="1:1고객문의"></a></li>
+                    <li><a href="../faq/faq-post-list.html"><img src="/images/sub_cate5_lnb5.png" alt="자주묻는질문"></a></li>
                 </ul>
             </aside>
             <article class="main-content">
                 <header class="main-content-header">
-                    <img src="/images/sub_nav_tit_cate3_tit1.png" alt="농작물이야기">
+                    <img src="/images/sub_nav_tit_cate5_tit2.png" alt="오늘의식단">
                     <section class="sub_nav_tit">
                         <nav>
-                            <span>HOME > 농작물이야기 ></span>
-                            <span class="sub_nav_select">농작물이야기</span>
+                            <span>HOME > 커뮤니티 ></span>
+                            <span class="sub_nav_select">오늘의식단</span>
                         </nav>
                     </section>
                 </header>
                 <section>
-                    <span class="post-list-header-text">글목록</span>
+                    <span class="post-list-header-text">글쓰기</span>
                     <form action="#">
-                        <input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색">
-                        <button>검색</button>
+                        <table border="0">
+                            <tr>
+                                <th>제목</th>
+                                <td><Input type="text" name="title" placeholder="제목을 입력하세요."/></td>
+                            </tr>
+                            <tr>
+                                <th>내용</th>
+                                <td><textarea name="content"></textarea></td>
+                            </tr>
+                            <tr>
+                                <th>파일</th>
+                                <td>
+                                    <p class="file-notice">최대 2개 파일 첨부 가능, 각 파일당 최대 10MB까지 가능</p>
+                                    <Input type="file" name="file1">
+                                    <Input type="file" name="file2">
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="button-box">
+                            <a href="./menu-post-list.html">취소</a>
+                            <input type="submit" value="작성완료">
+                        </div>
                     </form>
-                    <table border="0" class="table-post">
-                        <tr>
-                            <th>번호</th>
-                            <th>제목</th>
-                            <th>글쓴이</th>
-                            <th>날짜</th>
-                            <th>조회</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td id="post-title"><a href="./crops-story-post-view.html">농작물이야기 게시물입니다.[3]</a></td>
-                            <td>길동이</td>
-                            <td>20-05-12</td>
-                            <td>12</td>
-                        </tr>
-                    </table>
-                    <div>
-                        <div class="pagination">
-                            <a href="#" class="button-edge">이전</a>
-                            <a href="#" class="button-number selected">1</a>
-                            <a href="#" class="button-number">2</a>
-                            <a href="#" class="button-number">3</a>
-                            <a href="#" class="button-edge">다음</a>
-                        </div>
-                        <div class="button-wrap">
-                            <a href="./crops-story-post-write.html">글쓰기</a>
-                        </div>
-                    </div>
                 </section>
             </article>
         </main>
