@@ -1,0 +1,343 @@
+/* 메인 */
+main {
+    width: 100%;
+    min-height: 500px;
+}
+
+main > div {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+main > div:nth-of-type(1) {height: 312px;}
+main > div:nth-of-type(2) {height: 236px;}
+main > div:nth-of-type(3) {height:  74px;}
+main > div:nth-of-type(4) {height: 186px;}
+main > div:nth-of-type(5) {height: 154px;}
+
+/* 슬라이더  */
+.slider { 
+    position: relative;
+    background-image: url("/farmstory/images/main_slide_img1.jpg");
+}
+
+.slider > div { 
+    position: relative;
+    width: 230px;
+    height: 312px;
+    left: 750px;
+    background-image: url("/farmstory/images/main_banner_bg.jpg");
+    background-repeat: no-repeat;
+}
+
+.slider > div > img:nth-child(1) {
+    position: absolute;
+    width: 55px;
+    height: 31px;
+    left: 165px;
+    top: 10px;
+}
+
+.slider > div > img:nth-child(2) {
+    position: absolute;
+    width: 200px;
+    height: 140px;
+    top: 31px;
+    left: 10px;
+}
+
+.slider > div > img:nth-child(3) {
+    position: absolute;
+    width: 197px;
+    height:129px;
+    top: 175px;
+    left: 10px;
+}
+
+.slider > img {
+    position: absolute;
+    width: 330px;
+    height: 63px;
+    top: 40px;
+    left: 40px;
+}
+
+/* 장보기 배너 */
+.market_tit {
+    width: 131px;
+    height: 38px;
+    padding: 10px 0;
+}
+
+.market {
+    display: flex;
+    width: auto;
+    top: 384px;
+    justify-content: space-between;
+}
+
+.market > article {
+    position: relative;
+    float: left;
+    width: 160px;
+    height: 236px;
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+
+}
+
+.market > article > a {
+    position: relative;
+}
+
+.market > article > a > img {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 11px;
+    left: 20px;
+}
+
+.market > article > h1 {
+    position: absolute;
+    top: 142px;
+    left: 68px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    color: #777777;
+}
+
+.market > article > h2 {
+    position: absolute;
+    top : 165px;
+    left: 54.5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    color: #000000;
+}
+
+.market > article > p {
+    position: absolute;
+    top: 181px;
+    left: 51px;
+    line-height: 100%;
+    text-align: center;    
+    font-weight: 400;
+    font-style: normal;
+    font-size: 9.75px;
+
+}
+
+.market > article > p > span:nth-of-type(2) {
+    color: #ff0000;
+}
+
+.market > article > h3 {
+    position: absolute;
+    top: 202px;
+    left: 11px;
+    width: 138px;
+    height: 17px;
+    text-align: center;
+    line-height: 100%;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+
+/* 바로가기  */
+.quick {
+    display: flex;
+}
+.quick > a {
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.quick > a:nth-child(1) { background-image: url('/farmstory/images/main_banner_sub1_bg.jpg'); }
+.quick > a:nth-child(2) { background-image: url('/farmstory/images/main_banner_sub2_bg.jpg'); }        
+
+/* 최신글 목록  */
+.latest {
+    display: flex;
+}
+.latest > article {
+    position: relative;
+    width: 100%;
+}
+
+.latest > article > a {
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+.latest > article > img {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+}
+.latest > article > table {
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+    color: #6a6a6a;
+}
+
+.latest > article > table tr > td:nth-child(2) {
+    display: block;
+    width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 18px;
+}
+
+
+/* 기타 정보 안내  */
+.info {
+    display: flex;
+    border-top: 2px solid #756C65;
+    box-sizing: border-box;
+}
+
+.info > article {
+    width: 100%;
+    position: relative;
+}
+
+.info > article > img:nth-of-type(1) {
+    position: absolute;
+    top: 18px;
+}
+
+.info > article > div:nth-of-type(1) {
+    position: absolute;
+    width: 386px;
+    height: 54px;
+    top: 48px;
+}
+
+.info > article > div:nth-of-type(1) > img:nth-of-type(2) {
+    position: absolute;
+    left: 61px;
+}
+
+.info > article > div:nth-of-type(1) > p {
+    display: inline-block;
+    position:absolute;
+    top: 2px;
+    left: 198px;
+    font-family: Inter;
+    font-size: 10.69px;
+    line-height: 18px;
+    align-items: center;
+    color: #666666;
+}
+
+.info > article> a:nth-of-type(1) {
+    position: absolute;
+    top: 118px;
+    padding-right: 3px;
+}
+
+.info > article > a:nth-of-type(2) {
+    position: absolute;
+    top: 118px;
+    left: 126px;
+    padding-right: 3px;
+}
+
+.info > article > a:nth-of-type(3) {
+    position: absolute;
+    top: 118px;
+    left: 252px;
+}
+
+.info > article > div:nth-of-type(2) {
+    display: inline-block;
+    position: absolute;
+    width: 230px;
+    height: 132px;
+    top: 12px;
+    left: 386px;
+    border-left: 1px solid #D7D7D7;
+    border-right: 1px solid #D7D7D7;
+}
+
+.info > article > div:nth-of-type(2) > img {
+    position: absolute;
+    top: 6px;
+    left: 17px;
+}
+
+.info > article > div:nth-of-type(2) > p {
+    position: absolute;
+    top: 38px;
+    left: 17px;
+    font-family: Inter;
+    font-size: 10.5px;
+    line-height: 18px;
+    align-items: center;
+    color: #666666;
+
+}
+
+.info > article > img:nth-of-type(2) {
+    position: absolute;
+    top: 18px;
+    left: 626px;
+}
+
+.info > article > table {
+    position: absolute;
+    top: 50px;
+    left: 634px;
+    width: 305px;
+    height: 88px;
+}
+
+.info > article > table > tbody > tr {
+    padding: 1px;
+}
+.info > article > table > tbody > tr > td:nth-of-type(1) {
+    position: absolute;
+    font-family: Inter;
+    color: #6A6A6A;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.info > article > table > tbody > tr > td:nth-of-type(2) {
+    position: absolute;
+    left: 9px;
+    display: block;
+    width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 16px;
+}
+
+.info > article > table > tbody > tr > td:nth-of-type(2) > a {
+    font-family: Inter;
+    color: #6A6A6A;
+    font-size: 12px;
+}
+
+
+.info > article > table > tbody > tr > td:nth-of-type(3) {
+    position: absolute;
+    left: 261px;
+    font-family: Inter;
+    color:#6A6A6A;
+    font-size: 9.94px;
+    line-height: 16px;
+}

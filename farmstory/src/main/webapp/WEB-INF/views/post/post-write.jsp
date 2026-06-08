@@ -1,0 +1,118 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>farmstory::chef/chef-post-write</title>
+</head>
+<link rel="stylesheet" href="/global-style/reset.css">
+<link rel="stylesheet" href="/global-style/global-header.css">
+<link rel="stylesheet" href="/global-style/global-footer.css">
+<link rel="stylesheet" href="/global-style/global-main-style.css">
+<link rel="stylesheet" href="/global-style/global-post-form.css">
+
+<body>
+    <div id="container">
+        <header>
+            <!-- 로고 -->
+            <a href="#" class="logo"><img src="/images/logo.png" alt="메인로고"></a>
+            <!-- 오른쪽 상단 메뉴 -->
+            <p>
+                <a href="#">HOME</a>
+                |
+                <a href="#">로그인</a>
+                |
+                <a href="#">회원가입</a>
+                |
+                <a href="#">관리자</a>
+                |
+                <a href="#">고객센터</a>
+            </p>
+
+            <!-- 오른쪽 테스트 배너 -->
+            <img class="text" src="/images/head_txt_img.png" alt="3만원이상 무료배송">
+
+            <!-- 메인 메뉴(GNB) -->
+            <ul class="gnb">
+                <li><a href="#">팜스토리소개</a></li>
+                <li><a href="#">장보기</a></li>
+                <li><a href="#">농작물이야기</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">커뮤니티</a></li>
+            </ul>
+
+        </header>
+
+        <section class="sub-banner">
+            <img src="/images/sub_top_tit5.png" alt="Community">
+        </section>
+        <main>
+            <aside class="sub-sidebar-aside">
+                <img src="/images/sub_aside_cate5_tit.png" alt="Community 커뮤니티">
+                <ul>
+                    <li><a href="../notice/notice-post-list.html"><img src="/images/sub_cate5_lnb1.png" alt="공지사항"></a></li>
+                    <li><a href="../menu/menu-post-list.html"><img src="/images/sub_cate5_lnb2.png" alt="오늘의식단"></a></li>
+                    <li><a href="../chef/chef-post-list.html"><img src="/images/sub_cate5_lnb3_ov.png" alt="나도요리사"></a></li>
+                    <li><a href="../qna/qna-post-list.html"><img src="/images/sub_cate5_lnb4.png" alt="1:1고객문의"></a></li>
+                    <li><a href="../faq/faq-post-list.html"><img src="/images/sub_cate5_lnb5.png" alt="자주묻는질문"></a></li>
+                </ul>
+            </aside>
+            <article class="main-content">
+                <header class="main-content-header">
+                    <img src="/images/sub_nav_tit_cate5_tit3.png" alt="나도요리사">
+                    <section class="sub_nav_tit">
+                        <nav>
+                            <span>HOME > 커뮤니티 ></span>
+                            <span class="sub_nav_select">나도요리사</span>
+                        </nav>
+                    </section>
+                </header>
+                <section>
+                    <span class="post-list-header-text">글쓰기</span>
+                    <form action="#">
+                        <table border="0">
+                            <tr>
+                                <th>제목</th>
+                                <td><Input type="text" name="title" placeholder="제목을 입력하세요."></Input></td>
+                            </tr>
+                            <tr>
+                                <th>내용</th>
+                                <td><textarea name="content"></textarea></td>
+                            </tr>
+                            <tr>
+                                <th>파일</th>
+                                <td>
+                                    <p class="file-notice">최대 2개 파일 첨부 가능, 각 파일당 최대 10MB까지 가능</p>
+                                    <Input type="file" name="file1"/>
+                                    <Input type="file" name="file2"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="button-box">
+                            <a href="./chef-post-list.html">취소</a>
+                            <input type="submit" value="작성완료">
+                        </div>
+                    </form>
+                </section>
+            </article>
+        </main>
+            <footer>
+                <img src="/images/footer_logo.png">
+                <div>
+                    <p>
+                        (주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br>
+                        등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
+                        대표 : 김철학 / 이메일 : chhak0503@gmail.com / 전화 : 01) 234-5678 / 부산광역시 부산진구 부전동 123
+                    </p>
+                    <p>
+                        copyrightⓒ 김철학(개발에반하다) All rights reserved.
+                    </p>
+                    <p>farmstory ver1.0.1</p>
+                </div>
+
+            </footer>
+    </div>
+</body>
+
+</html>

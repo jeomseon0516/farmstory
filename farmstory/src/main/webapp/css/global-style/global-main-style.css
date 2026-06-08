@@ -1,0 +1,105 @@
+
+.sub-banner {
+    position: relative;
+    width: 100%;
+    height: 184px;
+    background-image: url('/farmstory/images/sub_top_bg.jpg');
+}
+
+.sub-banner > img:first-child {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+main {
+    display: flex;
+}
+
+.sub-sidebar-aside {
+    position: relative;
+    width: 176px;
+    min-height: 650px;
+    padding-top: 81px;
+    background-image: url('/farmstory/images/sub_aside_bg_line.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.sub-sidebar-aside > img {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
+.sub-sidebar-aside > ul {
+    width: 100%;
+    min-height: 233px;
+    background-image: url('/farmstory/images/sub_aside_bg_lnb.png');
+    background-repeat: no-repeat;
+    padding-top: 26px;
+    padding-bottom: 26px;
+}
+
+.sub-sidebar-aside > ul > li {
+    width: 100%;
+    height: 29px;
+    margin-bottom: 6px;
+}
+
+.sub-sidebar-aside a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.main-content {
+    width: 802px;
+}
+
+.main-content-header {
+    display: flex;
+    float: right;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 762px;
+    height: 72px;
+    border-bottom: 1px solid #C2C2C2;
+    box-sizing: border-box;
+}
+
+.main-content-header > img {
+    margin-bottom: 4px;
+}
+
+.sub_nav_tit {
+    margin-bottom: 3px;
+    background-image: url('/farmstory/images/sub_page_nav_ico.gif');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.sub_nav_tit > nav {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    gap: 3px;
+}
+
+.sub_nav_tit > nav > span {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+.sub_nav_tit > nav > span:nth-child(1) {
+    color: #8C8C8C;
+}
+
+.sub_nav_tit > nav > .sub_nav_select {
+    color: #91BA15;
+}
+
+.main-content > section {
+    margin-top: 112px;
+    margin-left: 40px;
+}
