@@ -36,21 +36,24 @@
     }
 
 
-    /* 왼쪽 메뉴 */
+    /* Aside(좌측메뉴) */
     aside {
-        width: 160px;
+        width: 176px;
+        height: 400px;
         flex-shrink: 0;
+        margin-left: 10px;
     }
 
     aside h3 {
+        width: 156px;
         height: 30px;
         line-height: 30px;
         padding-left: 20px;
 
-        border: 1px solid #c8c8c8;
+        border: 1px solid #cccccc;
         border-radius: 15px;
 
-        background: #dcdcdc;
+        background: #e5e5e5;
     }
 
     .menu {
@@ -58,7 +61,8 @@
     }
 
     .menu>span {
-        font-weight: bold;
+        font-size: 12px;
+        font-weight: 400;
     }
 
     .menu ul {
@@ -67,6 +71,8 @@
     }
 
     .menu li {
+        font-size: 12px;
+        font-weight: 400;
         margin-bottom: 8px;
     }
 
@@ -75,84 +81,48 @@
         color: #333;
     }
 
-
-    /* 오른쪽 컨텐츠 */
+    
+    /* 우측 컨텐츠*/
     section {
-        flex: 1;
+        padding: 5px 10px 0 10px;
+        width: 804px;
+        height: 400px;
     }
 
-    .main-title {
-        font: inter;
-        font-weight: 700;
-        font-style: bold;
+    section>h3 {
         font-size: 17px;
-        line-height: 100%;
-        letter-spacing: 0%;
-        vertical-align: middle;
-        color: #111;
-
-        width: 89.45px;
-        height: 19px;
-        top: 12px;
-        left: 10px;
+        font-weight: 700;
+        margin-bottom: 10px;
     }
 
-    /* 테이블 */
-    .product-status {
-        margin-bottom: 20px;
-    }
-
-    .table-title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 30px;
-        border-bottom: 2px solid #333333;
-        box-sizing: border-box;
-    }
-
-    .table-title span {
-        font-weight: bold;
-    }
-
-    .table-title a {
-        text-decoration: none;
-        color: #111;
-
-    }
-
-    .product-status table {
+    
+    section>article>table {
         width: 100%;
-        border-collapse: collapse;
-
-    }
-
-    .product-status th {
-        height: 42.5px;
+        border-top: 2px solid #333;
         border-bottom: 1px dotted #999;
-        font: inter;
-        font-weight: 400;
-        font-style: Regular;
-        font-size: 12px;
-        line-height: 100%;
-        letter-spacing: 0%;
-        vertical-align: middle;
-        text-align: center;
-        color: #111;
-        background-color: #fbfbfbfb;
+        border-spacing: 0;
     }
 
-    .product-status td {
-        height: 38px;
-        border-bottom: 1px dotted #ccc;
-        text-align: center;
+    th, td {
+        font-weight: 700;
+        text-align:  center;
     }
+
+    th {
+        background-color: #fbfbfb;
+        height: 42.5px;
+    }
+
+    th:nth-of-type(1) {
+        padding: 5px;
+    }
+
 
     /* 푸터 */
     footer {
-        height: 40px;
+        height: 41px;
         margin-top: 20px;
-
+        
         display: flex;
         justify-content: space-between;
         align-items: center;
