@@ -1,2 +1,26 @@
 /build/
 /.metadata/
+
+# Eclipse / STS Server metadata
+
+Servers/
+
+Servers/**
+
+# Eclipse project files
+
+.project
+
+.classpath
+
+.settings/
+
+# build output
+
+target/
+
+bin/
+
+# OS files
+
+.DS_Store
