@@ -13,10 +13,10 @@
         <div id="container">
             <header>
                 <!-- 로고 -->
-                <a href="#" class="logo"><img src="/farmstory/images/logo.png" alt="메인로고"></a>
+                <a href="/farmstory/main/main.do" class="logo"><img src="/farmstory/images/logo.png" alt="메인로고"></a>
                 <!-- 오른쪽 상단 메뉴 -->
                 <p>
-                    <a href="#">HOME</a>
+                    <a href="/farmstory/main/main.do">HOME</a>
                     |
                     <a href="#">로그인</a>
                     |
@@ -31,7 +31,7 @@
                 <!-- 메인 메뉴(GNB) -->
                 <ul class="gnb">
                     <li><a href="#">팜스토리소개</a></li>
-                    <li><a href="#">장보기</a></li>
+                    <li><a href="/farmstory/market/product-list/product-list.do">장보기</a></li>
                     <li><a href="#">농작물이야기</a></li>
                     <li><a href="#">이벤트</a></li>
                     <li><a href="#">커뮤니티</a></li>
