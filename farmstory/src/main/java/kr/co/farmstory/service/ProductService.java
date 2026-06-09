@@ -1,9 +1,9 @@
-package service;
+package kr.co.farmstory.service;
 
 import java.util.List;
 
-import kr.co.farmstory.controller.dao.ProductDAO;
-import kr.co.farmstory.controller.dto.ProductDTO;
+import kr.co.farmstory.dao.ProductDAO;
+import kr.co.farmstory.dto.ProductDTO;
 
 public enum ProductService {
 	
@@ -17,5 +17,9 @@ public enum ProductService {
 	// 전체 상품 목록 조회
 	public List<ProductDTO> findAll() {
 		return dao.selectAll();
+	}
+	
+	public ProductDTO findById(String prodId) {
+		return dao.select(prodId);
 	}
 }
