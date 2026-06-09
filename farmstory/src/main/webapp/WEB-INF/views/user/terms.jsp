@@ -4,10 +4,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>farmstory::find::id</title>
-        <link rel="stylesheet" href="id.css">     
+        <title>farmstory::user::terms</title>
     </head>
-    
+    <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-footer.css">
+    <link rel="stylesheet" href="/farmstory/css/user/terms/terms.css">       
 
     <body>
         <div id="container">
@@ -19,15 +21,17 @@
                 <!-- 오른쪽 상단 메뉴 -->
                 <p>
                     <a href="#">HOME</a>
+                    |
                     <a href="#">로그인</a>
+                    |
                     <a href="#">회원가입</a>
+                    |
                     <a href="#">관리자</a>
+                    |
                     <a href="#">고객센터</a>
                 </p>
-
-                <!-- 오른쪽 테스트 배너 -->         
+                <!-- 오른쪽 테스트 배너 -->
                 <img class="text" src="/farmstory/images/head_txt_img.png" alt="3만원이상 무료배송">
-                
                 <!-- 메인 메뉴(GNB) -->
                 <ul class="gnb">
                     <li><a href="#">팜스토리소개</a></li>
@@ -38,41 +42,40 @@
                 </ul>
             </header>
 
-            <!-- 메인 -->
-            <main>
-                <section class="find-id-box">
 
-                    <!-- 제목 -->
-                    <h3>아이디 찾기</h3>
+            <!--메인-->
+           <main>
+                <section class="terms-box">
 
-                    <!-- 입력 테이블 -->
-                    <table>
-                        <tr>
-                            <th>이름</th>
-                            <td>
-                                <input type="text" placeholder="이름 입력">
-                            </td>
-                        </tr>
+                    <!-- 이용약관 -->
+                    <article>
+                        <h4>사이트 이용약관</h4>
 
-                        <tr>
-                            <th>이메일</th>
-                            <td>
-                                <input type="text" placeholder="이메일 입력">
-                                <button type="button">인증번호 받기</button>
-                                <br>
-                                <input type="text" placeholder="인증번호 입력">
-                                <button type="button">확인</button>
-                            </td>
-                        </tr>
-                    </table>
+                        <textarea readonly>
+                        사이트 이용약관 내용 들어가는 자리입니다.
+                        </textarea>
 
-                    <!-- 안내 문구 -->
-                    <p class="guide">
-                        회원가입시 이메일 주소와 입력한 이메일 주소가 같아야, 인증번호를 받을 수 있습니다.<br>
-                        인증번호를 입력 후 확인 버튼을 누르세요.
-                    </p>
+                        <label>
+                            <input type="checkbox" name="agree1">
+                            동의합니다.
+                        </label>
+                    </article>
 
-                    <!-- 하단 버튼 -->
+                    <!-- 개인정보 처리방침 -->
+                    <article>
+                        <h4>개인정보 취급방침</h4>
+
+                        <textarea readonly>
+                        개인정보 처리방침 내용 들어가는 자리입니다.
+                        </textarea>
+
+                        <label>
+                            <input type="checkbox" name="agree2">
+                            동의합니다.
+                        </label>
+                    </article>
+
+                    <!-- 버튼 -->
                     <div class="btn-area">
                         <button type="button">취소</button>
                         <button type="button">다음</button>
@@ -80,10 +83,11 @@
 
                 </section>
             </main>
+        
 
-            <!--푸터-->  
+      <!--푸터-->  
             <footer>
-                <img src="/images/footer_logo.png">
+                <img src="/farmstory/images/footer_logo.png">
                 <div>
                     <p>(주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br>
                         등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
@@ -94,8 +98,14 @@
                     </p>
                     <p>farmstory ver1.0.1</p>
                 </div>
+
             </footer>
         </div>
     </body>
 </html>
+            
+            
+            
+            
+            
             

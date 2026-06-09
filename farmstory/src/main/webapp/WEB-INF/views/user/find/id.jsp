@@ -4,34 +4,36 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>farmstory::find::id-result</title>           
+        <title>farmstory::find::id</title>
+        
+        <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
+    	<link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
+    	<link rel="stylesheet" href="/farmstory/css/global-style/global-footer.css">
+        <link rel="stylesheet" href="/farmstory/css/find/id/id.css">     
     </head>
-    <link rel="stylesheet" href="../../global-style/reset.css"> 
-    <link rel="stylesheet" href="../../global-style/global-header.css"> 
-    <link rel="stylesheet" href="../../global-style/global-main-style.css"> 
-    <link rel="stylesheet" href="../../global-style/global-footer.css"> 
-    <link rel="stylesheet" href="id-result.css">  
     
 
     <body>
         <div id="container">
 
             <!--헤더-->
-            <header>
+             <header>
                 <!-- 로고 -->
-                <a href="#" class="logo"><img src="../../images/logo.png" alt="메인로고"></a>
+                <a href="#" class="logo"><img src="/farmstory/images/logo.png" alt="메인로고"></a>
                 <!-- 오른쪽 상단 메뉴 -->
                 <p>
                     <a href="#">HOME</a>
+                    |
                     <a href="#">로그인</a>
+                    |
                     <a href="#">회원가입</a>
+                    |
                     <a href="#">관리자</a>
+                    |
                     <a href="#">고객센터</a>
                 </p>
-
-                <!-- 오른쪽 테스트 배너 -->         
-                <img class="text" src="../../images/head_txt_img.png" alt="3만원이상 무료배송">
-                
+                <!-- 오른쪽 테스트 배너 -->
+                <img class="text" src="/farmstory/images/head_txt_img.png" alt="3만원이상 무료배송">
                 <!-- 메인 메뉴(GNB) -->
                 <ul class="gnb">
                     <li><a href="#">팜스토리소개</a></li>
@@ -42,43 +44,52 @@
                 </ul>
             </header>
 
-            
             <!-- 메인 -->
             <main>
-                <section class="find-result">
-                    <h3>아이디 찾기 결과</h3>
+                <section class="find-id-box">
 
+                    <!-- 제목 -->
+                    <h3>아이디 찾기</h3>
+
+                    <!-- 입력 테이블 -->
                     <table>
                         <tr>
                             <th>이름</th>
-                            <td>홍길동</td>
+                            <td>
+                                <input type="text" placeholder="이름 입력">
+                            </td>
                         </tr>
-                        <tr>
-                            <th>아이디</th>
-                            <td>honggildong</td>
-                        </tr>
+
                         <tr>
                             <th>이메일</th>
-                            <td>honggildong@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <th>가입일</th>
-                            <td>2022-11-16 10:20</td>
+                            <td>
+                                <input type="text" placeholder="이메일 입력">
+                                <button type="button">인증번호 받기</button>
+                                <br>
+                                <input type="text" placeholder="인증번호 입력">
+                                <button type="button">확인</button>
+                            </td>
                         </tr>
                     </table>
 
-                    <p class="message">고객님의 정보와 일치하는 아이디 입니다.</p>
+                    <!-- 안내 문구 -->
+                    <p class="guide">
+                        회원가입시 이메일 주소와 입력한 이메일 주소가 같아야, 인증번호를 받을 수 있습니다.<br>
+                        인증번호를 입력 후 확인 버튼을 누르세요.
+                    </p>
 
+                    <!-- 하단 버튼 -->
                     <div class="btn-area">
-                        <a href="#" class="btn">로그인</a>
-                        <a href="#" class="btn">비밀번호 찾기</a>
+                        <button type="button">취소</button>
+                        <button type="button">다음</button>
                     </div>
+
                 </section>
             </main>
 
-            <!-- 푸터 -->
+            <!--푸터-->  
             <footer>
-                <img src="../../images/footer_logo.png">
+                <img src="/images/footer_logo.png">
                 <div>
                     <p>(주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br>
                         등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
@@ -93,4 +104,4 @@
         </div>
     </body>
 </html>
-
+            
