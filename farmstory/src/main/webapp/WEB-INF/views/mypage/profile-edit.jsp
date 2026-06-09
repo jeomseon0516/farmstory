@@ -1,21 +1,22 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>farmstory::mypage/profile-edit</title>
-        <link rel="stylesheet" href="../../global-style/reset.css">
-        <link rel="stylesheet" href="../../global-style/global-header.css">
-        <link rel="stylesheet" href="../../global-style/global-main-style.css">
-        <link rel="stylesheet" href="../../global-style/global-footer.css">
-        <link rel="stylesheet" href="./profile-edit.css">
+        <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
+        <link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
+        <link rel="stylesheet" href="/farmstory/css/global-style/global-main-style.css">
+        <link rel="stylesheet" href="/farmstory/css/global-style/global-footer.css">
+        <link rel="stylesheet" href="/farmstory/css/mypage/profile-edit.css">
     </head>
     <body>
         <div id="container">
             <!-- 헤더 -->
             <header>
                 <!-- 로고 -->
-                <a href="#" class="logo"><img src="../../images/logo.png" alt="메인로고"></a>
+                <a href="#" class="logo"><img src="/farmstory/images/logo.png" alt="메인로고"></a>
                 <!-- 오른쪽 상단 메뉴 -->
                 <p>
                     <a href="#">HOME</a>
@@ -26,7 +27,7 @@
                 </p>
 
                 <!-- 오른쪽 테스트 배너 -->
-                <img class="text" src="../../images/head_txt_img.png" alt="3만원이상 무료배송">
+                <img class="text" src="/farmstory/images/head_txt_img.png" alt="3만원이상 무료배송">
                 
                 <!-- 메인 메뉴(GNB) -->
                 <ul class="gnb">
@@ -40,18 +41,18 @@
 
             <!-- 서브 배너 -->
             <section class="sub-banner">
-                <img src="../../images/myinfo/myinfo_top_tit.png">
+                <img src="/farmstory/images/myinfo/myinfo_top_tit.png">
             </section>
 
             <!-- 메인 -->
             <main>
                 <!-- 서브 사이드 바 -->
                 <aside class="sub-sidebar-aside">
-                    <img src="../../images/myinfo/myinfo_menu_tit.png">
+                    <img src="/farmstory/images/myinfo/myinfo_menu_tit.png">
                     <ul>
-                        <li><a href="../cart/cart.html"><img src="../../images/myinfo/myinfo_menu1.png"></a></li>
-                        <li><a href="../order-list/order-list.html"><img src="../../images/myinfo/myinfo_menu2.png"></a></li>
-                        <li><a href="./profile-edit.html"><img src="../../images/myinfo/myinfo_menu3_ov.png"></a></li>
+                        <li><a href="/farmstory/mypage/cart/cart.do"><img src="/farmstory/images/myinfo/myinfo_menu1.png"></a></li>
+                        <li><a href="/farmstory/mypage/order-list/order-list.do"><img src="/farmstory/images/myinfo/myinfo_menu2.png"></a></li>
+                        <li><a href="/farmstory/mypage/profile-edit.do"><img src="/farmstory/images/myinfo/myinfo_menu3_ov.png"></a></li>
                     </ul>
                 </aside>
 
@@ -59,7 +60,7 @@
                 <article class="main-content">
                     <!-- 메인 컨텐츠 헤더 -->
                     <div class="main-content-header">
-                        <img src="../../images/myinfo/myinfo_nav_tit3.png">
+                        <img src="/farmstory/images/myinfo/myinfo_nav_tit3.png">
 
                         <!-- 서브 내비게이션 타이틀 -->
                         <section class="sub_nav_tit">
@@ -92,10 +93,10 @@
                                     <td>이름</td><td><input type="text"></td>
                                 </tr>
                                 <tr>
-                                    <td>별명</td><td>공백없는 한글, 영문, 숫자 입력<br><input type="text" placeholder="별명 입력"><button><img src="../../images/myinfo/chk_id.gif"></button></td>
+                                    <td>별명</td><td>공백없는 한글, 영문, 숫자 입력<br><input type="text" placeholder="별명 입력"><button><img src="/farmstory/images/myinfo/chk_id.gif"></button></td>
                                 </tr>
                                 <tr>
-                                    <td>이메일</td><td><input type="text" placeholder="이메일 입력"><button><img src="../../images/myinfo/chk_auth.gif"></button></td>
+                                    <td>이메일</td><td><input type="text" placeholder="이메일 입력"><button><img src="/farmstory/images/myinfo/chk_auth.gif"></button></td>
                                 </tr>
                                 <tr>
                                     <td>휴대폰</td>
@@ -106,7 +107,7 @@
                                 <tr>
                                     <td>주소</td>
                                     <td>
-                                        <input type="text" placeholder="우편번호"><button><img src="../../images/myinfo/chk_post.gif"></button><br>
+                                        <input type="text" placeholder="우편번호"><button><img src="/farmstory/images/myinfo/chk_post.gif"></button><br>
                                         <input type="text" placeholder="주소 검색"><br>
                                         <input type="text" placeholder="상세주소 입력"><br>
                                     </td>
@@ -124,7 +125,7 @@
 
             <!-- 푸터 -->
             <footer>
-                <img src="../../images/footer_logo.png">
+                <img src="/farmstory/images/footer_logo.png">
                 <div>
                     <p>(주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br>
                         등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>

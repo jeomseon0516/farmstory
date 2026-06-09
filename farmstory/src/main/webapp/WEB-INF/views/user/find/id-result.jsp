@@ -4,9 +4,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>farmstory::user::terms</title>
+        <title>farmstory::find::id-result</title>           
     </head>
-    <link rel="stylesheet" href="terms.css">       
+    <link rel="stylesheet" href="/farmstory/css/global-style/reset.css"> 
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-header.css"> 
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-main-style.css"> 
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-footer.css"> 
+    <link rel="stylesheet" href="/farmstory/css/find/id-result/id-result.css">  
+    
 
     <body>
         <div id="container">
@@ -14,7 +19,7 @@
             <!--헤더-->
             <header>
                 <!-- 로고 -->
-                <a href="#" class="logo"><img src="../../images/logo.png" alt="메인로고"></a>
+                <a href="#" class="logo"><img src="/farmstory/images/logo.png" alt="메인로고"></a>
                 <!-- 오른쪽 상단 메뉴 -->
                 <p>
                     <a href="#">HOME</a>
@@ -25,7 +30,7 @@
                 </p>
 
                 <!-- 오른쪽 테스트 배너 -->         
-                <img class="text" src="../../images/head_txt_img.png" alt="3만원이상 무료배송">
+                <img class="text" src="/farmstory/images/head_txt_img.png" alt="3만원이상 무료배송">
                 
                 <!-- 메인 메뉴(GNB) -->
                 <ul class="gnb">
@@ -37,51 +42,43 @@
                 </ul>
             </header>
 
-            <!--메인-->
-           <main>
-                <section class="terms-box">
+            
+            <!-- 메인 -->
+            <main>
+                <section class="find-result">
+                    <h3>아이디 찾기 결과</h3>
 
-                    <!-- 이용약관 -->
-                    <article>
-                        <h4>사이트 이용약관</h4>
+                    <table>
+                        <tr>
+                            <th>이름</th>
+                            <td>홍길동</td>
+                        </tr>
+                        <tr>
+                            <th>아이디</th>
+                            <td>honggildong</td>
+                        </tr>
+                        <tr>
+                            <th>이메일</th>
+                            <td>honggildong@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <th>가입일</th>
+                            <td>2022-11-16 10:20</td>
+                        </tr>
+                    </table>
 
-                        <textarea readonly>
-                        사이트 이용약관 내용 들어가는 자리입니다.
-                        </textarea>
+                    <p class="message">고객님의 정보와 일치하는 아이디 입니다.</p>
 
-                        <label>
-                            <input type="checkbox" name="agree1">
-                            동의합니다.
-                        </label>
-                    </article>
-
-                    <!-- 개인정보 처리방침 -->
-                    <article>
-                        <h4>개인정보 취급방침</h4>
-
-                        <textarea readonly>
-                        개인정보 처리방침 내용 들어가는 자리입니다.
-                        </textarea>
-
-                        <label>
-                            <input type="checkbox" name="agree2">
-                            동의합니다.
-                        </label>
-                    </article>
-
-                    <!-- 버튼 -->
                     <div class="btn-area">
-                        <button type="button">취소</button>
-                        <button type="button">다음</button>
+                        <a href="#" class="btn">로그인</a>
+                        <a href="#" class="btn">비밀번호 찾기</a>
                     </div>
-
                 </section>
             </main>
-        
 
-      <!--푸터-->  
+            <!-- 푸터 -->
             <footer>
-                <img src="/images/footer_logo.png">
+                <img src="/farmstory/images/footer_logo.png">
                 <div>
                     <p>(주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br>
                         등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
@@ -92,14 +89,8 @@
                     </p>
                     <p>farmstory ver1.0.1</p>
                 </div>
-
             </footer>
         </div>
     </body>
 </html>
-            
-            
-            
-            
-            
-            
+

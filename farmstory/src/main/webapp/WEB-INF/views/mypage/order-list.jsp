@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,17 +6,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>farmstory::mypage::order-list</title>
     </head>
-    <link rel="stylesheet" href="../../global-style/reset.css">
-    <link rel="stylesheet" href="../../global-style/global-header.css">
-    <link rel="stylesheet" href="../../global-style/global-main-style.css">
-    <link rel="stylesheet" href="../../global-style/global-footer.css">
-    <link rel="stylesheet" href="./order-list.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-main-style.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-footer.css">
+    <link rel="stylesheet" href="/farmstory/css/mypage/order-list.css">
     <body>
         <div id="container">
             <!-- 헤더 -->
             <header>
                 <!-- 로고 -->
-                <a href="#" class="logo"><img src="../../images/logo.png" alt="메인로고"></a>
+                <a href="#" class="logo"><img src="/farmstory/images/logo.png" alt="메인로고"></a>
                 <!-- 오른쪽 상단 메뉴 -->
                 <p>
                     <a href="#">HOME</a>
@@ -26,7 +27,7 @@
                 </p>
 
                 <!-- 오른쪽 테스트 배너 -->
-                <img class="text" src="../../images/head_txt_img.png" alt="3만원이상 무료배송">
+                <img class="text" src="/farmstory/images/head_txt_img.png" alt="3만원이상 무료배송">
                 
                 <!-- 메인 메뉴(GNB) -->
                 <ul class="gnb">
@@ -40,18 +41,18 @@
 
             <!-- 서브 배너 -->
             <section class="sub-banner">
-                <img src="../../images/myinfo/myinfo_top_tit.png">
+                <img src="/farmstory/images/myinfo/myinfo_top_tit.png">
             </section>
 
             <!-- 메인 -->
             <main>
                 <!-- 서브 사이드 바 -->
                 <aside class="sub-sidebar-aside">
-                    <img src="../../images/myinfo/myinfo_menu_tit.png">
+                    <img src="/farmstory/images/myinfo/myinfo_menu_tit.png">
                     <ul>
-                        <li><a href="./cart.html"><img src="../../images/myinfo/myinfo_menu1.png"></a></li>
-                        <li><a href="../order-list/order-list.html"><img src="../../images/myinfo/myinfo_menu2_ov.png"></a></li>
-                        <li><a href="../profile-edit/profile-edit.html"><img src="../../images/myinfo/myinfo_menu3.png"></a></li>
+                        <li><a href="/farmstory/mypage/cart.do"><img src="/farmstory/images/myinfo/myinfo_menu1.png"></a></li>
+                        <li><a href="/farmstory/mypage/order-list/order-list.do"><img src="/farmstory/images/myinfo/myinfo_menu2_ov.png"></a></li>
+                        <li><a href="/farmstory/mypage/profile-edit/profile-edit.do"><img src="/farmstory/images/myinfo/myinfo_menu3.png"></a></li>
                     </ul>
                 </aside>
 
@@ -59,7 +60,7 @@
                 <article class="main-content">
                     <!-- 메인 컨텐츠 헤더 -->
                     <div class="main-content-header">
-                        <img src="../../images/myinfo/myinfo_nav_tit2.png">
+                        <img src="/farmstory/images/myinfo/myinfo_nav_tit2.png">
 
                         <!-- 서브 내비게이션 타이틀 -->
                         <section class="sub_nav_tit">

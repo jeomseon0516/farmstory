@@ -1,6 +1,6 @@
 /* 서브 배너 */
     .sub-banner {
-        background-image: url('../../images/myinfo/myinfo_top_bg.jpg');
+        background-image: url('/farmstory/images/myinfo/myinfo_top_bg.jpg');
     }
 
 /* 메인 */
