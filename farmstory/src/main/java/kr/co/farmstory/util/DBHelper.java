@@ -1,4 +1,4 @@
-package kr.co.farmstory.controller.util;
+package kr.co.farmstory.util;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

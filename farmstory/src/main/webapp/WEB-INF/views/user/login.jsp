@@ -14,14 +14,14 @@
         <div id="container">
              <header>
                 <!-- 로고 -->
-                <a href="#" class="logo"><img src="/farmstory/images/logo.png" alt="메인로고"></a>
+                <a href="/farmstory/main/main.do" class="logo"><img src="/farmstory/images/logo.png" alt="메인로고"></a>
                 <!-- 오른쪽 상단 메뉴 -->
                 <p>
-                    <a href="#">HOME</a>
+                    <a href="/farmstory/main/main.do">HOME</a>
                     |
-                    <a href="#">로그인</a>
+                    <a href="/farmstory/user/login.do">로그인</a>
                     |
-                    <a href="#">회원가입</a>
+                    <a href="/farmstory/user/register.do">회원가입</a>
                     |
                     <a href="#">관리자</a>
                     |

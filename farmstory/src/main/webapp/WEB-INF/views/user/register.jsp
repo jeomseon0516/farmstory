@@ -19,11 +19,11 @@
                 <a href="#" class="logo"><img src="/farmstory/images/logo.png" alt="메인로고"></a>
                 <!-- 오른쪽 상단 메뉴 -->
                 <p>
-                    <a href="#">HOME</a>
+                    <a href="/main/main.do">HOME</a>
                     |
-                    <a href="#">로그인</a>
+                    <a href="/user/login.do">로그인</a>
                     |
-                    <a href="#">회원가입</a>
+                    <a href="/user/register.do">회원가입</a>
                     |
                     <a href="#">관리자</a>
                     |
@@ -33,8 +33,8 @@
                 <img class="text" src="/farmstory/images/head_txt_img.png" alt="3만원이상 무료배송">
                 <!-- 메인 메뉴(GNB) -->
                 <ul class="gnb">
-                    <li><a href="#">팜스토리소개</a></li>
-                    <li><a href="#">장보기</a></li>
+                    <li><a href="/intro/greeting/greeting.do">팜스토리소개</a></li>
+                    <li><a href="/merket/product-list/product-list.do">장보기</a></li>
                     <li><a href="#">농작물이야기</a></li>
                     <li><a href="#">이벤트</a></li>
                     <li><a href="#">커뮤니티</a></li>
@@ -43,78 +43,80 @@
 
         <!-- 메인 섹션 -->
         <main>
-            <section class="register-box">
+    <form action="/farmstory/user/register.do" method="post">
+        <section class="register-box">
 
-                <h3>사이트 이용정보 입력</h3>
-                <table>
-                    <tr>
-                        <th>아이디</th>
-                        <td>
-                            <input type="text" placeholder="아이디 입력">
-                            <button type="button">중복확인</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>비밀번호</th>
-                        <td>
-                            <input type="password" placeholder="비밀번호 입력">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>비밀번호 확인</th>
-                        <td>
-                            <input type="password" placeholder="비밀번호 입력 확인">
-                        </td>
-                    </tr>
-                </table>
+            <h3>사이트 이용정보 입력</h3>
+            <table>
+                <tr>
+                    <th>아이디</th>
+                    <td>
+                        <input type="text" name="id" placeholder="아이디 입력">
+                        <button type="button">중복확인</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>비밀번호</th>
+                    <td>
+                        <input type="password" name="pass" placeholder="비밀번호 입력">
+                    </td>
+                </tr>
+                <tr>
+                    <th>비밀번호 확인</th>
+                    <td>
+                        <input type="password" name="pass2" placeholder="비밀번호 입력 확인">
+                    </td>
+                </tr>
+            </table>
 
-                <h3>개인정보 입력</h3>
-                <table>
-                    <tr>
-                        <th>이름</th>
-                        <td>
-                            <input type="text" placeholder="이름 입력">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>별명</th>
-                        <td>
-                            <p>공백없는 한글, 영문, 숫자 입력</p>
-                            <input type="text" placeholder="별명 입력">
-                            <button type="button">중복확인</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>이메일</th>
-                        <td>
-                            <input type="email" placeholder="이메일 입력">
-                            <button type="button">인증번호 받기</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>휴대폰</th>
-                        <td>
-                            <input type="text" placeholder="휴대폰 입력">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>주소</th>
-                        <td>
-                            <input type="text" placeholder="우편번호">
-                            <button type="button">우편번호찾기</button>
-                            <input type="text" placeholder="주소 검색" class="addr">
-                            <input type="text" placeholder="상세주소 입력" class="addr">
-                        </td>
-                    </tr>
-                </table>
+            <h3>개인정보 입력</h3>
+            <table>
+                <tr>
+                    <th>이름</th>
+                    <td>
+                        <input type="text" name="name" placeholder="이름 입력">
+                    </td>
+                </tr>
+                <tr>
+                    <th>별명</th>
+                    <td>
+                        <p>공백없는 한글, 영문, 숫자 입력</p>
+                        <input type="text" name="nick" placeholder="별명 입력">
+                        <button type="button">중복확인</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>이메일</th>
+                    <td>
+                        <input type="email" name="email" placeholder="이메일 입력">
+                        <button type="button">인증번호 받기</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>휴대폰</th>
+                    <td>
+                        <input type="text" name="phone" placeholder="휴대폰 입력">
+                    </td>
+                </tr>
+                <tr>
+                    <th>주소</th>
+                    <td>
+                        <input type="text" name="zipCode" placeholder="우편번호">
+                        <button type="button">우편번호찾기</button>
+                        <input type="text" name="address" placeholder="주소 검색" class="addr">
+                        <input type="text" name="detailAddress" placeholder="상세주소 입력" class="addr">
+                    </td>
+                </tr>
+            </table>
 
-                <div class="btn-area">
-                    <button type="button" class="cancel">취소</button>
-                    <button type="submit" class="submit">회원가입</button>
-                </div>
+		            <div class="btn-area">
+		                <button type="button" class="cancel">취소</button>
+		                <button type="submit" class="submit">회원가입</button>
+		            </div>
 
-            </section>
-        </main>
+		        </section>
+		    </form>
+		</main>
 
         <!-- 푸터 -->
         <footer>
