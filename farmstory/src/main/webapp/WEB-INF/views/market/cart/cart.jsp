@@ -6,20 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>farmstory::market/market-cart</title>
     </head>
-    <link rel="stylesheet" href="../../global-style/reset.css">
-    <link rel="stylesheet" href="../../global-style/global-header.css">
-    <link rel="stylesheet" href="../../global-style/global-main-style.css">
-    <link rel="stylesheet" href="../../global-style/global-footer.css">
-    <link rel="stylesheet" href="./cart.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-main-style.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-footer.css">
+    <link rel="stylesheet" href="/farmstory/css/market/cart/cart.css">
     <body>
         <div id="container">
             <!-- 헤더 -->
             <header>
                 <!-- 로고 -->
-                <a href="#" class="logo"><img src="../../images/logo.png" alt="메인로고"></a>
+                <a href="/farmstory/main/main.do" class="logo"><img src="/farmstory/images/logo.png" alt="메인로고"></a>
                 <!-- 오른쪽 상단 메뉴 -->
                 <p>
-                    <a href="#">HOME</a>
+                    <a href="/farmstory/main/main.do">HOME</a>
                     <a href="#">로그인</a>
                     <a href="#">회원가입</a>
                     <a href="#">관리자</a>
@@ -27,12 +27,12 @@
                 </p>
 
                 <!-- 오른쪽 테스트 배너 -->
-                <img class="text" src="../../images/head_txt_img.png" alt="3만원이상 무료배송">
+                <img class="text" src="/farmstory/images/head_txt_img.png" alt="3만원이상 무료배송">
                 
                 <!-- 메인 메뉴(GNB) -->
                 <ul class="gnb">
                     <li><a href="#">팜스토리소개</a></li>
-                    <li><a href="#">장보기</a></li>
+                    <li><a href="/farmstory/market/product-list/product-list.do">장보기</a></li>
                     <li><a href="#">농작물이야기</a></li>
                     <li><a href="#">이벤트</a></li>
                     <li><a href="#">커뮤니티</a></li>
@@ -41,16 +41,16 @@
 
             <!-- 서브 배너 -->
             <section class="sub-banner">
-                <img src="../../images/sub_top_tit2.png">
+                <img src="/farmstory/images/sub_top_tit2.png">
             </section>
 
             <!-- 메인 -->
             <main>
                 <!-- 서브 사이드 바 -->
                 <aside class="sub-sidebar-aside">
-                    <img src="../../images/sub_aside_cate2_tit.png">
+                    <img src="/farmstory/images/sub_aside_cate2_tit.png">
                     <ul>
-                        <li><a href="../product-list/product-list.html"><img src="../../images/sub_cate2_lnb1_ov.png"></a></li>
+                        <li><a href="/farmstory/market/product-list/product-list.do"><img src="/farmstory/images/sub_cate2_lnb1_ov.png"></a></li>
                     </ul>
                 </aside>
 
@@ -58,7 +58,7 @@
                 <article class="main-content">
                     <!-- 메인 컨텐츠 헤더 -->
                     <div class="main-content-header">
-                        <img src="../../images/sub_nav_tit_cate2_tit1.png">
+                        <img src="/farmstory/images/sub_nav_tit_cate2_tit1.png">
 
                         <!-- 서브 내비게이션 타이틀 -->
                         <section class="sub_nav_tit">
@@ -91,7 +91,7 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td><img src="../../images/market_item1.jpg" width="60px" height="60px"></td>
+                                <td><img src="/farmstory/images/market_item1.jpg" width="60px" height="60px"></td>
                                 <td>과일</td>
                                 <td>사과 500g</td>
                                 <td>1</td>
@@ -102,7 +102,7 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td><img src="../../images/market_item1.jpg" width="60px" height="60px"></td>
+                                <td><img src="/farmstory/images/market_item1.jpg" width="60px" height="60px"></td>
                                 <td>과일</td>
                                 <td>사과 500g</td>
                                 <td>1</td>
@@ -113,7 +113,7 @@
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td><img src="../../images/market_item1.jpg" width="60px" height="60px"></td>
+                                <td><img src="/farmstory/images/market_item1.jpg" width="60px" height="60px"></td>
                                 <td>과일</td>
                                 <td>사과 500g</td>
                                 <td>1</td>
@@ -166,7 +166,7 @@
 
             <!-- 푸터 -->
             <footer>
-                <img src="../../images/footer_logo.png">
+                <img src="/farmstory/images/footer_logo.png">
                 <div>
                     <p>(주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br>
                         등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>

@@ -1,4 +1,4 @@
-package kr.co.farmstory.controller.post;
+package kr.co.farmstory.controller;
 
 import java.io.IOException;
 
@@ -9,8 +9,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/login.do", "/logout.do"})
-public class ListController extends HttpServlet {
+@WebServlet(urlPatterns = {"/market/cart/cart.do"})
+public class CartController extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
 	
 	@Override
@@ -18,23 +19,17 @@ public class ListController extends HttpServlet {
 		
 		String reqUri = req.getRequestURI();
 		
-		if (reqUri.endsWith("login.do")) {
-			// 로그인 페이지 요청
-			// View 포워드
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/post/post-list.jsp");
+		if (reqUri.endsWith("/market/cart/cart.do")) {
+			// 장보기의 장바구니 페이지 요청
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/market/cart/cart.jsp");
 			dispatcher.forward(req, resp);
+			
 		}
-		
-
+	
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-		String reqUri = req.getRequestURI();
-		
-		if (reqUri.endsWith("login.do")) {
-			// 로그인 요청
-		}
 	}
+
 }
