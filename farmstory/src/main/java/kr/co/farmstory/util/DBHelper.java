@@ -5,16 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import java.sql.SQLException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 public class DBHelper {
-	
 	// jboard에 있는 유틸을 긁어왔습니다.
-	
 	protected Connection conn = null;
 	protected PreparedStatement psmt = null;
 	protected Statement stmt = null;
@@ -27,7 +25,7 @@ public class DBHelper {
 		DataSource ds = (DataSource) ctx.lookup("jdbc/farmstory");
 		return ds.getConnection();
 	}
-
+  
 	public void closeAll() throws SQLException {
 		
 		if(rs != null) {

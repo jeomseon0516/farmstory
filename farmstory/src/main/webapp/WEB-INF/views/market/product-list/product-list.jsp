@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,6 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>farmstory::market::product-list</title>
     </head>
+       <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-main-style.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-footer.css">
     <link rel="stylesheet" href="/farmstory/css/market/product-list/product-list.css">
     <body>
         <div id="container">
@@ -35,83 +40,62 @@
                 </ul>
             </header>
 
-            <!-- 서브 탑 타이틀 -->
-            <section>
-                <img src="/farmstory/images/sub_top_tit1.png">
+            <!-- 서브 배너 -->
+            <section class="sub-banner">
+                <img src="/farmstory/images/sub_top_tit2.png">
             </section>
 
-             <!-- 메인 -->
+            <!-- 메인 -->
             <main>
-
-                <!-- 메인 사이드 -->
-                <aside>
-                    <img src="/farmstory/images/sub_aside_cate1_tit.png">
+                <!-- 서브 사이드 바 -->
+                <aside class="sub-sidebar-aside">
+                    <img src="/farmstory/images/sub_aside_cate2_tit.png">
                     <ul>
                         <li><a href="/farmstory/market/product-list/product-list.do"><img src="/farmstory/images/sub_cate2_lnb1_ov.png"></a></li>
                     </ul>
                 </aside>
 
-                <!-- 본문 -->
-                <article>
-                    <!-- 본문-타이틀 -->
-                    <div>
+                <!-- 메인 내용 -->
+                <article class="main-content">
+                    <!-- 메인 컨텐츠 헤더 -->
+                    <div class="main-content-header">
                         <img src="/farmstory/images/sub_nav_tit_cate2_tit1.png">
-                        <div>
-                            <div><span>HOME > 장보기 > <span>장보기</span></span></div>
-                        </div>
+
+                        <!-- 서브 내비게이션 타이틀 -->
+                        <section class="sub_nav_tit">
+                            <nav>
+                                <span>HOME > 장보기 </span>
+                                <span class="sub_nav_select">> 장보기</span>
+                            </nav>
+
+                        </section>
                     </div>
-                    <a href="#"><p>전체(10) | 과일 | 야채 | 곡류</p></a>
-                    <table>
-                        <tr>
-                            <th>이미지</th>
-                            <th>종류</th>
-                            <th>상품명</th>
-                            <th>할인</th>
-                            <th>포인트</th>
-                            <th>판매가격</th>
-                        </tr>
-                        <tr class="table_content">
-                            <td><a href="#"><img src="/farmstory/images/market_item1.jpg"></a></td>
-                            <td><a href="#">과일</a></td>
-                            <td><a href="#">사과 500g</a></td>
-                            <td>10%</td>
-                            <td>400p</td>
-                            <td><p>3,600원</p><p>4,000원</p></td>
-                        </tr>
-                        <tr class="table_content">
-                            <td><a href="#"><img src="/farmstory/images/market_item2.jpg"></a></td>
-                            <td><a href="#">과일</a></td>
-                            <td><a href="#">전남 완주 배 5kg</a></td>
-                            <td>10%</td>
-                            <td>400p</td>
-                            <td><p>3,600원</p><p>4,000원</p></td>
-                        </tr>
-                        <tr class="table_content">
-                            <td><a href="#"><img src="/farmstory/images/market_item3.jpg"></a></td>
-                            <td><a href="#">과일</a></td>
-                            <td><a href="#">방울 토마토</a></td>
-                            <td>10%</td>
-                            <td>400p</td>
-                            <td><p>3,600원</p><p>4,000원</p></td>
-                        </tr>
-                        <tr class="table_content">
-                            <td><a href="#"><img src="/farmstory/images/market_item6.jpg"></a></td>
-                            <td><a href="#">과일</a></td>
-                            <td><a href="#">무농약 현미</a></td>
-                            <td>10%</td>
-                            <td>400p</td>
-                            <td><p>3,600원</p><p>4,000원</p></td>
-                        </tr>
-                        <tr class="table_content">
-                            <td><a href="#"><img src="/farmstory/images/market_item7.jpg"></a></td>
-                            <td><a href="#">과일</a></td>
-                            <td><a href="#">팜스토리 하루야채 샐러드</a></td>
-                            <td>10%</td>
-                            <td>400p</td>
-                            <td><p>3,600원</p><p>4,000원</p></td>
-                        </tr>
-                    </table>
-                    <a href="#"> &lt; [1] [2] [3] [4] [5] &gt;</a>
+                    
+                    <!-- 본문 내용 -->
+                    <section>
+	                    <a href="#">전체(10) | 과일 | 야채 | 곡류</a>
+	                    <table>
+	                        <tr>
+	                            <th>이미지</th>
+	                            <th>종류</th>
+	                            <th>상품명</th>
+	                            <th>할인</th>
+	                            <th>포인트</th>
+	                            <th>판매가격</th>
+	                        </tr>
+	                        <c:forEach var="dto" items="${dtoList}">
+		                        <tr class="table_content">
+		                            <td><a href="/farmstory/market/product-view/product-view.do?prodId=${dto.prodId}"><img src="/farmstory/images/market_item1.jpg" width="80px" height="80px"></a></td>
+		                            <td><a href="/farmstory/market/product-view/product-view.do?prodId=${dto.prodId}">${dto.prodType}</a></td>
+		                            <td><a href="/farmstory/market/product-view/product-view.do?prodId=${dto.prodId}">${dto.prodName}</a></td>
+		                            <td>${dto.prodDiscount}%</td>
+		                            <td>${dto.prodPoint}p</td>
+		                            <td><p>${dto.prodPrice - Math.round(dto.prodPrice * dto.prodDiscount / 100)}원</p><p>${dto.prodPrice}원</p></td>
+		                        </tr>
+	                        </c:forEach>
+	                    </table>
+	                    <a href="#"> &lt; [1] [2] [3] [4] [5] &gt;</a>
+                    </section>
                 </article>
             </main>
 

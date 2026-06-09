@@ -1,355 +1,66 @@
-/* 초기화 */
-    * {
-        margin: 0;
-        padding: 0;
-        font: normal 12px '돋움';
-    }
-    ul, ol {list-style: none;}
-    a {text-decoration: none; color: #111;}
-    input, textarea {outline: none;}
+main {
+	height: 758px;
+}
 
-    #container {
-        width: 980px;
-        height: auto;
-        margin: 0 auto;
-    }
+/* 본문 내용 */
+.main-content > section > table {
+	width: 762px;
+	border-top: 1px solid #111111;
+	border-bottom: 1px solid #111111;
+	border-spacing: 0;
+}
 
+th {
+	height: 38px;
+	background-color: #E5ECEF;
+	
+}
 
-/* 헤더 */
-    header {
-        position: relative;
-        width: 100%;
-        height: 142px;
-        background: url('/farmstory/images/head_top_line.png') no-repeat;            
-        margin-bottom: 10px;
-    }
+th:nth-of-type(1) {
+	width: 100px;
+}
+th:nth-of-type(2) {
+	width: 76.19px;
+}
+th:nth-of-type(3) {
+	width: 311.5px;
+}
+th:nth-of-type(4) {
+	width: 91.44px;
+}
+th:nth-of-type(5) {
+	width: 91.44px;
+}
+th:nth-of-type(6) {
+	width: 91.44px;
+}
 
-    header > .logo {
-        position: absolute;
-        left: 50%;
-        top: 20px;
-        margin-left: -95px;
-    }
+td {
+	height: 105px;
+	text-align: center;
+}
 
-    header > p {
-        float: right;
-        margin-top: 16px;
-    }
-    header > p > a {}
-    header > .text {
-        float: right;
-        clear: both;
-        margin-top: 10px;
-    }
-    header > .gnb {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 50px;
-    }
-    header > .gnb > li {  
-        float: left;      
-        width: 20%;
-        height: 100%;
-        background-image: url('/farmstory/images/head_menu_line.png');
-        background-repeat: no-repeat;
-        background-position: 0 -7px;
-    }
-    header > .gnb > li > a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        font-size: 0;
-        background-position: 0 8px;
-        background-repeat: no-repeat;
-    }
-    header > .gnb > li:nth-child(1) > a { background-image: url('/farmstory/images/head_menu1.png'); }
-    header > .gnb > li:nth-child(2) > a { background-image: url('/farmstory/images/head_menu2.png'); }
-    header > .gnb > li:nth-child(3) > a { background-image: url('/farmstory/images/head_menu3.png'); }
-    header > .gnb > li:nth-child(4) > a { background-image: url('/farmstory/images/head_menu4.png'); }
-    header > .gnb > li:nth-child(5) > a { background-image: url('/farmstory/images/head_menu5.png'); }
-    header > .gnb > li:nth-child(1) > a:hover { background-image: url('/farmstory/images/head_menu1_ov.png'); }
-    header > .gnb > li:nth-child(2) > a:hover { background-image: url('/farmstory/images/head_menu2_ov.png'); }
-    header > .gnb > li:nth-child(3) > a:hover { background-image: url('/farmstory/images/head_menu3_ov.png'); }
-    header > .gnb > li:nth-child(4) > a:hover { background-image: url('/farmstory/images/head_menu4_ov.png'); }
-    header > .gnb > li:nth-child(5) > a:hover { background-image: url('/farmstory/images/head_menu5_ov.png'); }
+td:nth-of-type(2)> a {
+	color: #777777;
+}
+td:nth-of-type(3) {
+	text-align: left;
+}
 
+td:nth-of-type(6)>p:nth-of-type(1) {
+	font-weight: 700;
+}
+td:nth-of-type(6)>p:nth-of-type(2) {
+	text-decoration: line-through;
+}
 
-/* 서브 탑 타이틀 */
-    section {
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        height: 184px;
-        background-image: url(/farmstory/images/sub_top_bg.jpg);
-        background-position: no-repeat;
-    }
+th, td {
+	border-bottom: 1px solid #D1DEE2;
+}
 
-    section > img {
-        position: absolute;
-        top: 137px;
-        left: 10px;
-    }
-
-/* 메인 */
-    main {
-        width: 100%;
-        height: 758px;
-    }
-
-    /* 메인 사이드 */
-        main > aside {
-            float: left;
-            position: relative;
-            width: 176px;
-            height: 100%;
-            background-image: url('/farmstory/images/sub_aside_bg_line.png');
-            background-repeat: no-repeat;
-            background-position: 100% 50%;
-        }
-
-        main > aside > img {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-        }
-
-        main > aside > ul {
-            position: absolute;
-            width: 175px;
-            height: 233px;
-            top: 81px;
-            background-image: url('/farmstory/images/sub_aside_bg_lnb.png');
-        }
-
-        main > aside > ul > li:nth-of-type(1) {
-            position: absolute;
-            top: 26px;
-        }
-
-        main > aside > ul > li:nth-of-type(2) {
-            position: absolute;
-            top: 61px;
-        }
-
-    /* 본문 */
-        main > article {
-            display: inline-block;
-            position: relative;
-            width: 802px;
-            height: 100%;
-        }
-
-        /* 본문 타이틀 */
-        main > article > div {
-            position: absolute;
-            left: 40px;
-            width: 762px;
-            height: 72px;
-            border-bottom: 1px solid #C2C2C2;
-        }
-        
-        main > article > div > img {
-            position: absolute;
-            top: 41px;
-        }
-
-        main > article > div > div {
-            position: absolute;
-            display: inline-block;
-            top: 50px;
-            left: 615px;
-            width: 100%;
-            height: 17px;
-            background-image: url('/farmstory/images/sub_page_nav_ico.gif');
-            background-repeat: no-repeat;
-            background-position-y: center;
-        }
-
-        main > article > div > div > div {
-            position: absolute;
-            width: 100%;
-            left: 10px;
-            top: 2px;
-        }
-
-        main > article > div > div > div > span {
-            color: #8C8C8C;
-        }
-
-        main > article > div > div > div > span > span {
-            font-weight: 700;
-            color: #91BA15;
-        }   
-
-        /* 본문 컨텐츠 */
-        main > article > a:nth-of-type(1) {
-            position: absolute;
-            top: 113px;
-            left: 40px;
-        }
-
-            /* 본문 테이블 */
-            main > article > table {
-                position: absolute;
-                top: 139px;
-                left: 40px;
-                width: 762px;
-                border-top: 1px solid #111111;
-                border-bottom: 1px solid #111111;
-                border-collapse: collapse;
-                box-sizing: border-box;
-            }
-
-            main > article > table > tbody> tr:nth-of-type(1) {
-                height: 38px;
-                border-bottom: 1px solid #EEEEEE;
-                box-sizing: border-box;
-            }
-
-            main > article > table > tbody > tr:nth-of-type(1) > th {
-                background-color: #E5ECEF;
-                border-bottom: 1px solid #D1DEE2;
-                box-sizing: border-box;
-            }
-
-            main > article > table > tbody > tr:nth-of-type(1) > th:nth-of-type(1) {
-                width: 100px;
-            }
-
-            main > article > table > tbody > tr:nth-of-type(1) > th:nth-of-type(2) {
-                width: 76.19px;
-            }
-
-            main > article > table > tbody > tr:nth-of-type(1) > th:nth-of-type(3) {
-                width: 311.5px;
-            }
-
-            main > article > table > tbody > tr:nth-of-type(1) > th:nth-of-type(4) {
-                width: 91.44px;
-            }
-
-            main > article > table > tbody > tr:nth-of-type(1) > th:nth-of-type(5) {
-                width: 91.44px;
-            }
-
-            main > article > table > tbody > tr:nth-of-type(1) > th:nth-of-type(6) {
-                width: 91.44px;
-            }
-
-            .table_content {
-                height: 105px;
-                border-bottom: 1px solid #EEEEEE;
-                box-sizing: border-box;
-            }
-
-            .table_content > td:nth-of-type(1) > a > img {
-                position: relative;
-                left: 10px;
-                width: 80px;
-                height: 80px;
-            }
-
-            .table_content > td:nth-of-type(2) {
-                text-align: center;
-            }
-
-            .table_content > td:nth-of-type(2) > a {
-                color: #777777;
-            }
-
-            .table_content > td:nth-of-type(3) > a {
-                font-size: 11.06px;
-            }
-
-            .table_content > td:nth-of-type(4) {
-                text-align: center;
-            }
-
-            .table_content > td:nth-of-type(4) > a {
-                font-size: 9.75px;
-            }
-
-            .table_content > td:nth-of-type(5) {
-                text-align: center;
-                font-size: 9.75px;
-            }
-
-            .table_content > td:nth-of-type(6) {
-                text-align: center;
-            }
-
-            .table_content > td:nth-of-type(6) > p:nth-of-type(1) {
-                font-size: 10.13px;
-                font-weight: 700;
-            }
-
-            .table_content > td:nth-of-type(6) > p:nth-of-type(2) {
-                font-size: 9.75px;
-                text-decoration: line-through;
-                color: #777777;
-            }
-
-            .table_content:nth-of-type(6) {
-                border-bottom: 1px solid #111111;
-            }
-
-            main > article > a:nth-of-type(2) {
-                position: absolute;
-                top: 723px;
-                left: 370.22px;
-            }
-
-
-
-/* 푸터 */
-    footer {
-        position: relative;
-        width: 100%;
-        height: 120px;
-        border-top: 1px solid #D1CAB2;
-        box-sizing: border-box;
-    }
-
-    footer > img {
-        position: absolute;
-        width: 174px;
-        height: 64px;
-        top: 1px;
-        left: 0px;
-    }
-
-    footer > div {
-        position: absolute;
-        width: 709.48px;
-        height: 71px;
-        top: 27px;
-        left: 254.52px;
-    }
-
-    footer > div > p:nth-of-type(1) {
-        font-family: Inter;
-        font-size: 10.31px;
-        line-height: 18px;
-        letter-spacing: 0;
-        color: #585858;
-    }
-
-    footer > div > p:nth-of-type(2) {
-        font-family: Inter;
-        font-size: 11.06px;
-        line-height: 100%;
-        color: #888888;
-    }
-
-    footer > div > p:nth-of-type(3) {
-        position: absolute;
-        top: 54px;
-        left: 620px;
-        font-family: Inter;
-        font-size: 10.60px;
-        line-height: 100%;
-        letter-spacing: 0;
-        color: #888888;
-    }
+/* 본문 아래 페이지 선택 */
+.main-content > section > a:nth-of-type(2) {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
