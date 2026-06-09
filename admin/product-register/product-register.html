@@ -64,69 +64,131 @@
 
             <h3>상품등록</h3>
 
-            <!-- 상품 등록 -->
             <article class="product-reg">
 
-                <table>
-                    <thead>
-                    <tr>
-                        <td>상품명</td>
-                        <td><input type="text"></td>
-                    </tr>
+                <form action="#" method="post" enctype="multipart/form-data">
 
-                    <tr>
-                        <td>종류</td>
-                        <td><button type="submit"> 종류 </button></td>
-                    </tr>
+                    <table>
 
-                    <tr>
-                        <td>가격</td>
-                        <td><input type="text"></td>
-                    </tr>
+                        <tbody>
 
-                    <tr>
-                        <td>포인트</td>
-                        <td><input type="text"></td>
-                    </tr>
+                        <tr>
+                            <td>상품명</td>
+                            <td>
+                                <input type="text" name="prodName">
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>할인</td>
-                        <td><button type="submit"> 5% </button></td>
-                    </tr>
+                        <tr>
+                            <td>종류</td>
+                            <td>
+                                <select name="type">
+                                    <option>종류</option>
+                                    <option>과일</option>
+                                    <option>채소</option>
+                                    <option>곡물</option>
+                                </select>
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>배송비</td>
+                        <tr>
+                            <td>가격</td>
+                            <td>
+                                <input type="text" name="price">
+                            </td>
+                        </tr>
 
-                        <td><input type="radio"> 2,000원  
-                            <input type="radio"> 3,000원  
-                            <input type="radio"> 5,000원  
-                            <input type="radio"> 무료 
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>포인트</td>
+                            <td>
+                                <input type="text" name="point">
+                                <span>포인트는 가격의 1%</span>
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>재고</td>
-                        <td><input type="text"></td>
-                    </tr>
+                        <tr>
+                            <td>할인</td>
+                            <td>
+                                <select name="discount">
+                                    <option>5%</option>
+                                    <option>10%</option>
+                                    <option>15%</option>
+                                    <option>20%</option>
+                                </select>
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>상품이미지</td>
-                        <td>상품목록 이미지(약 120 x 120)</td><br>
-                        <td><button type="submit">Choose File</button>No file chosen</td>
-                        <td>기본정보 이미지(약 240 x 240)</td><br>
-                        <td><button type="submit">Choose File</button>No file chosen</td>
-                        <td>상품목록 이미지(약 750 x Auto)</td><br>
-                        <td><button type="submit">Choose File</button>No file chosen</td>                       
-                    </tr>
+                        <tr>
+                            <td>배송비</td>
+                            <td>
+                                <label>
+                                    <input type="radio" name="delivery" value="2000">
+                                    2,000원
+                                </label>
 
-                    <tr>
-                        <td>기타</td>
-                        <td><input type="text"></td>
-                    </tr>
+                                <label>
+                                    <input type="radio" name="delivery" value="3000">
+                                    3,000원
+                                </label>
 
-                    </thead>
+                                <label>
+                                    <input type="radio" name="delivery" value="5000">
+                                    5,000원
+                                </label>
 
-                </table>
+                                <label>
+                                    <input type="radio" name="delivery" value="0">
+                                    무료
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>재고</td>
+                            <td>
+                                <input type="text" name="stock">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>상품이미지</td>
+                            <td>
+
+                                <div class="file-box">
+                                    <p>상품목록 이미지(약 120 x 120)</p>
+                                    <input type="file" name="listImg">
+                                </div>
+
+                                <div class="file-box">
+                                    <p>기본정보 이미지(약 240 x 240)</p>
+                                    <input type="file" name="basicImg">
+                                </div>
+
+                                <div class="file-box">
+                                    <p>상품설명 이미지(약 750 x Auto)</p>
+                                    <input type="file" name="detailImg">
+                                </div>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>기타</td>
+                            <td>
+                                <input type="text" name="etc">
+                            </td>
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+
+                    <div class="btns">
+                        <button type="reset">취소</button>
+                        <button type="submit">상품등록</button>
+                    </div>
+
+                </form>
 
             </article>
 
@@ -135,7 +197,7 @@
     </main>
 
     <!-- 푸터 -->
-    <footer> 
+    <footer>
         <p>
             Copyright(C)Farmstory All rights reserved.
             FARMSTORY ADMINISTRATOR Version 1.0.1
@@ -143,6 +205,5 @@
     </footer>
 
 </div>
-
 </body>
 </html>
