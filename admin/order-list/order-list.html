@@ -3,61 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmstory Admin</title>
+    <title>farmstory::admin/order-list</title>
 
     <link rel="stylesheet" href="/global-style/reset.css">
-    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./order-list.css">
 </head>
-<body>
 
+<body>
 <div id="container">
 
     <!-- 헤더 -->
     <header>
-        <a href="#">
+        <a href="./dashboard.html">
             <img src="../../images/admin/admin_logo.jpg" alt="logo">
         </a>
 
         <div class="top-menu">
-            <a href="#">HOME</a> |
-            <a href="#">로그아웃</a> |
+            <a href="#">HOME | </a> 
+            <a href="#">로그아웃 | </a> 
             <a href="#">고객센터</a>
         </div>
+        
     </header>
 
     <!-- 메인 -->
     <main>
 
-        <!-- 좌측메뉴 -->
+        <!-- 좌측 메뉴 -->
         <aside>
 
             <h3>주요기능</h3>
 
-            <div class="menu-group">
-                <p>상품관리</p>
+            <div class="menu">
+                <span>상품관리</span>
                 <ul>
-                    <li><a href="#">상품목록</a></li>
-                    <li><a href="#">상품등록</a></li>
+                    <li><a href="#">ㄴ 상품목록</a></li>
+                    <li><a href="#">ㄴ 상품등록</a></li>
                 </ul>
             </div>
 
-            <div class="menu-group">
-                <p>주문관리</p>
+            <div class="menu">
+                <span>주문관리</span>
                 <ul>
-                    <li><a href="#">주문목록</a></li>
+                    <li><a href="#">ㄴ 주문목록</a></li>
                 </ul>
             </div>
 
-            <div class="menu-group">
-                <p>회원관리</p>
+            <div class="menu">
+                <span>회원관리</span>
                 <ul>
-                    <li><a href="#">회원목록</a></li>
+                    <li><a href="#">ㄴ 회원목록</a></li>
                 </ul>
             </div>
 
         </aside>
 
-        <!-- 컨텐츠 -->
+
+        <!--우측 컨텐츠 -->
         <section>
 
             <div class="content-title">
@@ -101,16 +103,16 @@
             </table>
 
             <div class="table-bottom">
-                <button>선택삭제</button>
+                <a href="#">선택삭제</a>
             </div>
 
             <div class="paging">
                 &lt;
-                [1]
-                [2]
-                [3]
-                [4]
-                [5]
+                <a href="#">[1]</a>
+                <a href="#">[2]</a>
+                <a href="#">[3]</a>
+                <a href="#">[4]</a>
+                <a href="#">[5]</a>
                 &gt;
             </div>
 

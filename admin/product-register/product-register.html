@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>farmstory::dashboard</title>
+    <title>farmstory::admin/product-register</title>
 
     <link rel="stylesheet" href="/global-style/reset.css">
-    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./product-register.css">
 </head>
 
 <body>
@@ -58,59 +58,76 @@
 
         </aside>
 
+
         <!-- 우측 컨텐츠 -->
         <section>
 
-            <h2 class="main-title">관리자 메인</h2>
+            <h3>상품등록</h3>
 
-            <!-- 상품현황 -->
-            <article class="product-status">
-
-                <div class="table-title">
-                    <span>상품현황</span>
-                </div>
+            <!-- 상품 등록 -->
+            <article class="product-reg">
 
                 <table>
                     <thead>
-                        <tr>
-                            <th>아이디</th>
-                            <th>이름</th>
-                            <th>별명</th>
-                            <th>이메일</th>
-                            <th>배송비</th>
-                            <th>휴대폰</th>
-                            <th>등급</th>
-                            <th>가입일</th>
-                            <th>확인</th>
-                        </tr>
+                    <tr>
+                        <td>상품명</td>
+                        <td><input type="text"></td>
+                    </tr>
+
+                    <tr>
+                        <td>종류</td>
+                        <td><button type="submit"> 종류 </button></td>
+                    </tr>
+
+                    <tr>
+                        <td>가격</td>
+                        <td><input type="text"></td>
+                    </tr>
+
+                    <tr>
+                        <td>포인트</td>
+                        <td><input type="text"></td>
+                    </tr>
+
+                    <tr>
+                        <td>할인</td>
+                        <td><button type="submit"> 5% </button></td>
+                    </tr>
+
+                    <tr>
+                        <td>배송비</td>
+
+                        <td><input type="radio"> 2,000원  
+                            <input type="radio"> 3,000원  
+                            <input type="radio"> 5,000원  
+                            <input type="radio"> 무료 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>재고</td>
+                        <td><input type="text"></td>
+                    </tr>
+
+                    <tr>
+                        <td>상품이미지</td>
+                        <td>상품목록 이미지(약 120 x 120)</td><br>
+                        <td><button type="submit">Choose File</button>No file chosen</td>
+                        <td>기본정보 이미지(약 240 x 240)</td><br>
+                        <td><button type="submit">Choose File</button>No file chosen</td>
+                        <td>상품목록 이미지(약 750 x Auto)</td><br>
+                        <td><button type="submit">Choose File</button>No file chosen</td>                       
+                    </tr>
+
+                    <tr>
+                        <td>기타</td>
+                        <td><input type="text"></td>
+                    </tr>
+
                     </thead>
 
-                    <tbody>
-                        <tr>
-                            <th>a101</th>
-                            <td>김유신</td>
-                            <td>유신101</td>
-                            <td>yusin101@naver.com</td>
-                            <td>010-1234-1001</td>
-                            <td>2</td>
-                            <td>2023 01-01 13:06:14</td>
-                            <td>[상세확인]</td>
-                        </tr>
+                </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    
             </article>
 
         </section>
@@ -118,11 +135,14 @@
     </main>
 
     <!-- 푸터 -->
-    <footer>
-        <span>FARMSTORY ADMINISTRATOR Version 1.0.1</span>
-        <span>Copyrightⓒ 김철학(개발에반하다.) All rights reserved.</span>
+    <footer> 
+        <p>
+            Copyright(C)Farmstory All rights reserved.
+            FARMSTORY ADMINISTRATOR Version 1.0.1
+        </p>
     </footer>
 
 </div>
+
 </body>
 </html>
