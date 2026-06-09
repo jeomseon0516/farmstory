@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>farmstory::dashboard</title>
+    <title>farmstory::admin/product-list</title>
 
     <link rel="stylesheet" href="/global-style/reset.css">
-    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./product-list.css">
 </head>
 
 <body>
@@ -58,10 +58,11 @@
 
         </aside>
 
+
         <!-- 우측 컨텐츠 -->
         <section>
 
-            <h2 class="main-title">상품목록</h2>
+            <h3>상품목록</h3>
 
             <!-- 상품 목록 -->
             <article class="product-status">
@@ -69,6 +70,7 @@
                 <table>
                     <thead>
                     <tr>
+                        <th><input type="checkbox"></th>
                         <th>사진</th>
                         <th>상품번호</th>
                         <th>상품명</th>
@@ -81,7 +83,8 @@
 
                     <tbody>
                     <tr>
-                        <th>#샘플사진#</th>
+                        <td><input type="checkbox"></td>
+                        <td>#샘플사진#</td>
                         <td>1011</td>
                         <td>사과 500g</td>
                         <td>과일</td>
@@ -89,12 +92,8 @@
                         <td>100</td>
                         <td>2023-01-01</td>
                     </tr>
-
-
-
-
-
-              
+                    </tbody>
+                </table>
 
             </article>
 
@@ -102,12 +101,16 @@
 
     </main>
 
+
     <!-- 푸터 -->
     <footer>
-        <span>FARMSTORY ADMINISTRATOR Version 1.0.1</span>
-        <span>Copyrightⓒ 김철학(개발에반하다.) All rights reserved.</span>
+        <p>
+            Copyright(C)Farmstory All rights reserved.
+            FARMSTORY ADMINISTRATOR Version 1.0.1
+        </p>
     </footer>
 
 </div>
+
 </body>
 </html>
