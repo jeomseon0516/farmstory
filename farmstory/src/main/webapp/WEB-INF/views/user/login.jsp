@@ -1,4 +1,27 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%
+    String register = request.getParameter("register");
+    String login = request.getParameter("login");
+
+    if("success".equals(register)){
+%>
+<script>
+    alert("회원가입 성공! 로그인 해주세요.");
+</script>
+<%
+    }
+
+    if("fail".equals(login)){
+%>
+<script>
+    alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+</script>
+<%
+    }
+%>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -42,7 +65,7 @@
     <main>
                 
         <section class="login">
-            <form action="#" method="post">
+            <form action="/farmstory/user/login.do" method="post">
 
                 <!-- 로그인 입력 영역 -->
                 <div class="login-box">
@@ -51,7 +74,7 @@
 
                         <div>
                             <img src="/farmstory/images/user/login_ico_id.png" alt="아이디">
-                            <input type="text" name="uid" placeholder="아이디 입력">
+                            <input type="text" name="id" placeholder="아이디 입력">
                         </div>
 
                         <div>
@@ -77,8 +100,9 @@
                 </p>
 
                 <div class="login-link">
-                    <a href="#">아이디 | 비밀번호찾기 | </a>
-                    <a href="#">회원가입</a>
+                    <a href="/farmstory/user/find/id.do">아이디 </a> |
+                    <a href="/farmstory/user/find/password.do">비밀번호찾기 </a> | 
+                    <a href="/farmstory/user/register.do">회원가입</a>
                 </div>
 
             </div>

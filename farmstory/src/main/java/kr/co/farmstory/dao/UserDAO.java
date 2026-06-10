@@ -13,6 +13,8 @@ public class UserDAO extends DBHelper {
 	}
 	private UserDAO() {}	
 	
+	
+	// 회원가입 
 	public void insert(UserDTO dto) {
 		try {
 			conn = getConnection();
@@ -37,4 +39,35 @@ public class UserDAO extends DBHelper {
 			}
 	}
 	
+	// 로그인 
+	public UserDTO select(String id, String pass) {
+		
+		UserDTO dto = null;
+		
+		try {
+			conn = getConnection();
+			
+			psmt = conn.prepareStatement(SqlUser.SELECT_USER);
+			psmt.setString(1, id);
+			psmt.setString(2, pass);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto = new UserDTO();
+				
+				dto.setId(rs.getString("id"));
+				dto.setName(rs.getString("name"));
+				dto.setNick(rs.getString("nick"));
+				dto.setEmail(rs.getString("email"));
+			}
+			
+			closeAll();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return dto;
+	}
 }
