@@ -46,50 +46,48 @@
 
             <!-- 메인 -->
             <main>
-                <section class="find-id-box">
-
-                    <!-- 제목 -->
-                    <h3>아이디 찾기</h3>
-
-                    <!-- 입력 테이블 -->
-                    <table>
-                        <tr>
-                            <th>이름</th>
-                            <td>
-                                <input type="text" placeholder="이름 입력">
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th>이메일</th>
-                            <td>
-                                <input type="text" placeholder="이메일 입력">
-                                <button type="button">인증번호 받기</button>
-                                <br>
-                                <input type="text" placeholder="인증번호 입력">
-                                <button type="button">확인</button>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- 안내 문구 -->
-                    <p class="guide">
-                        회원가입시 이메일 주소와 입력한 이메일 주소가 같아야, 인증번호를 받을 수 있습니다.<br>
-                        인증번호를 입력 후 확인 버튼을 누르세요.
-                    </p>
-
-                    <!-- 하단 버튼 -->
-                    <div class="btn-area">
-                        <button type="button">취소</button>
-                        <button type="button">다음</button>
-                    </div>
-
-                </section>
-            </main>
+			    <form action="/farmstory/user/find/id-result.do" method="post">
+			        <section class="find-id-box">
+			
+			            <h3>아이디 찾기</h3>
+			
+			            <table>
+			                <tr>
+			                    <th>이름</th>
+			                    <td>
+			                        <input type="text" name="name" placeholder="이름 입력">
+			                    </td>
+			                </tr>
+			
+			                <tr>
+			                    <th>이메일</th>
+			                    <td>
+			                        <input type="text" name="email" placeholder="이메일 입력">
+			                        <button type="button" id="btnSendEmail">인증번호 받기</button>
+			                        <br>
+			                        <input type="text" name="authCode" placeholder="인증번호 입력">
+			                        <button type="button">확인</button>
+			                    </td>
+			                </tr>
+			            </table>
+			
+			            <p class="guide">
+			                회원가입시 이메일 주소와 입력한 이메일 주소가 같아야, 인증번호를 받을 수 있습니다.<br>
+			                인증번호를 입력 후 확인 버튼을 누르세요.
+			            </p>
+			
+			            <div class="btn-area">
+			                <button type="button">취소</button>
+			                <button type="submit">다음</button>
+			            </div>
+			
+			        </section>
+			    </form>
+			</main>
 
             <!--푸터-->  
             <footer>
-                <img src="/images/footer_logo.png">
+                <img src="/farmstory/images/footer_logo.png">
                 <div>
                     <p>(주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br>
                         등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
@@ -102,6 +100,28 @@
                 </div>
             </footer>
         </div>
+        
+        <script>
+
+		document.getElementById('btnSendEmail')
+		.addEventListener('click', async function(){
+		
+		    const email =
+		        document.querySelector('input[name="email"]').value;
+		
+		    const response =
+		        await fetch('/farmstory/user/find/sendEmail.do?email=' + email);
+		
+		    const result = await response.text();
+		
+		    if(result == 'success'){
+		        alert('인증번호가 발송되었습니다.');
+		    }
+		
+		});
+		
+		</script>
+        
     </body>
 </html>
             
