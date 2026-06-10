@@ -19,8 +19,10 @@
     			const cartLink = document.getElementById('cartLink');
     			
     			const baseUrl = "/farmstory/market/cart/cart.do?prodId=${dto.prodId}"
+    					
+   				totalPrice.innerText = totalPriceValue + '원';
+    			cartLink.href = baseUrl + "&prodQty=" + qtyValue;
     			
-        		
         		
         		qty.addEventListener('input', function(e){
         			const qtyValue = qty.value;
