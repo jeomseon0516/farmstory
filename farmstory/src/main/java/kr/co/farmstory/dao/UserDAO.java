@@ -20,9 +20,9 @@ public class UserDAO extends DBHelper {
 			conn = getConnection();
 			psmt = conn.prepareStatement(SqlUser.INSERT_USER);
 			psmt.setString(1, dto.getId());
-			psmt.setString(2, dto.getPass());
+			psmt.setString(2, dto.getPassword());
 			psmt.setString(3, dto.getName());
-			psmt.setString(4, dto.getNick());
+			psmt.setString(4, dto.getNickname());
 			psmt.setString(5, dto.getEmail());
 			psmt.setString(6, dto.getZipCode());
 			psmt.setString(7, dto.getAddress());
