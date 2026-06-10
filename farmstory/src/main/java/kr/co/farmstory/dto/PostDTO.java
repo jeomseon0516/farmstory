@@ -12,7 +12,7 @@ public class PostDTO {
 	private String writtenAt;
 	private String ipAddress;
 	private String nickname;
-	private List<PostFileDTO>
+	private List<PostFileDTO> postFileList;
 	
 	public int getId() {
 		return id;
