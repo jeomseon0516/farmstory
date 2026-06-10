@@ -17,14 +17,16 @@ public class CartController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String reqUri = req.getRequestURI();
+		// 파라미터 수신
+		String prodId = req.getParameter("prodId");
+		String prodQty = req.getParameter("prodQty");
 		
-		if (reqUri.endsWith("/market/cart/cart.do")) {
-			// 장보기의 장바구니 페이지 요청
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/market/cart/cart.jsp");
-			dispatcher.forward(req, resp);
+		
+		
+		// 장보기의 장바구니 페이지 요청
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/market/cart/cart.jsp");
+		dispatcher.forward(req, resp);
 			
-		}
 	
 	}
 	

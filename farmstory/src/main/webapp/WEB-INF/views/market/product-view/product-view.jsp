@@ -6,6 +6,36 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>farmstory::market/market-product-view</title>
+        <script>
+        	document.addEventListener('DOMContentLoaded', function(){
+        		
+        		// 합계 가격 계산
+        		const price = document.getElementById('prodPrice');
+        		const qty = document.getElementById('prodQty');
+        		const totalPrice = document.getElementById('totalPrice');
+    			const qtyValue = qty.value;
+    			const priceValue = price.innerText;
+    			const totalPriceValue = qtyValue * priceValue;
+    			const cartLink = document.getElementById('cartLink');
+    			
+    			const baseUrl = "/farmstory/market/cart/cart.do?prodId=${dto.prodId}"
+    			
+        		
+        		
+        		qty.addEventListener('input', function(e){
+        			const qtyValue = qty.value;
+        			const priceValue = price.innerText;
+        			const totalPriceValue = qtyValue * priceValue;
+        			console.log(qtyValue);
+        			
+        			totalPrice.innerText = totalPriceValue + '원';
+        			cartLink.href = baseUrl + "&prodQty=" + qtyValue;
+        		});
+        		
+        	});	//DOMContendLoaded End
+        
+        
+        </script>
     </head>
     <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
     <link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
@@ -33,7 +63,7 @@
                 <!-- 메인 메뉴(GNB) -->
                 <ul class="gnb">
                     <li><a href="#">팜스토리소개</a></li>
-                    <li><a href="/farmstory/market/product-list.do">장보기</a></li>
+                    <li><a href="/farmstory/market/product-list/product-list.do">장보기</a></li>
                     <li><a href="#">농작물이야기</a></li>
                     <li><a href="#">이벤트</a></li>
                     <li><a href="#">커뮤니티</a></li>
@@ -82,31 +112,31 @@
                             <table>
                                 <tr>
                                     <td>상품명</td>
-                                    <td>딸기 500g</td>
+                                    <td>${dto.prodName}</td>
                                 </tr>
                                 <tr>
                                     <td>상품코드</td>
-                                    <td>01</td>
+                                    <td>${dto.prodId}<p>${dto.prodId}<p></td>
                                 </tr>
                                 <tr>
                                     <td>배송비</td>
-                                    <td>5,000원 <span>3만원 이상 무료배송</span></td>
+                                    <td>${dto.prodDeliveryCost}원<span> 3만원 이상 무료배송</span></td>
                                 </tr>
                                 <tr>
                                     <td>판매가격</td>
-                                    <td>4,000원</td>
+                                    <td ><span id="prodPrice">${dto.prodPrice}</span>원</td>
                                 </tr>
                                 <tr>
                                     <td>구매수량</td>
-                                    <td><input type="number"></td>
+                                    <td><input type="number" id="prodQty" value="1" min="1"></td>
                                 </tr>
                                 <tr>
                                     <td>합계</td>
-                                    <td>4,000원</td>
+                                    <td id="totalPrice"></td>
                                 </tr>
                             </table>
                             <a href="#">바로구매</a>
-                            <a href="#">장바구니</a>
+                            <a href="/farmstory/market/cart/cart.do?prodId=${dto.prodId}&prodQty=1" id="cartLink">장바구니</a>
                         </div>
                         <h3>상품설명</h3>
                         <img src="/farmstory/images/market_detail_sample.jpg">
