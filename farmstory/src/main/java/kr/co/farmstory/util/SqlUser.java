@@ -6,7 +6,7 @@ public class SqlUser {
 													      + "id=?, "
 													      + "password=SHA2(?, 256), "
 													      + "name=?, "
-													      + "nick=?, "
+													      + "nickname=?, "
 													      + "email=?, "
 													      + "zip_code=?, "
 													      + "address=?, "
