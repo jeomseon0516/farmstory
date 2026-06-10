@@ -108,7 +108,7 @@ public class UserController extends HttpServlet {
 	    dto.setId(id);
 	    dto.setPass(pass);
 	    dto.setName(name);
-	    dto.setNick(nick);
+	    dto.setNickname(nick);
 	    dto.setEmail(email);
 	    dto.setZipCode(zipCode);
 	    dto.setAddress(address);

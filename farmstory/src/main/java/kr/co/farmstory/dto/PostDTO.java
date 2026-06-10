@@ -1,4 +1,6 @@
-package kr.co.farmstory.dto.entity;
+package kr.co.farmstory.dto;
+
+import java.util.List;
 
 public class PostDTO {
 	private int id;
@@ -9,6 +11,8 @@ public class PostDTO {
 	private int viewCount;
 	private String writtenAt;
 	private String ipAddress;
+	private String nickname;
+	private List<PostFileDTO>
 	
 	public int getId() {
 		return id;
@@ -61,6 +65,7 @@ public class PostDTO {
 	public void setIpAddress(String ipAddress) {
 		this.ipAddress = ipAddress;
 	}
+	
 	@Override
 	public String toString() {
 		return "PostDTO [id=" + id + ", writerId=" + writerId + ", category=" + category + ", title=" + title

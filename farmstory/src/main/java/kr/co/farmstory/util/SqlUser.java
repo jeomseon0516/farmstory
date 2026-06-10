@@ -4,7 +4,7 @@ public class SqlUser {
 	
 	public static final String INSERT_USER = "INSERT INTO `User` SET "
 													      + "id=?, "
-													      + "pass=SHA2(?, 256), "
+													      + "password=SHA2(?, 256), "
 													      + "name=?, "
 													      + "nick=?, "
 													      + "email=?, "

@@ -3,9 +3,9 @@ package kr.co.farmstory.dto;
 public class UserDTO {
 	
 	private String id;
-	private String pass;
+	private String password;
 	private String name;
-	private String nick;
+	private String nickname;
 	private String email;
 	private String zipCode;
 	private String address;
@@ -20,11 +20,11 @@ public class UserDTO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPass() {
-		return pass;
+	public String getPassword() {
+		return password;
 	}
-	public void setPass(String pass) {
-		this.pass = pass;
+	public void setPass(String password) {
+		this.password = password;
 	}
 	public String getName() {
 		return name;
@@ -32,11 +32,11 @@ public class UserDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getNick() {
-		return nick;
+	public String getNickname() {
+		return nickname;
 	}
-	public void setNick(String nick) {
-		this.nick = nick;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 	public String getEmail() {
 		return email;
@@ -88,11 +88,8 @@ public class UserDTO {
 	}
 	@Override
 	public String toString() {
-		return "UserDTO [id=" + id + ", pass=" + pass + ", name=" + name + ", nick=" + nick + ", email=" + email
+		return "UserDTO [id=" + id + ", password=" + password + ", name=" + name + ", nickname=" + nickname + ", email=" + email
 				+ ", zipCode=" + zipCode + ", address=" + address + ", detailAddress=" + detailAddress + ", phone="
 				+ phone + ", createdAt=" + createdAt + ", deletedAt=" + deletedAt + ", ipAddress=" + ipAddress + "]";
 	}
-	
-	
-
 }
