@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import kr.co.farmstory.dto.UserDTO;
 import kr.co.farmstory.service.UserService;
 
@@ -30,95 +31,95 @@ public class UserController extends HttpServlet {
 	
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+	        throws ServletException, IOException {
+
 	    String path = req.getServletPath();
+	    String view = null;
 
 	    if(path.equals("/user/login.do")) {
-
-	        RequestDispatcher dispatcher =
-	                req.getRequestDispatcher("/WEB-INF/views/user/login.jsp");
-
-	        dispatcher.forward(req, resp);
+	        view = "/WEB-INF/views/user/login.jsp";
 
 	    } else if(path.equals("/user/register.do")) {
-
-	        RequestDispatcher dispatcher =
-	                req.getRequestDispatcher("/WEB-INF/views/user/register.jsp");
-
-	        dispatcher.forward(req, resp);
+	        view = "/WEB-INF/views/user/register.jsp";
 
 	    } else if(path.equals("/user/find/id.do")) {
+	        view = "/WEB-INF/views/user/find/id.jsp";
 
-	        RequestDispatcher dispatcher =
-	                req.getRequestDispatcher("/WEB-INF/views/user/find/id.jsp");
+	    } else if(path.equals("/user/find/id-result.do")) {
+	        view = "/WEB-INF/views/user/find/id-result.jsp";
 
-	        dispatcher.forward(req, resp);
-	        
 	    } else if(path.equals("/user/find/password.do")) {
+	        view = "/WEB-INF/views/user/find/password.jsp";
 
-	        RequestDispatcher dispatcher =
-	                req.getRequestDispatcher("/WEB-INF/views/user/find/password.jsp");
-
-	        dispatcher.forward(req, resp);    
-	        
 	    } else if(path.equals("/user/find/password-change.do")) {
-
-	        RequestDispatcher dispatcher =
-	                req.getRequestDispatcher("/WEB-INF/views/user/find/password-change.jsp");
-
-	        dispatcher.forward(req, resp);  
+	        view = "/WEB-INF/views/user/find/password-change.jsp";
 
 	    } else if(path.equals("/mypage/profile-edit.do")) {
-
-	        RequestDispatcher dispatcher =
-	                req.getRequestDispatcher("/WEB-INF/views/mypage/profile-edit.jsp");
-
-	        dispatcher.forward(req, resp);
-	     
-	    } else if(path.equals("/user/find/id-result.do")) {
-
-	        RequestDispatcher dispatcher =
-	                req.getRequestDispatcher("/WEB-INF/views/user/find/id-result.jsp");
-
-	        dispatcher.forward(req, resp);
-	        
+	        view = "/WEB-INF/views/mypage/profile-edit.jsp";
 	    }
+
+	    RequestDispatcher dispatcher = req.getRequestDispatcher(view);
+	    dispatcher.forward(req, resp);
 	}
-	
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		
-		
-		String id = req.getParameter("id");
-		String pass = req.getParameter("pass");
-		String name = req.getParameter("name");
-		String nick = req.getParameter("nick");
-		String email = req.getParameter("email");
-		String zipCode = req.getParameter("zipCode");
-		String address = req.getParameter("address");
-		String detailAddress = req.getParameter("detailAddress");
-		String phone = req.getParameter("phone");
-		String ipAddress = req.getRemoteAddr();
-		
-		UserDTO dto = new UserDTO();
-		
-	    dto.setId(id);
-	    dto.setPass(pass);
-	    dto.setName(name);
-	    dto.setNick(nick);
-	    dto.setEmail(email);
-	    dto.setZipCode(zipCode);
-	    dto.setAddress(address);
-	    dto.setDetailAddress(detailAddress);
-	    dto.setPhone(phone);
-	    dto.setIpAddress(ipAddress);
-	    
-	    // 서비스 호출
-	    service.register(dto);
+	    String path = req.getServletPath();
 
-	    resp.sendRedirect("/farmstory/user/login.do?+register=success");
-	}
+	    if(path.equals("/user/register.do")) {
+
+	        // 회원가입 처리
+    	  	String id = req.getParameter("id");
+    	    String pass = req.getParameter("pass");
+    	    String name = req.getParameter("name");
+    	    String nick = req.getParameter("nick");
+    	    String email = req.getParameter("email");
+    	    String zipCode = req.getParameter("zipCode");
+    	    String address = req.getParameter("address");
+    	    String detailAddress = req.getParameter("detailAddress");
+    	    String phone = req.getParameter("phone");
+    	    String ipAddress = req.getRemoteAddr();
+
+    	    UserDTO dto = new UserDTO();
+
+    	    dto.setId(id);
+    	    dto.setPass(pass);
+    	    dto.setName(name);
+    	    dto.setNick(nick);
+    	    dto.setEmail(email);
+    	    dto.setZipCode(zipCode);
+    	    dto.setAddress(address);
+    	    dto.setDetailAddress(detailAddress);
+    	    dto.setPhone(phone);
+    	    dto.setIpAddress(ipAddress);
+
+    	    service.register(dto);
+
+    	    resp.sendRedirect("/farmstory/user/login.do?register=success");
+
+    } else if(path.equals("/user/login.do")) {
+
+        	// 로그인 처리
+    	 	String id = req.getParameter("id");
+    	    String pass = req.getParameter("pass");
+
+    	    UserDTO user = service.login(id, pass);
+
+    	    if(user != null) {
+
+    	        HttpSession session = req.getSession();
+    	        session.setAttribute("sessUser", user);
+
+    	        resp.sendRedirect("/farmstory/main/main.do?login=success");
+    	        
+    	    } else {    	        
+    	            	            	        
+    	        resp.sendRedirect("/farmstory/user/login.do?login=fail");
+    	    }
+	    }
+	}		
+		
+		
 }

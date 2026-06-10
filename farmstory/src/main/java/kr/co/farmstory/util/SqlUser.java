@@ -15,6 +15,12 @@ public class SqlUser {
 													      + "created_at=NOW(), "
 													      + "deleted_at=NULL, "
 													      + "ip_address=?";
+	
+	
+	public static final String SELECT_USER = "SELECT * FROM `User` "
+													      + "WHERE id=? "
+													      + "AND pass=SHA2(?,256)";
+	
 	}
 
 
