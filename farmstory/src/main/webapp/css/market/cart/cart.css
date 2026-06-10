@@ -1,192 +1,59 @@
 /* 메인 내용 - 내용 */
     .main-content {
         position: relative;
-        height: 743px;
+        min-height: 743px;
     }
 
-    .main-content > section > a {
-        position: absolute;
-        top: 113px;
 
-    }
+	/* 메인 테이블 */
+	#cartTable {
+		margin-top: 10px;
+		width: 762px;
+		border-top: 1px solid #111111;
+		border-bottom: 1px solid #111111;
+		border-spacing: 0;
+	}
+	
+	#cartTable > tbody > tr > th {
+		height: 38px;
+		border-bottom: 1px solid #EEEEEE;
+		background-color: #E5ECEF;
+	}
+	
+	#cartTable > tbody > tr > th:nth-of-type(1) {
+		width: 76.19px;
+	}
+	#cartTable > tbody > tr > th:nth-of-type(2) {
+		width: 80px;
+	}
+	#cartTable > tbody > tr > th:nth-of-type(3) {
+		width: 76.19px;
+	}
+	#cartTable > tbody > tr > th:nth-of-type(4) {
+		width: 148.69px;
+	}
+	#cartTable > tbody > tr > th:nth-of-type(5) {
+		width: 76.19px;
+	}
+	#cartTable > tbody > tr > th:nth-of-type(6) {
+		width: 76.19px;
+	}
+	#cartTable > tbody > tr > th:nth-of-type(7) {
+		width: 76.19px;
+	}
+	#cartTable > tbody > tr > th:nth-of-type(8) {
+		width: 76.19px;
+	}
+	#cartTable > tbody > tr > td {
+		height: 85px;
+		border-bottom: 1px solid #EEEEEE;
+		text-align: center;
+	}
 
-    /* 장바구니 테이블 */
-        .main-content > section > table {
-            position:absolute;
-            top: 139px;
-            border-collapse: collapse;
-            border-top: 1px solid #111111;
-            border-bottom: 1px solid #111111;
-        }
 
-        .main-content > section > table > tbody > tr {
-            border-bottom: 1px solid #EEEEEE;
-        }
-
-        .main-content > section > table > tbody > tr > th {
-            background-color: #E5ECEF;
-            border-bottom: 1px solid #D1DEE2;
-        }
-
-        /* 열 */
-            .main-content > section > table > tbody > tr > th:nth-of-type(1) {
-                width: 76.19px;
-            }
-
-            .main-content > section > table > tbody > tr > th:nth-of-type(2) {
-                width: 80px;
-            }
-
-            .main-content > section > table > tbody > tr > th:nth-of-type(3) {
-                width: 76.19px;
-            }
-
-            .main-content > section > table > tbody > tr > th:nth-of-type(4) {
-                width: 148.69px;
-            }
-
-            .main-content > section > table > tbody > tr > th:nth-of-type(5) {
-                width: 76.19px;
-            }
-
-            .main-content > section > table > tbody > tr > th:nth-of-type(6) {
-                width: 76.19px;
-            }
-
-            .main-content > section > table > tbody > tr > th:nth-of-type(7) {
-                width: 76.19px;
-            }
-
-            .main-content > section > table > tbody > tr > th:nth-of-type(8) {
-                width: 76.19px;
-            }
-
-            .main-content > section > table > tbody > tr > th:nth-of-type(9) {
-                width: 76.19px;
-            }
-
-        /* 행 */
-            .main-content > section > table > tbody > tr:nth-of-type(1) {
-                height: 38px;
-            }
-
-            .main-content > section > table > tbody > tr:nth-of-type(2) {
-                height: 38px;
-                text-align: center;
-            }
-
-            /* 3행 */
-            .main-content > section > table > tbody > tr:nth-of-type(3) {
-                height: 85px;
-                text-align: center;
-            }
-
-                .main-content > section > table > tbody > tr:nth-of-type(3) > td:nth-of-type(3) {
-                    color: #777777;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(3) > td:nth-of-type(5) {
-                    color: #777777;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(3) > td:nth-of-type(6) {
-                    color: #777777;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(3) > td:nth-of-type(7) {
-                    color: #777777;
-                    font-size: 9.75px;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(3) > td:nth-of-type(8) {
-                    color: #777777;
-                    font-size: 9.75px;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(3) > td:nth-of-type(9) {
-                    font-size: 10.13px;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(3) > td:nth-of-type(9) > span {
-                    font-weight: 700;
-                }
-            
-            /* 4행 */
-            .main-content > section > table > tbody > tr:nth-of-type(4) {
-                height: 85px;
-                text-align: center;
-            }
-
-                .main-content > section > table > tbody > tr:nth-of-type(4) > td:nth-of-type(3) {
-                    color: #777777;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(4) > td:nth-of-type(5) {
-                    color: #777777;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(4) > td:nth-of-type(6) {
-                    color: #777777;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(4) > td:nth-of-type(7) {
-                    color: #777777;
-                    font-size: 9.75px;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(4) > td:nth-of-type(8) {
-                    color: #777777;
-                    font-size: 9.75px;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(4) > td:nth-of-type(9) {
-                    font-size: 10.13px;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(4) > td:nth-of-type(9) > span {
-                    font-weight: 700;
-                }
-
-            /* 5행 */
-            .main-content > section > table > tbody > tr:nth-of-type(5) {
-                height: 85px;
-                text-align: center;
-                border-bottom: 1px solid #111111;
-            }
-
-                .main-content > section > table > tbody > tr:nth-of-type(5) > td:nth-of-type(3) {
-                    color: #777777;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(5) > td:nth-of-type(5) {
-                    color: #777777;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(5) > td:nth-of-type(6) {
-                    color: #777777;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(5) > td:nth-of-type(7) {
-                    color: #777777;
-                    font-size: 9.75px;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(5) > td:nth-of-type(8) {
-                    color: #777777;
-                    font-size: 9.75px;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(5) > td:nth-of-type(9) {
-                    font-size: 10.13px;
-                }
-
-                .main-content > section > table > tbody > tr:nth-of-type(5) > td:nth-of-type(9) > span {
-                    font-weight: 700;
-                }
-
-    .main-content > section > div:nth-of-type(1) {
-        position: absolute;
-        top: 481px;
+    .main-content > section > form > div:nth-of-type(1) {
+    	display: inline-block;
+    	margin-top: 10px;
         width: 60px;
         height: 29px;
         background-color: #960D1A;
@@ -195,19 +62,17 @@
         line-height: 29px;
     }
 
-    .main-content > section > div:nth-of-type(2) {
-        position: absolute;
-        top: 481px;
-        left: 497.2px;
+    .main-content > section > form > div:nth-of-type(2) {
+    	margin-top: 10px;
+    	margin-bottom: 10px;
+    	float: right;
         width: 304.8px;
         height: 262px;
         border: 1px solid #D7D7D7;
     }
 
-    .main-content > section > div:nth-of-type(2) > table {
-        position: absolute;
-        top: 7px;
-        left: 7px;
+    .main-content > section > form > div:nth-of-type(2) > table {
+    	margin: 7px;
         width: 290.8px;
         height: 201px;
         border-top: 1px solid #111111;
@@ -215,30 +80,33 @@
         border-collapse: collapse;
     }
 
-    .main-content > section > div:nth-of-type(2) > table > tbody > tr > td:nth-of-type(1) {
+    .main-content > section > form > div:nth-of-type(2) > table > tbody > tr > td:nth-of-type(1) {
         width: 65%;
         padding-left: 20px;
 
     }
 
-    .main-content > section > div:nth-of-type(2) > table > tbody > tr > td:nth-of-type(2) {
+    .main-content > section > form > div:nth-of-type(2) > table > tbody > tr > td:nth-of-type(2) {
         width: 35%;
     }
 
-    .main-content > section > div:nth-of-type(2) > table > tbody > tr:nth-of-type(7) > td:nth-of-type(2) {
+    .main-content > section > form > div:nth-of-type(2) > table > tbody > tr:nth-of-type(7) > td:nth-of-type(2) {
         color: #C20A0A;
         font-size: 700;
     }
 
-    .main-content > section > div:nth-of-type(2) > div {
-        position: absolute;
-        top: 218px;
-        left: 7px;
+    .main-content > section > form > div:nth-of-type(2) > button {
+    	margin-left: 7px;
         width:290.8px;
         height: 37px;
         background-color: #960D1A;
         color: #FFFFFF;
         text-align: center;
         line-height: 37px;
+        border: 0;
+    }
+    
+    #eachTotalPrice {
+    	font-weight: 700;
     }
 
