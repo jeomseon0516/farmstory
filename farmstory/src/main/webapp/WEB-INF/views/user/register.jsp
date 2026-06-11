@@ -99,9 +99,9 @@
                         <th>별명</th>
                         <td>
                             <p>공백없는 한글, 영문, 숫자 입력</p>
-                            <input type="text" name="nick" placeholder="별명 입력">
-                            <button type="button" id="btnNick">중복확인</button>
-                            <span class="nickResult"></span>
+                            <input type="text" name="nickname" placeholder="별명 입력">
+                            <button type="button" id="btnNickname">중복확인</button>
+                            <span class="nicknameResult"></span>
                         </td>
                     </tr>
 

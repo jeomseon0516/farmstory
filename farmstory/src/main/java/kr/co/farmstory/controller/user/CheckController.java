@@ -31,7 +31,7 @@ public class CheckController extends HttpServlet {
         if("id".equals(type)) {
             count = service.checkId(value);
 
-        } else if("nick".equals(type)) {
+        } else if("nickname".equals(type)) {
             count = service.checkNick(value);
 
         } else if("phone".equals(type)) {

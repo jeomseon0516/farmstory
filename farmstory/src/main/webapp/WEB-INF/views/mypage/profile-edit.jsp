@@ -17,6 +17,7 @@
             <header>
                 <!-- 로고 -->
                 <a href="#" class="logo"><img src="/farmstory/images/logo.png" alt="메인로고"></a>
+                
                 <!-- 오른쪽 상단 메뉴 -->
                 <p>
                     <a href="#">HOME</a>
@@ -26,10 +27,10 @@
                     <a href="#">고객센터</a>
                 </p>
 
-                <!-- 오른쪽 테스트 배너 -->
+                <!-- 오른쪽 텍스트 배너 -->
                 <img class="text" src="/farmstory/images/head_txt_img.png" alt="3만원이상 무료배송">
                 
-                <!-- 메인 메뉴(GNB) -->
+                <!-- 메인 메뉴 -->
                 <ul class="gnb">
                     <li><a href="#">팜스토리소개</a></li>
                     <li><a href="#">장보기</a></li>
@@ -70,57 +71,88 @@
                             </nav>
                         </section>
                     </div>
+
                     <section>
-                        <form action="#">
+                        <form action="/farmstory/mypage/profile-edit.do" method="post">
                             <h2>회원정보 설정</h2>
+
                             <table class="user_modify1">
                                 <tr>
-                                    <td>아이디</td><td>chhak1234</td>
+                                    <td>아이디</td>
+                                    <td>${sessUser.id}</td>
                                 </tr>
                                 <tr>
-                                    <td>비밀번호</td><td><input type="text" placeholder="비밀번호 입력"></td>
+                                    <td>비밀번호</td>
+                                    <td>
+                                        <input type="password" name="pass1" placeholder="비밀번호 입력">
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>비밀번호 확인</td><td><input type="text" placeholder="비밀번호 입력 확인"><button>비밀번호 수정</button></td>
+                                    <td>비밀번호 확인</td>
+                                    <td>
+                                        <input type="password" name="pass2" placeholder="비밀번호 입력 확인">
+                                        <button type="submit" name="mode" value="pass">비밀번호 수정</button>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>회원가입날짜</td><td>2022-01-01 12:45:12</td>
+                                    <td>회원가입날짜</td>
+                                    <td>${sessUser.createdAt}</td>
                                 </tr>
-                            </table><br>
+                            </table>
+
+                            <br>
+
                             <h2>개인정보 수정</h2>
+
                             <table class="user_modify2">
                                 <tr>
-                                    <td>이름</td><td><input type="text"></td>
+                                    <td>이름</td>
+                                    <td>
+                                        <input type="text" name="name" value="${sessUser.name}">
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>별명</td><td>공백없는 한글, 영문, 숫자 입력<br><input type="text" placeholder="별명 입력"><button><img src="/farmstory/images/myinfo/chk_id.gif"></button></td>
+                                    <td>별명</td>
+                                    <td>
+                                        공백없는 한글, 영문, 숫자 입력<br>
+                                        <input type="text" name="nickname" value="${sessUser.nickname}" placeholder="별명 입력">
+                                        <button type="button"><img src="/farmstory/images/myinfo/chk_id.gif"></button>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>이메일</td><td><input type="text" placeholder="이메일 입력"><button><img src="/farmstory/images/myinfo/chk_auth.gif"></button></td>
+                                    <td>이메일</td>
+                                    <td>
+                                        <input type="text" name="email" value="${sessUser.email}" placeholder="이메일 입력">
+                                        <button type="button"><img src="/farmstory/images/myinfo/chk_auth.gif"></button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>휴대폰</td>
                                     <td>
-                                        <input type="text" placeholder="휴대폰 입력">
+                                        <input type="text" name="phone" value="${sessUser.phone}" placeholder="휴대폰 입력">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>주소</td>
                                     <td>
-                                        <input type="text" placeholder="우편번호"><button><img src="/farmstory/images/myinfo/chk_post.gif"></button><br>
-                                        <input type="text" placeholder="주소 검색"><br>
-                                        <input type="text" placeholder="상세주소 입력"><br>
+                                        <input type="text" name="zipCode" value="${sessUser.zipCode}" placeholder="우편번호">
+                                        <button type="button"><img src="/farmstory/images/myinfo/chk_post.gif"></button><br>
+                                        <input type="text" name="address" value="${sessUser.address}" placeholder="주소 검색"><br>
+                                        <input type="text" name="detailAddress" value="${sessUser.detailAddress}" placeholder="상세주소 입력"><br>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>회원탈퇴</td><td><button>탈퇴하기</button></td>
+                                    <td>회원탈퇴</td>
+                                    <td>
+                                        <button type="submit" name="mode" value="withdraw">탈퇴하기</button>
+                                    </td>
                                 </tr>
-
                             </table>
+
+                            <button type="submit" name="mode" value="profile">회원수정</button>
                         </form>
                     </section>
                 </article>
-
             </main>
 
             <!-- 푸터 -->
@@ -137,8 +169,6 @@
                     <p>farmstory ver1.0.1</p>
                 </div>
             </footer>
-
         </div>
-        
     </body>
 </html>

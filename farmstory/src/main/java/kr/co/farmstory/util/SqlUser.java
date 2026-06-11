@@ -6,8 +6,8 @@ public class SqlUser {
 	public static final String SELECT_COUNT_ID =
 	        "SELECT COUNT(*) FROM User WHERE id=?";
 
-	public static final String SELECT_COUNT_NICK =
-	        "SELECT COUNT(*) FROM User WHERE nick=?";
+	public static final String SELECT_COUNT_NICKNAME =
+	        "SELECT COUNT(*) FROM User WHERE nickname=?";
 
 	public static final String SELECT_COUNT_EMAIL =
 	        "SELECT COUNT(*) FROM User WHERE email=?";
@@ -50,6 +50,8 @@ public class SqlUser {
 	public static final String UPDATE_USER_PASSWORD = "UPDATE `User` SET "
 													      + "pass=SHA2(?, 256) "
 													      + "WHERE id=?";
+	
+	
 	
 	}
 

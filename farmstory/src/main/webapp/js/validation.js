@@ -3,7 +3,7 @@
 const reId 	= /^[a-z][a-z0-9]{4,19}$/;
 const rePass = /^[a-zA-Z0-9!@#$%^&*]{4,20}$/;
 const reName  = /^[가-힣]{2,10}$/;
-const reNick  = /^[a-zA-Z가-힣0-9]+$/;
+const reNickname  = /^[a-zA-Z가-힣0-9]+$/;
 const reEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
 const rePhone = /^01(?:0|1|[6-9])-\d{4}-\d{4}$/;
 
@@ -11,7 +11,7 @@ const rePhone = /^01(?:0|1|[6-9])-\d{4}-\d{4}$/;
 let isIdOk = false;
 let isPassOk = false;
 let isNameOk = false;
-let isNickOk = false;
+let isNicknameOk = false;
 let isEmailOk = false;
 let isPhoneOk = false;
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const idResult = document.querySelector('.idResult');
     const passResult = document.querySelector('.passResult');
     const nameResult = document.querySelector('.nameResult');
-    const nickResult = document.querySelector('.nickResult');
+    const nicknameResult = document.querySelector('.nicknameResult');
     const emailResult = document.querySelector('.emailResult');
     const phoneResult = document.querySelector('.phoneResult');
 
@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', function(){
 	     isNameOk = false;
 	 });
 
-	 form.nick.addEventListener('input', function(){
-	     nickResult.innerText = '';
-	     isNickOk = false;
+	 form.nickname.addEventListener('input', function(){
+	     nicknameResult.innerText = '';
+	     isNicknameOk = false;
 	 });
 
 	 form.email.addEventListener('input', function(){
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
 
-        if(!isNickOk){
+        if(!isNicknameOk){
             e.preventDefault();
             alert('별명을 확인하세요.');
             return;
@@ -201,36 +201,36 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
     /* 별명 중복 확인 */
-    document.getElementById('btnNick').addEventListener('click', async function(e){
+    document.getElementById('btnNickname').addEventListener('click', async function(e){
         e.preventDefault();
 
-        const value = form.nick.value.trim();
+        const value = form.nickname.value.trim();
 
-        if(!reNick.test(value)){
-            nickResult.innerText = '별명이 유효하지 않습니다.';
-            nickResult.style.color = 'red';
-            isNickOk = false;
+        if(!reNickname.test(value)){
+            nicknameResult.innerText = '별명이 유효하지 않습니다.';
+            nicknameResult.style.color = 'red';
+            isNicknameOk = false;
             return;
         }
 
         try {
-            const response = await fetch('/farmstory/user/check.do?type=nick&value=' + encodeURIComponent(value));
+            const response = await fetch('/farmstory/user/check.do?type=nickname&value=' + encodeURIComponent(value));
             const data = await response.json();
 
             if(data.count > 0){
-                nickResult.innerText = '이미 사용중인 별명입니다.';
-                nickResult.style.color = 'red';
-                isNickOk = false;
+                nicknameResult.innerText = '이미 사용중인 별명입니다.';
+                nicknameResult.style.color = 'red';
+                isNicknameOk = false;
             }else{
-                nickResult.innerText = '사용 가능한 별명입니다.';
-                nickResult.style.color = 'green';
-                isNickOk = true;
+                nicknameResult.innerText = '사용 가능한 별명입니다.';
+                nicknameResult.style.color = 'green';
+                isNicknameOk = true;
             }
 
         } catch(err) {
-            nickResult.innerText = '별명 확인 중 오류가 발생했습니다.';
-            nickResult.style.color = 'red';
-            isNickOk = false;
+            nicknameResult.innerText = '별명 확인 중 오류가 발생했습니다.';
+            nicknameResult.style.color = 'red';
+            isNicknameOk = false;
         }
     });
 
