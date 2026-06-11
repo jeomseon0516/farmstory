@@ -18,7 +18,7 @@ public class SqlUser {
 	//회원가입
 	public static final String INSERT_USER = "INSERT INTO `User` SET "
 													      + "id=?, "
-													      + "pass=SHA2(?, 256), "
+													      + "password=SHA2(?, 256), "
 													      + "name=?, "
 													      + "nickname=?, "
 													      + "email=?, "
@@ -34,7 +34,7 @@ public class SqlUser {
 	// 로그인
 	public static final String SELECT_USER = "SELECT * FROM `User` "
 													      + "WHERE id=? "
-													      + "AND pass=SHA2(?,256)";
+													      + "AND password=SHA2(?,256)";
 	
 	//아이디 찾기
 	public static final String SELECT_USER_ID = "SELECT * FROM `User` "
@@ -48,10 +48,19 @@ public class SqlUser {
 
 	// 비밀번호 변경
 	public static final String UPDATE_USER_PASSWORD = "UPDATE `User` SET "
-													      + "pass=SHA2(?, 256) "
+													      + "password=SHA2(?, 256) "
 													      + "WHERE id=?";
 	
-	
+	// 회원정보 수정
+	public static final String UPDATE_USER_PROFILE = "UPDATE `User` SET "
+	                                                  + "name=?, "
+	                                                  + "nickname=?, "
+	                                                  + "email=?, "
+	                                                  + "phone=?, "
+	                                                  + "zip_code=?, "
+	                                                  + "address=?, "
+	                                                  + "detail_address=? "
+	                                                  + "WHERE id=?";
 	
 	}
 

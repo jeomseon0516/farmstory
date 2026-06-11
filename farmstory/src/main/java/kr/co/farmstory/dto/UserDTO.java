@@ -3,7 +3,7 @@ package kr.co.farmstory.dto;
 public class UserDTO {
 	
 	private String id;
-	private String pass;
+	private String password;
 	private String name;
 	private String nickname;
 	private String email;
@@ -23,10 +23,10 @@ public class UserDTO {
 		this.id = id;
 	}
 	public String getPass() {
-		return pass;
+		return password;
 	}
-	public void setPass(String pass) {
-		this.pass = pass;
+	public void setPass(String password) {
+		this.password = password;
 	}
 	public String getName() {
 		return name;
@@ -97,7 +97,7 @@ public class UserDTO {
 	
 	@Override
 	public String toString() {
-		return "UserDTO [id=" + id + ", pass=" + pass + ", name=" + name + ", nickname=" + nickname + ", email=" + email
+		return "UserDTO [id=" + id + ", password=" + password + ", name=" + name + ", nickname=" + nickname + ", email=" + email
 				+ ", zipCode=" + zipCode + ", address=" + address + ", detailAddress=" + detailAddress + ", phone="
 				+ phone + ", createdAt=" + createdAt + ", deletedAt=" + deletedAt + ", ipAddress=" + ipAddress + "]";
 	}

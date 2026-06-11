@@ -47,6 +47,9 @@ public class RegisterController extends HttpServlet {
         dto.setPhone(req.getParameter("phone"));
         dto.setIpAddress(req.getRemoteAddr());
 
+        System.out.println("===== 회원가입 Controller =====");
+        System.out.println(dto);
+        
         service.register(dto);
 
         resp.sendRedirect("/farmstory/user/login.do?register=success");

@@ -9,7 +9,6 @@
 
 <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
 <link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
-<link rel="stylesheet" href="/farmstory/css/global-style/global-main-style.css">
 <link rel="stylesheet" href="/farmstory/css/global-style/global-footer.css">
 <link rel="stylesheet" href="/farmstory/css/find/password-change/password-change.css">
 
