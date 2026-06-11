@@ -51,5 +51,10 @@ public enum UserService {
 	public void changePassword(String id, String pass) {
 	    dao.updatePassword(id, pass);
 	}
+	
+	// 회원정보 수정 : DAO 호출 서비스 메서드
+	public void updateUserProfile(UserDTO dto) {
+	    dao.updateUserProfile(dto);
+	}
 
 }

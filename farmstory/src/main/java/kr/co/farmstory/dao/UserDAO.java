@@ -88,6 +88,10 @@ public class UserDAO extends DBHelper {
 	}
 	// 회원가입 
 	public void insert(UserDTO dto) {
+		
+		System.out.println("==회원가입DAO진입==");
+		System.out.println("dto");
+		
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(SqlUser.INSERT_USER);
@@ -104,6 +108,8 @@ public class UserDAO extends DBHelper {
 			
 			psmt.executeUpdate();
 			
+			
+			
 			closeAll();
 			
 			}catch (Exception e) {
@@ -112,7 +118,7 @@ public class UserDAO extends DBHelper {
 	}
 	
 	// 로그인 
-	public UserDTO select(String id, String pass) {
+	public UserDTO select(String id, String password) {
 		
 		UserDTO dto = null;
 		
@@ -121,7 +127,7 @@ public class UserDAO extends DBHelper {
 			
 			psmt = conn.prepareStatement(SqlUser.SELECT_USER);
 			psmt.setString(1, id);
-			psmt.setString(2, pass);
+			psmt.setString(2, password);
 			
 			rs = psmt.executeQuery();
 			
@@ -132,6 +138,11 @@ public class UserDAO extends DBHelper {
 				dto.setName(rs.getString("name"));
 				dto.setNickname(rs.getString("nickname"));
 				dto.setEmail(rs.getString("email"));
+				dto.setPhone(rs.getString("phone"));
+			    dto.setZipCode(rs.getString("zip_code"));
+			    dto.setAddress(rs.getString("address"));
+			    dto.setDetailAddress(rs.getString("detail_address"));
+				dto.setCreatedAt(rs.getString("created_at"));
 			}
 			
 			closeAll();
@@ -208,13 +219,13 @@ public class UserDAO extends DBHelper {
 	}
 	
 	// 비밀번호 변경
-	public void updatePassword(String id, String pass) {
+	public void updatePassword(String id, String password) {
 
 	    try {
 	        conn = getConnection();
 
 	        psmt = conn.prepareStatement(SqlUser.UPDATE_USER_PASSWORD);
-	        psmt.setString(1, pass);
+	        psmt.setString(1, password);
 	        psmt.setString(2, id);
 
 	        psmt.executeUpdate();
@@ -225,5 +236,32 @@ public class UserDAO extends DBHelper {
 	        e.printStackTrace();
 	    }
 	}
+	
+	// 회원정보 수정
+	public void updateUserProfile(UserDTO dto) {
+
+	    try {
+	        conn = getConnection();
+
+	        psmt = conn.prepareStatement(SqlUser.UPDATE_USER_PROFILE);
+	        psmt.setString(1, dto.getName());
+	        psmt.setString(2, dto.getNickname());
+	        psmt.setString(3, dto.getEmail());
+	        psmt.setString(4, dto.getPhone());
+	        psmt.setString(5, dto.getZipCode());
+	        psmt.setString(6, dto.getAddress());
+	        psmt.setString(7, dto.getDetailAddress());
+	        psmt.setString(8, dto.getId());
+
+	        psmt.executeUpdate();
+	        
+	        closeAll();
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }   
+	    
+	}
+	
 	
 }
