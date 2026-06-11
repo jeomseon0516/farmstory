@@ -4,9 +4,11 @@ public class PostSQL {
 	public static final String SELECT_ALL_FOR_LIST = "SELECT "
 			+ "p.id, "
 			+ "p.title, "
-			+ "u.nickname, "
-			+ "p.written_at, "
+			+ "p.writer_id, "
+			+ "p.category, "
 			+ "p.view_count, "
+			+ "p.written_at, "
+			+ "u.nickname, "
 			+ "COUNT(c.id) "
 			+ "FROM Post AS p "
 			+ "JOIN User AS u ON p.writer_id = u.id "
@@ -32,10 +34,16 @@ public class PostSQL {
 			+ "ORDER BY p.id DESC "
 			+ "LIMIT ?, 10";
 	
-	public static final String SELECT_COUNT = "SELECT COUNT(id) FROM Post";
+	public static final String SELECT_COUNT = "SELECT COUNT(id) FROM Post WHERE category=?";
 	
-	public static final String SELECT = "SELECT p.*, u.nickname" + " WHERE id=?";
+	public static final String SELECT_COUNT_BY_KEYWORD = "SELECT COUNT(id) FROM Post AS p "
+			+ "JOIN User AS u ON p.writer_id = u.id "
+			+ "WHERE p.category=? "
+			+ "AND (p.title LIKE ? OR u.ninknamee LIKE ? OR p.content LIKE ?)";
 	
+	public static final String SELECT = "SELECT p.*, u.nickname FROM Post AS p "
+			+ "JOIN " 
+			+ "WHERE id=?";
 	
 	public static final String INSERT = "INSERT INTO Post SET "
 			+ "writer_id=?,"

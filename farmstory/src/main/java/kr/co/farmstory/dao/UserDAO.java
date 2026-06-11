@@ -58,7 +58,7 @@ public class UserDAO extends DBHelper {
 				
 				dto.setId(rs.getString("id"));
 				dto.setName(rs.getString("name"));
-				dto.setNick(rs.getString("nick"));
+				dto.setNickname(rs.getString("nickname"));
 				dto.setEmail(rs.getString("email"));
 			}
 			
