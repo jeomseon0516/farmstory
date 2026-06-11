@@ -17,8 +17,8 @@ public enum UserService {
 	}
 
 	// 별명 중복 확인
-	public int checkNick(String nick) {
-	    return dao.selectCountNick(nick);
+	public int checkNick(String nickname) {
+	    return dao.selectCountNickname(nickname);
 	}
 
 	// 휴대폰 중복 확인

@@ -36,15 +36,15 @@ public class UserDAO extends DBHelper {
 	}
 	
 	// 별명 중복 확인
-	public int selectCountNick(String nick) {
+	public int selectCountNickname(String nickname) {
 
 	    int count = 0;
 
 	    try {
 	        conn = getConnection();
 
-	        psmt = conn.prepareStatement(SqlUser.SELECT_COUNT_NICK);
-	        psmt.setString(1, nick);
+	        psmt = conn.prepareStatement(SqlUser.SELECT_COUNT_NICKNAME);
+	        psmt.setString(1, nickname);
 
 	        rs = psmt.executeQuery();
 
@@ -94,7 +94,7 @@ public class UserDAO extends DBHelper {
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPass());
 			psmt.setString(3, dto.getName());
-			psmt.setString(4, dto.getNick());
+			psmt.setString(4, dto.getNickname());
 			psmt.setString(5, dto.getEmail());
 			psmt.setString(6, dto.getZipCode());
 			psmt.setString(7, dto.getAddress());
