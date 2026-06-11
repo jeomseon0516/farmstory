@@ -3,12 +3,13 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>farmstory::main</title>
+        <title>${pageTitle}::main</title>
+        
+        <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
+	    <link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
+	    <link rel="stylesheet" href="/farmstory/css/global-style/global-footer.css">
+	    <link rel="stylesheet" href="/farmstory/css/main/style.css">
     </head>
-    <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
-    <link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
-    <link rel="stylesheet" href="/farmstory/css/global-style/global-footer.css">
-    <link rel="stylesheet" href="/farmstory/css/main/style.css">
     <body>
         <div id="container">
             <header>
@@ -18,9 +19,9 @@
                 <p>
                     <a href="/farmstory/main/main.do">HOME</a>
                     |
-                    <a href="#">로그인</a>
+                    <a href="/farmstory/user/login.do">로그인</a>
                     |
-                    <a href="#">회원가입</a>
+                    <a href="/farmstory/user/register.do">회원가입</a>
                     |
                     <a href="#">관리자</a>
                     |
