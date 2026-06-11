@@ -45,11 +45,13 @@ public enum EmailService {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(receiver));
             message.setSubject(title);
             message.setContent(content, "text/html;charset=UTF-8");
-
-            Transport.send(message);
             
             System.out.println("인증코드 : " + code);
             System.out.println("메일 발송 시작");
+
+            Transport.send(message);
+            
+            
 
         } catch(Exception e) {
             e.printStackTrace();

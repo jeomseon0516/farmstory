@@ -39,8 +39,17 @@ public enum UserService {
 	}
 	
 	//아이디 찾기 : DAO가 호출한 서비스 메서드
-	public String findId(String name, String email) {
+	public UserDTO findId(String name, String email) {
 	    return dao.selectId(name, email);
+	}
+	// 비밀번호 찾기 : DAO가 호출한 서비스 메서드
+	public UserDTO findPassword(String id, String email) {
+	    return dao.selectUserForPassword(id, email);
+	}
+
+	// 비밀번호 변경 : DAO가 호출한 서비스 메서드
+	public void changePassword(String id, String pass) {
+	    dao.updatePassword(id, pass);
 	}
 
 }
