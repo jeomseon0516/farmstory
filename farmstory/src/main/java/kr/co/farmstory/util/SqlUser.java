@@ -34,7 +34,7 @@ public class SqlUser {
 	// 로그인
 	public static final String SELECT_USER = "SELECT * FROM `User` "
 													      + "WHERE id=? "
-													      + "AND pass=SHA2(?,256)";
+													      + "AND password=SHA2(?,256)";
 	
 	//아이디 찾기
 	public static final String SELECT_USER_ID = "SELECT * FROM `User` "

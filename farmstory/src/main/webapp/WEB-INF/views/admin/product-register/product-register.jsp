@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>farmstory::admin/product-register</title>
 
-    <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
-    <link rel="stylesheet" href="/farmstory/css/admin/product-register/product-register.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/global-style/reset.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin/product-register/product-register.css">
 </head>
 
 <body>
@@ -15,16 +15,15 @@
 
     <!-- 헤더 -->
     <header>
-        <a href="./dashboard.html">
-            <img src="./images/admin/admin_logo.jpg" alt="logo">
+        <a href="${pageContext.request.contextPath}/admin/productList.do">
+            <img src="${pageContext.request.contextPath}/images/admin/admin_logo.jpg" alt="logo">
         </a>
 
         <div class="top-menu">
-            <a href="#">HOME | </a> 
-            <a href="#">로그아웃 | </a> 
+            <a href="${pageContext.request.contextPath}/main/main.do">HOME | </a> 
+            <a href="${pageContext.request.contextPath}/user/logout.do">로그아웃 | </a> 
             <a href="#">고객센터</a>
         </div>
-        
     </header>
 
     <!-- 메인 -->
@@ -38,8 +37,12 @@
             <div class="menu">
                 <span>상품관리</span>
                 <ul>
-                    <li><a href="#">ㄴ 상품목록</a></li>
-                    <li><a href="#">ㄴ 상품등록</a></li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/admin/productList.do">ㄴ 상품목록</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/admin/productRegister.do">ㄴ 상품등록</a>
+                    </li>
                 </ul>
             </div>
 
@@ -59,7 +62,6 @@
 
         </aside>
 
-
         <!-- 우측 컨텐츠 -->
         <section>
 
@@ -67,10 +69,9 @@
 
             <article class="product-reg">
 
-                <form action="/admin/product-register/product-register.do" method="post">
+               <form action="${pageContext.request.contextPath}/admin/productRegister.do" method="post" enctype="multipart/form-data">
 
                     <table>
-
                         <tbody>
 
                         <tr>
@@ -83,11 +84,10 @@
                         <tr>
                             <td>종류</td>
                             <td>
-                                <select name="type">
-                                    <option>종류</option>
-                                    <option>과일</option>
-                                    <option>채소</option>
-                                    <option>곡물</option>
+                                <select name="prodType">
+                                    <option value="과일">과일</option>
+                                    <option value="채소">채소</option>
+                                    <option value="곡물">곡물</option>
                                 </select>
                             </td>
                         </tr>
@@ -95,14 +95,14 @@
                         <tr>
                             <td>가격</td>
                             <td>
-                                <input type="text" name="price">
+                                <input type="text" name="prodPrice">
                             </td>
                         </tr>
 
                         <tr>
                             <td>포인트</td>
                             <td>
-                                <input type="text" name="point">
+                                <input type="text" name="prodPoint">
                                 <span>포인트는 가격의 1%</span>
                             </td>
                         </tr>
@@ -110,11 +110,11 @@
                         <tr>
                             <td>할인</td>
                             <td>
-                                <select name="discount">
-                                    <option>5%</option>
-                                    <option>10%</option>
-                                    <option>15%</option>
-                                    <option>20%</option>
+                                <select name="prodDiscount">
+                                    <option value="5">5%</option>
+                                    <option value="10">10%</option>
+                                    <option value="15">15%</option>
+                                    <option value="20">20%</option>
                                 </select>
                             </td>
                         </tr>
@@ -123,22 +123,22 @@
                             <td>배송비</td>
                             <td>
                                 <label>
-                                    <input type="radio" name="delivery" value="2000">
+                                    <input type="radio" name="prodDeliveryCost" value="2000">
                                     2,000원
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="delivery" value="3000">
+                                    <input type="radio" name="prodDeliveryCost" value="3000">
                                     3,000원
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="delivery" value="5000">
+                                    <input type="radio" name="prodDeliveryCost" value="5000">
                                     5,000원
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="delivery" value="0">
+                                    <input type="radio" name="prodDeliveryCost" value="0" checked>
                                     무료
                                 </label>
                             </td>
@@ -147,7 +147,7 @@
                         <tr>
                             <td>재고</td>
                             <td>
-                                <input type="text" name="stock">
+                                <input type="text" name="prodStock">
                             </td>
                         </tr>
 
@@ -176,12 +176,11 @@
                         <tr>
                             <td>기타</td>
                             <td>
-                                <input type="text" name="etc">
+                                <input type="text" name="prodRemark">
                             </td>
                         </tr>
 
                         </tbody>
-
                     </table>
 
                     <div class="btns">
