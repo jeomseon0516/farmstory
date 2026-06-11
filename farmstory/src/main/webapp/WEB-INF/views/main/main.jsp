@@ -1,4 +1,4 @@
-<%@ page contentType="text/html"; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -33,9 +33,9 @@
                 <ul class="gnb">
                     <li><a href="#">팜스토리소개</a></li>
                     <li><a href="/farmstory/market/product-list/product-list.do">장보기</a></li>
-                    <li><a href="#">농작물이야기</a></li>
+                    <li><a href="/farmstory/post/list.do?category=CROPS_STORY">농작물이야기</a></li>
                     <li><a href="#">이벤트</a></li>
-                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="/farmstory/post/list.do?category=NOTICE">커뮤니티</a></li>
                 </ul>
             </header>
             <main>

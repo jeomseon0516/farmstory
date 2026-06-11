@@ -67,7 +67,8 @@
                     </header>
                     <section>
                         <span class="post-list-header-text">글목록</span>
-                        <form action="#">
+                        <form action="/farmstory/post/list.do">
+                        	<input type="hidden" name="category" value="${category}"/>
                             <input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색">
                             <button>검색</button>
                         </form>
@@ -82,22 +83,27 @@
                             <c:forEach var="dto" items="${dtoList}">
 	                            <tr>
 	                                <td>${pageStart}</td>
-	                                <td class="post-title"><a href="./chef-post-view.html">${dto.content}[${dto.commentCount}]</a></td>
+	                                <td class="post-title"><a href="./chef-post-view.html">${dto.title}[${dto.commentCount}]</a></td>
 	                                <td>${dto.nickname}</td>
 	                                <td>${dto.writtenAt}</td>
 	                                <td>${dto.viewCount}</td>
 	                            </tr>
-	                            <c:set var="pageStart" value="${pageStart-1}"/>
+	                            <c:set var="pageStart" value="${pageStart - 1}"/>
                             </c:forEach>
                         </table>
                         <div>
-                            <div class="pagination">
-                                <a href="#" class="button-edge">이전</a>
-                                <a href="#" class="button-number selected">1</a>
-                                <a href="#" class="button-number">2</a>
-                                <a href="#" class="button-number">3</a>
-                                <a href="#" class="button-edge">다음</a>
-                            </div>
+							<div class="pagination">
+								<c:if test="${pageGroupDTO.start > 1}">
+									<a href="/farmstory/post/list.do?category=${category}&page=${pageGroupDTO.start - 1}" class="button-edge">이전</a>
+								</c:if>
+								<c:forEach var="i" begin="${pageGroupDTO.start}"
+									end="${pageGroupDTO.end}">
+									<a href="/farmstory/post/list.do?category=${category}&page=${i}" class="button-number ${currentPage == i ? 'selected' : ''}">${i}</a>
+								</c:forEach>
+								<c:if test="${pageGroupDTO.end < lastPageNum}">
+									<a href="/farmstory/post/list.do?category=${category}&page=${pageGroupDTO.end + 1}" class="button-edge">다음</a>
+								</c:if>
+							</div>
                             <div class="button-wrap">
                                 <a href="./chef-post-write.html">글쓰기</a>
                             </div>
