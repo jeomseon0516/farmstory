@@ -67,7 +67,7 @@
 
             <article class="product-reg">
 
-                <form action="#" method="post" enctype="multipart/form-data">
+                <form action="/admin/product-register/product-register.do" method="post">
 
                     <table>
 
