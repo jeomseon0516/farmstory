@@ -50,28 +50,31 @@
 
                     <table>
                         <tr>
-                            <th>이름</th>
-                            <td>홍길동</td>
-                        </tr>
-                        <tr>
-                            <th>아이디</th>
-                            <td>honggildong</td>
-                        </tr>
-                        <tr>
-                            <th>이메일</th>
-                            <td>honggildong@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <th>가입일</th>
-                            <td>2022-11-16 10:20</td>
-                        </tr>
+						    <th>이름</th>
+						    <td>${sessionScope.foundUser.name}</td>
+						</tr>
+						
+						<tr>
+						    <th>아이디</th>
+						    <td>${sessionScope.foundUser.id}</td>
+						</tr>
+						
+						<tr>
+						    <th>이메일</th>
+						    <td>${sessionScope.foundUser.email}</td>
+						</tr>
+						
+						<tr>
+						    <th>가입일</th>
+						    <td>${sessionScope.foundUser.createdAt}</td>
+						</tr>
                     </table>
 
                     <p class="message">고객님의 정보와 일치하는 아이디 입니다.</p>
 
                     <div class="btn-area">
-                        <a href="#" class="btn">로그인</a>
-                        <a href="#" class="btn">비밀번호 찾기</a>
+                        <a href="/farmstory/user/login.do" class="btn">로그인</a>
+                        <a href="/farmstory/user/find/password.do" class="btn">비밀번호 찾기</a>
                     </div>
                 </section>
             </main>

@@ -3,9 +3,9 @@ package kr.co.farmstory.dto;
 public class UserDTO {
 	
 	private String id;
-	private String password;
+	private String pass;
 	private String name;
-	private String nickname;
+	private String nick;
 	private String email;
 	private String zipCode;
 	private String address;
@@ -14,17 +14,18 @@ public class UserDTO {
 	private String createdAt;
 	private String deletedAt;
 	private String ipAddress;
+	
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPassword() {
-		return password;
+	public String getPass() {
+		return pass;
 	}
-	public void setPass(String password) {
-		this.password = password;
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 	public String getName() {
 		return name;
@@ -32,11 +33,11 @@ public class UserDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getNickname() {
-		return nickname;
+	public String getNick() {
+		return nick;
 	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 	public String getEmail() {
 		return email;
@@ -84,12 +85,16 @@ public class UserDTO {
 		return ipAddress;
 	}
 	public void setIpAddress(String ipAddress) {
-		this.ipAddress = ipAddress;
+		this.ipAddress = ipAddress;		
 	}
+	
 	@Override
 	public String toString() {
-		return "UserDTO [id=" + id + ", password=" + password + ", name=" + name + ", nickname=" + nickname + ", email=" + email
+		return "UserDTO [id=" + id + ", pass=" + pass + ", name=" + name + ", nick=" + nick + ", email=" + email
 				+ ", zipCode=" + zipCode + ", address=" + address + ", detailAddress=" + detailAddress + ", phone="
 				+ phone + ", createdAt=" + createdAt + ", deletedAt=" + deletedAt + ", ipAddress=" + ipAddress + "]";
 	}
+	
+	
+	
 }

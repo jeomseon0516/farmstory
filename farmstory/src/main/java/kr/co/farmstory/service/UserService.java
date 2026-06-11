@@ -11,6 +11,23 @@ public enum UserService {
 	// DAO 싱글톤 한거 가져오기
 	private UserDAO dao = UserDAO.getInstance();
 	
+	//회원가입 : 유효성 검사에 사용할  것
+	public int checkId(String id) {
+	    return dao.selectCountId(id);
+	}
+
+	// 별명 중복 확인
+	public int checkNick(String nick) {
+	    return dao.selectCountNick(nick);
+	}
+
+	// 휴대폰 중복 확인
+	public int checkPhone(String phone) {
+	    return dao.selectCountPhone(phone);
+	}
+	
+	
+	
 	//회원가입 : DAO 호출 서비스 메서드
 	public void register(UserDTO dto) {
 		dao.insert(dto);
@@ -19,6 +36,20 @@ public enum UserService {
 	//로그인 : DAO가 호출한 서비스 메서드
 	public UserDTO login(String id, String pass) {
 		return dao.select(id, pass);
+	}
+	
+	//아이디 찾기 : DAO가 호출한 서비스 메서드
+	public UserDTO findId(String name, String email) {
+	    return dao.selectId(name, email);
+	}
+	// 비밀번호 찾기 : DAO가 호출한 서비스 메서드
+	public UserDTO findPassword(String id, String email) {
+	    return dao.selectUserForPassword(id, email);
+	}
+
+	// 비밀번호 변경 : DAO가 호출한 서비스 메서드
+	public void changePassword(String id, String pass) {
+	    dao.updatePassword(id, pass);
 	}
 
 }
