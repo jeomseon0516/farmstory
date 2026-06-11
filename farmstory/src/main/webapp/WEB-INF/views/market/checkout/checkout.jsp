@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -74,7 +75,7 @@
                     <!-- 내용 -->
                     <section>
                         <a href="#">장바구니 전체(10)</a>
-                        <table>
+                        <table id="checkTable">
                             <tr>
                                 <th>이미지</th>
                                 <th>종류</th>
@@ -85,119 +86,103 @@
                                 <th>가격</th>
                                 <th>소계</th>
                             </tr>
-                            <tr>
-                                <td><img src="/farmstory/images/market_item1.jpg" width="60px" height="60px"></td>
-                                <td>과일</td>
-                                <td>사과 500g</td>
-                                <td>1</td>
-                                <td>10%</td>
-                                <td>40P</td>
-                                <td>4,000</td>
-                                <td><span>3,600</span>원</td>
-                            </tr>
-                            <tr>
-                                <td><img src="/farmstory/images/market_item1.jpg" width="60px" height="60px"></td>
-                                <td>과일</td>
-                                <td>사과 500g</td>
-                                <td>1</td>
-                                <td>10%</td>
-                                <td>40P</td>
-                                <td>4,000</td>
-                                <td><span>3,600</span>원</td>
-                            </tr>
-                            <tr>
-                                <td><img src="/farmstory/images/market_item1.jpg" width="60px" height="60px"></td>
-                                <td>과일</td>
-                                <td>사과 500g</td>
-                                <td>1</td>
-                                <td>10%</td>
-                                <td>40P</td>
-                                <td>4,000</td>
-                                <td><span>3,600</span>원</td>
-                            </tr>
+                            <c:forEach var="dto" items="${cartDtoList}">
+	                            <tr>
+	                                <td><img src="/farmstory/images/market_item1.jpg" width="60px" height="60px"></td>
+	                                <td>${dto.prodType}</td>
+	                                <td>${dto.prodName}</td>
+	                                <td>${dto.prodQty}</td>
+	                                <td>${dto.prodDiscount}%</td>
+	                                <td>${dto.prodPoint}P</td>
+	                                <td>${dto.prodPrice }</td>
+	                                <td><span>${dto.prodTotalPrice}</span>원</td>
+	                            </tr>
+                            </c:forEach>
                         </table>
                         <h3>주문정보 입력</h3>
-                        <table>
-                            <tr>
-                                <td>주문자</td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td>휴대폰</td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td>포인트사용</td>
-                                <td>
-                                    <input type="text"><button>사용하기</button><br>
-                                    사용가능 2,000
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>받는분</td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td>연락처</td>
-                                <td><input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td>배송주소</td>
-                                <td>
-                                    <input type="text"><img src="/farmstory/images/user/btn_post_search.gif"><br>
-                                    <input type="text" placeholder="기본주소 검색"><br>
-                                    <input type="text" placeholder="상세주소 입력">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>결제방법</td>
-                                <td>
-                                    <input type="radio" name="payment" value="계좌이체"> 계좌이체 
-                                    <input type="radio" name="payment" value="신용카드"> 신용카드 
-                                    <input type="radio" name="payment" value="체크카드"> 체크카드 
-                                    <input type="radio" name="payment" value="휴대폰"> 휴대폰 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>기타</td>
-                                <td>
-                                    <input type="textarea">
-                                </td>
-                            </tr>
-                        </table>
-                        <div>
-                            <table>
-                                <tr>
-                                    <th colspan="2">최종결제정보</th>
-                                </tr>
-                                <tr>
-                                    <td>상품수</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>상품금액</td>
-                                    <td>27,000</td>
-                                </tr>
-                                <tr>
-                                    <td>할인금액</td>
-                                    <td>5,000원</td>
-                                </tr>
-                                <tr>
-                                    <td>배송비</td>
-                                    <td>5,000원</td>
-                                </tr>
-                                <tr>
-                                    <td>포인트</td>
-                                    <td>4,000원</td>
-                                </tr>
-                                <tr>
-                                    <td>전체주문금액</td>
-                                    <td>22,000</td>
-                                </tr>
-
-                            </table>
-                            <div>주문하기</div>
-                        </div>
+                        <form id="orderForm" action="#" method="post">
+	                        <table id="orderInput">
+	                            <tr>
+	                                <td>주문자</td>
+	                                <td><input type="text"></td>
+	                            </tr>
+	                            <tr>
+	                                <td>휴대폰</td>
+	                                <td><input type="text"></td>
+	                            </tr>
+	                            <tr>
+	                                <td>포인트사용</td>
+	                                <td>
+	                                    <input type="text"><button>사용하기</button><br>
+	                                    사용가능 2,000
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td>받는분</td>
+	                                <td><input type="text"></td>
+	                            </tr>
+	                            <tr>
+	                                <td>연락처</td>
+	                                <td><input type="text"></td>
+	                            </tr>
+	                            <tr>
+	                                <td>배송주소</td>
+	                                <td>
+	                                    <input type="text"><img src="/farmstory/images/user/btn_post_search.gif"><br>
+	                                    <input type="text" placeholder="기본주소 검색"><br>
+	                                    <input type="text" placeholder="상세주소 입력">
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td>결제방법</td>
+	                                <td>
+	                                    <input type="radio" name="payment" value="계좌이체"> 계좌이체 
+	                                    <input type="radio" name="payment" value="신용카드"> 신용카드 
+	                                    <input type="radio" name="payment" value="체크카드"> 체크카드 
+	                                    <input type="radio" name="payment" value="휴대폰"> 휴대폰 
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td>기타</td>
+	                                <td>
+	                                    <input type="textarea">
+	                                </td>
+	                            </tr>
+	                        </table>
+	                        <div>
+	                            <table>
+	                                <tr>
+	                                    <th colspan="2">최종결제정보</th>
+	                                </tr>
+	                                <tr>
+	                                    <td>상품수</td>
+	                                    <td>1</td>
+	                                </tr>
+	                                <tr>
+	                                    <td>상품금액</td>
+	                                    <td>27,000</td>
+	                                </tr>
+	                                <tr>
+	                                    <td>할인금액</td>
+	                                    <td>5,000원</td>
+	                                </tr>
+	                                <tr>
+	                                    <td>배송비</td>
+	                                    <td>5,000원</td>
+	                                </tr>
+	                                <tr>
+	                                    <td>포인트</td>
+	                                    <td>4,000원</td>
+	                                </tr>
+	                                <tr>
+	                                    <td>전체주문금액</td>
+	                                    <td>22,000</td>
+	                                </tr>
+	
+	                            </table>
+	                            <div>주문하기</div>
+	                        </div>
+                        </form>
                     </section>
                 </article>
             </main>

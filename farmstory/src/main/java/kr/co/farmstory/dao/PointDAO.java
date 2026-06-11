@@ -17,7 +17,7 @@ public class PointDAO extends DBHelper {
     private PointDAO() {}
 
     // C - 포인트 로그 등록
-    public void insertPoint(PointDTO dto) {
+    public void insert(PointDTO dto) {
 
         try {
             conn = getConnection();
@@ -40,7 +40,7 @@ public class PointDAO extends DBHelper {
 
 
     // R - 특정 회원의 포인트 로그 목록 조회
-    public List<PointDTO> selectPoints(String userId) {
+    public List<PointDTO> selectAll(String userId) {
 
         List<PointDTO> points = new ArrayList<>();
 
@@ -80,7 +80,7 @@ public class PointDAO extends DBHelper {
 
 
     // R - 포인트 로그 1건 조회
-    public PointDTO selectPoint(int id) {
+    public PointDTO select(int id) {
 
         PointDTO dto = null;
 
@@ -114,26 +114,4 @@ public class PointDAO extends DBHelper {
         return dto;
     }
 
-
-    // U - 포인트 로그 수정
-    public void updatePoint(PointDTO dto) {
-
-        try {
-            conn = getConnection();
-
-            String sql = "UPDATE point SET amount=? WHERE id=?";
-
-            psmt = conn.prepareStatement(sql);
-
-            psmt.setInt(1, dto.getAmount());
-            psmt.setInt(2, dto.getId());
-
-            psmt.executeUpdate();
-
-            closeAll();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
