@@ -8,24 +8,29 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import kr.co.farmstory.dto.UserDTO;
 
 @WebFilter("/admin/*")
 public class AdminAuthorizationFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
-		//로그인 확인
-		
-		HttpServletRequest req = (Http)
-		
+		// 로그인 확인
+		HttpServletRequest request = (HttpServletRequest) req;
+
 		// 권한 처리를 위해 로그인 정보 Session
-		HttpSession session = req.session();
-			//로그인 하지 않은 경우 - 로그인 페이지로 이동
-			if(loginVO == null)
-		
-		
-		// 관리자 권한 확인
-		
-		((HttpServletResponse)resp).sendRedirect("/main/main.do");
+		HttpSession session = request.getSession();
+
+		// 로그인이 필요한 권한 처리
+
+		if (session.getAttribute("sessUser") instanceof UserDTO userDTO && 
+			userDTO.getRole() == "ADMIN") {
+			return;
+		}
+
+		// 로그인 페이지 이동
+		((HttpServletResponse) resp).sendRedirect("/farmstory/main/main.do");
 	}
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+}

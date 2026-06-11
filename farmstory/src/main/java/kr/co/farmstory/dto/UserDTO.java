@@ -8,6 +8,7 @@ public class UserDTO {
 	private String nick;
 	private String email;
 	private String zipCode;
+	private String role;
 	private String address;
 	private String detailAddress;
 	private String phone;
@@ -50,6 +51,12 @@ public class UserDTO {
 	}
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
 	}
 	public String getAddress() {
 		return address;
