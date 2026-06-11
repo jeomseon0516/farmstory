@@ -5,6 +5,8 @@ import java.util.List;
 import kr.co.farmstory.dao.PostDAO;
 import kr.co.farmstory.dto.PageGroupDTO;
 import kr.co.farmstory.dto.PostDTO;
+import kr.co.farmstory.service.CommentService;
+import kr.co.farmstory.service.PostFileService;
 
 public class PostService {
 	private static PostService instance = new PostService();
@@ -12,6 +14,10 @@ public class PostService {
 	public static PostService getInstance() { return instance; }
 	
 	private PostDAO dao = PostDAO.getInstance();
+	
+	public int register(PostDTO dto) {
+		return dao.insert(dto);
+	}
 	
 	public int getCurrentPage(String page) {
 		return page != null ? Integer.parseInt(page) : 1;
@@ -47,10 +53,11 @@ public class PostService {
 	
 	public PostDTO findById(String id) {
 		PostDTO dto = dao.select(id);
-		// 파일 조회
-		// 댓글 조회
-		
-		return dao.select(id);
+		if (dto != null) {
+			dto.setFiles(PostFileService.INSTANCE.findByPostId(id));
+			dto.setComments(CommentService.INSTANCE.findAll(id));
+		}
+		return dto;
 	}
 	
 	public List<PostDTO> findAllForList(int offset, String category) {

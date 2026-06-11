@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kr.co.farmstory.dto.ProductDTO;
+import kr.co.farmstory.sql.SqlProduct;
 import kr.co.farmstory.util.DBHelper;
-import kr.co.farmstory.util.SqlProduct;
 
 public class ProductDAO extends DBHelper {
 	

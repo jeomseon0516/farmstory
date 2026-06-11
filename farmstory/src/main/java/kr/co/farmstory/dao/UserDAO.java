@@ -1,8 +1,8 @@
 package kr.co.farmstory.dao;
 
 import kr.co.farmstory.dto.UserDTO;
+import kr.co.farmstory.sql.SqlUser;
 import kr.co.farmstory.util.DBHelper;
-import kr.co.farmstory.util.SqlUser;
 
 public class UserDAO extends DBHelper {
 	

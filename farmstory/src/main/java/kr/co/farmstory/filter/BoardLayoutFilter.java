@@ -8,23 +8,28 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebFilter;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kr.co.farmstory.option.CategoryOption;
 import kr.co.farmstory.option.MenuOption;
 
-@WebFilter("*")
+@WebFilter({
+	"/market/*", 
+	"/post/*",
+	"/event/*"
+})
 public class BoardLayoutFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException { 
-		
 		String menu = req.getParameter("menu");
 		String category = req.getParameter("category");
 		MenuOption menuOption = MenuOption.from(menu);
 		CategoryOption categoryOption = CategoryOption.from(category);
 		
-		if (categoryOption == null && menuOption != null) {
-			categoryOption = menuOption.getCategoryOptions().get(0);
+		System.out.println();
+		// 잘못된 파라미터의 경우 예외처리
+		if (categoryOption == null || menuOption == null) {
+			((HttpServletResponse)resp).sendError(HttpServletResponse.SC_BAD_REQUEST);
+			return;
 		}
 		
 		req.setAttribute("menu", menu);

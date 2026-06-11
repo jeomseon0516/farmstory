@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kr.co.farmstory.dto.CartDTO;
+import kr.co.farmstory.sql.SqlCart;
 import kr.co.farmstory.util.DBHelper;
-import kr.co.farmstory.util.SqlCart;
 
 public class CartDAO extends DBHelper {
 	
@@ -18,8 +18,6 @@ public class CartDAO extends DBHelper {
 	
 	// 상품을 cart 테이블에 insert
 	public void insert(String userId, String prodId, String prodQty) {
-		
-		
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(SqlCart.INSERT_CART);

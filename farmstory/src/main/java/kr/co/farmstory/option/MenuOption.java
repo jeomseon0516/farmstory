@@ -35,7 +35,8 @@ public enum MenuOption {
 		"이벤트",
 		"/farmstory/images/sub_top_tit4.png",
 		"/farmstory/images/sub_asdie_cate4_tit.png",
-		List.of(CategoryOption.EVENT)),
+		List.of(CategoryOption.EVENT)
+	),
 	
 	COMMUNITY(
 		"Community",

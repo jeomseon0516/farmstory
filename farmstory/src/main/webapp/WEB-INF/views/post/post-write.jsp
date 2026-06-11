@@ -23,7 +23,10 @@
                 <%@ include file="/WEB-INF/views/global/_main-content-header.jsp" %>
                 <section>
                     <span class="post-list-header-text">글쓰기</span>
-                    <form action="#">
+                    <form action="/farmstory/post/write.do" method="post" enctype="multipart/form-data">
+                    	<input type="hidden" name="writerId" value="${sessionScope.sessUser.id}"/>
+                    	<input type="hidden" name="menu" value="${menu}"/>
+                    	<input type="hidden" name="category" value="${category}"/>
                         <table border="0">
                             <tr>
                                 <th>제목</th>
@@ -50,8 +53,7 @@
                 </section>
             </article>
         </main>
-            <%@ include file="/WEB-INF/views/global/_footer.jsp" %>
-
+        <%@ include file="/WEB-INF/views/global/_footer.jsp" %>
     </div>
 </body>
 

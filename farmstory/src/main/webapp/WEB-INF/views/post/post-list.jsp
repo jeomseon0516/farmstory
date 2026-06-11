@@ -40,7 +40,7 @@
 	                            <tr>
 	                                <td>${pageStart}</td>
 	                                <td class="post-title">
-	                                	<a href="/post/view.do?menu=${menu}&id=${dto.id}&page=${currentPage}${not empty keyword ? '&keyword='.concat(keyword) : ''}">
+	                                	<a href="/farmstory/post/view.do?menu=${menu}&category=${category}&id=${dto.id}&page=${currentPage}${not empty keyword ? '&keyword='.concat(keyword) : ''}">
 	                                		${dto.title}[${dto.commentCount}]
 	                                	</a>
 	                                	</td>
