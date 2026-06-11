@@ -278,7 +278,7 @@ main {
         font-size: 700;
     }
 
-    #orderForm > div > div {
+    #btnSubmitOrder {
         width:290.8px;
         height: 37px;
         background-color: #960D1A;
@@ -287,5 +287,6 @@ main {
         line-height: 37px;
         margin-top: 7px;
         margin-left: 7px;
+        border: 0;
     }
 
