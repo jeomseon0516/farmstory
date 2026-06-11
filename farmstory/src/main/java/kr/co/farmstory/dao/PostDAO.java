@@ -96,7 +96,7 @@ public class PostDAO {
 			psmt.setInt(2, offset);
 			
 			try (ResultSet rs = psmt.executeQuery()) {
-				if (rs.next()) {
+				while (rs.next()) {
 					PostDTO dto = new PostDTO();
 					dto.setId(rs.getInt(1));
 					dto.setTitle(rs.getString(2));
@@ -123,16 +123,17 @@ public class PostDAO {
 			PreparedStatement psmt = conn.prepareStatement(PostSQL.SELECT_ALL_FOR_LIST_SEARCH)) {
 
 			try (ResultSet rs = psmt.executeQuery()) {
-				if (rs.next()) {
+				
+				while (rs.next()) {
 					PostDTO dto = new PostDTO();
 					dto.setId(rs.getInt(1));
-					dto.setWriterId(rs.getString(2));
-					dto.setCategory(rs.getString(3));
-					dto.setTitle(rs.getString(4));
-					dto.setContent(rs.getString(5));
-					dto.setViewCount(rs.getInt(6));
-					dto.setIpAddress(rs.getString(7));
-					dto.setWrittenAt(rs.getString(8));
+					dto.setTitle(rs.getString(2));
+					dto.setWriterId(rs.getString(3));
+					dto.setCategory(rs.getString(4));
+					dto.setViewCount(rs.getInt(5));
+					dto.setWrittenAt(rs.getString(6));
+					dto.setNickname(rs.getString(7));
+					dto.setCommentCount(rs.getInt(8));
 					dtoList.add(dto);
 				}
 			}

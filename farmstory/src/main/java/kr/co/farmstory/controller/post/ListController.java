@@ -53,6 +53,8 @@ public class ListController extends HttpServlet {
 		req.setAttribute("keyword", keyword);
 		req.setAttribute("category", category);
 		
+		System.out.println(dtoList);
+		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/post/post-list.jsp");
 		dispatcher.forward(req, resp);
 	}
