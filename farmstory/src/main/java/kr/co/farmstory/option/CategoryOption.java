@@ -82,7 +82,7 @@ public enum CategoryOption {
 	),
 	
 	QNA(
-		"인사말",
+		"1:1",
 		"/farmstory/post/list.do?menu=Community&category=QNA",
 		"/farmstory/images/sub_cate5_lnb4.png",
 		"/farmstory/images/sub_cate5_lnb4_ov.png",
@@ -90,7 +90,7 @@ public enum CategoryOption {
 	),
 	
 	FAQ(
-		"인사말",
+		"자주묻는질문",
 		"/farmstory/post/list.do?menu=Community&category=FAQ",
 		"/farmstory/images/sub_cate5_lnb5.png",
 		"/farmstory/images/sub_cate5_lnb5_ov.png",

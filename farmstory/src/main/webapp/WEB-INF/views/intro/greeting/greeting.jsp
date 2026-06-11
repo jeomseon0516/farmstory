@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <title>farmstory::intro::greeting</title>
     </head>
-    <link rel="stylesheet" href="./greeting.css">
+    <link rel="stylesheet" href="/farmstory/view/css/greeting.css">
     <body>
         <div id="container">
             <!-- 헤더 -->

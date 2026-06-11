@@ -4,8 +4,8 @@ import java.util.List;
 
 import kr.co.farmstory.dto.OrderDTO;
 import kr.co.farmstory.dto.OrderItemDTO;
+import kr.co.farmstory.sql.SqlOrder;
 import kr.co.farmstory.util.DBHelper;
-import kr.co.farmstory.util.SqlOrder;
 
 public class OrderDAO extends DBHelper {
 	

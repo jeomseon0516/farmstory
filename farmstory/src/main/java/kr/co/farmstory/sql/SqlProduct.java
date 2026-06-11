@@ -1,4 +1,4 @@
-package kr.co.farmstory.util;
+package kr.co.farmstory.sql;
 
 public class SqlProduct {
 	

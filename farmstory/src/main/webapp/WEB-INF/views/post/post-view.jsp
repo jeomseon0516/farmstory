@@ -26,9 +26,7 @@
 					<table border="0" class="main-content-table">
 						<tr>
 							<th>제목</th>
-							<td>나도요리사 게시물입니다.
-								</div>
-							</td>
+							<td><input type="text" name="title" value="${postDTO.title}" readonly/></td>
 						</tr>
 						<tr>
 							<th>파일</th>
