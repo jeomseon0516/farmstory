@@ -6,6 +6,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>farmstory::market/market-cart</title>
+        <script>
+        	document.addEventListener('DOMContentLoaded', function() {
+        		
+        		
+        	
+        	}); // DOMContentLoaded End
+        
+        </script>
     </head>
     <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
     <link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
@@ -100,7 +108,7 @@
                             </c:forEach>
                         </table>
                         <h3>주문정보 입력</h3>
-                        <form id="orderForm" action="#" method="post">
+                        <form id="orderForm" action="/farmstory/market/checkout/order.do" method="post">
 	                        <table id="orderInput">
 	                            <tr>
 	                                <td>주문자</td>
@@ -119,18 +127,18 @@
 	                            </tr>
 	                            <tr>
 	                                <td>받는분</td>
-	                                <td><input type="text"></td>
+	                                <td><input type="text" name="receiverName"></td>
 	                            </tr>
 	                            <tr>
 	                                <td>연락처</td>
-	                                <td><input type="text"></td>
+	                                <td><input type="text" name="receiverHp"></td>
 	                            </tr>
 	                            <tr>
 	                                <td>배송주소</td>
 	                                <td>
-	                                    <input type="text"><img src="/farmstory/images/user/btn_post_search.gif"><br>
-	                                    <input type="text" placeholder="기본주소 검색"><br>
-	                                    <input type="text" placeholder="상세주소 입력">
+	                                    <input type="text" name="receiverZip"><img src="/farmstory/images/user/btn_post_search.gif"><br>
+	                                    <input type="text" name="receiverAddr" placeholder="기본주소 검색"><br>
+	                                    <input type="text" name="receiverDetailAddr" placeholder="상세주소 입력">
 	                                </td>
 	                            </tr>
 	                            <tr>
@@ -145,7 +153,7 @@
 	                            <tr>
 	                                <td>기타</td>
 	                                <td>
-	                                    <input type="textarea">
+	                                    <textarea rows="4" cols="30" name="etc"></textarea>
 	                                </td>
 	                            </tr>
 	                        </table>
@@ -156,7 +164,7 @@
 	                                </tr>
 	                                <tr>
 	                                    <td>상품수</td>
-	                                    <td>1</td>
+	                                    <td id="prodCount">1</td>
 	                                </tr>
 	                                <tr>
 	                                    <td>상품금액</td>

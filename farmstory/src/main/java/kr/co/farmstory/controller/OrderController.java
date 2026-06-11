@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import kr.co.farmstory.dto.CartDTO;
 import kr.co.farmstory.service.CartService;
 
-@WebServlet(urlPatterns = {"/market/checkout/checkout.do"})
+@WebServlet(urlPatterns = {"/market/checkout/checkout.do", "/market/checkout/order.do"})
 public class OrderController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -60,6 +60,14 @@ public class OrderController extends HttpServlet {
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/market/checkout/checkout.jsp");
 			dispatcher.forward(req, resp);
 		}
+		
+		// 결제 눌러서 주문하기
+		if(reqUri.endsWith("/market/checkout/order.do")) {
+			
+			
+			
+		}
+		
 		
 	}
 
