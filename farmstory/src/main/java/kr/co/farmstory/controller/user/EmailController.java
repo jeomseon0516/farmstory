@@ -36,6 +36,8 @@ public class EmailController extends HttpServlet {
         // 인증코드 세션 저장
         HttpSession session = req.getSession();
         session.setAttribute("sessCode", code);
+        
+        System.out.println("세션 저장 코드 : " + code);
 
         // 결과 JSON 생성
         JsonObject json = new JsonObject();
@@ -57,10 +59,13 @@ public class EmailController extends HttpServlet {
 
         HttpSession session = req.getSession();
         String sessCode = (String) session.getAttribute("sessCode");
+        
+        System.out.println("사용자 입력 코드 : " + code);
+        System.out.println("세션 저장 코드 : " + sessCode);
 
         JsonObject json = new JsonObject();
 
-        if(sessCode != null && sessCode.equals(code)) {
+        if(sessCode != null && sessCode.trim().equals(code.trim())) {
             json.addProperty("count", 0); // 인증완료
         } else {
             json.addProperty("count", 1); // 인증코드 불일치

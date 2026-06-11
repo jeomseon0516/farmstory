@@ -37,9 +37,19 @@ public class SqlUser {
 													      + "AND pass=SHA2(?,256)";
 	
 	//아이디 찾기
-	public static final String SELECT_USER_ID = "SELECT id FROM user "
-													      + "WHERE name=? "
+	public static final String SELECT_USER_ID = "SELECT * FROM `User` "
+														  + "WHERE name=? "
+														  + "AND email=?";
+	
+	// 비밀번호 찾기 - 아이디/이메일 일치 회원 조회
+	public static final String SELECT_USER_PASSWORD = "SELECT * FROM `User` "
+													      + "WHERE id=? "
 													      + "AND email=?";
+
+	// 비밀번호 변경
+	public static final String UPDATE_USER_PASSWORD = "UPDATE `User` SET "
+													      + "pass=SHA2(?, 256) "
+													      + "WHERE id=?";
 	
 	}
 

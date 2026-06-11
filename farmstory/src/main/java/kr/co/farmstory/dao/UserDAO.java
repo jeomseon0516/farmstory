@@ -144,9 +144,9 @@ public class UserDAO extends DBHelper {
 	}
 	
 	// 아이디 찾기 
-	public String selectId(String name, String email) {
+	public UserDTO selectId(String name, String email) {
 	    
-	    String id = null;
+	    UserDTO dto = null;
 	    
 	    try {
 	        conn = getConnection();
@@ -158,7 +158,12 @@ public class UserDAO extends DBHelper {
 	        rs = psmt.executeQuery();
 
 	        if(rs.next()) {
-	            id = rs.getString("id");
+	            dto = new UserDTO();
+
+	            dto.setId(rs.getString("id"));
+	            dto.setName(rs.getString("name"));
+	            dto.setEmail(rs.getString("email"));
+	            dto.setCreatedAt(rs.getString("created_at"));
 	        }
 
 	        closeAll();
@@ -167,7 +172,58 @@ public class UserDAO extends DBHelper {
 	        e.printStackTrace();
 	    }
 
-	    return id;
+	    return dto;
+	}
+	
+	// 비밀번호 찾기
+	public UserDTO selectUserForPassword(String id, String email) {
+
+	    UserDTO dto = null;
+
+	    try {
+	        conn = getConnection();
+
+	        psmt = conn.prepareStatement(SqlUser.SELECT_USER_PASSWORD);
+	        psmt.setString(1, id);
+	        psmt.setString(2, email);
+
+	        rs = psmt.executeQuery();
+
+	        if(rs.next()) {
+
+	            dto = new UserDTO();
+
+	            dto.setId(rs.getString("id"));
+	            dto.setEmail(rs.getString("email"));
+	            dto.setName(rs.getString("name"));
+	        }
+
+	        closeAll();
+
+	    } catch(Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return dto;
+	}
+	
+	// 비밀번호 변경
+	public void updatePassword(String id, String pass) {
+
+	    try {
+	        conn = getConnection();
+
+	        psmt = conn.prepareStatement(SqlUser.UPDATE_USER_PASSWORD);
+	        psmt.setString(1, pass);
+	        psmt.setString(2, id);
+
+	        psmt.executeUpdate();
+
+	        closeAll();
+
+	    } catch(Exception e) {
+	        e.printStackTrace();
+	    }
 	}
 	
 }

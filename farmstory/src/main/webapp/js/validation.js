@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         const value = form.id.value.trim();
 		
-		console.log('입력한 아이디: ', value);
+		
 		
 
         if(!reId.test(value)){
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function(){
         preventDblClick = true;
 
         try {
-            const response = await fetch('/farmstory/user/check.do?type=email&value=' + encodeURIComponent(value));
+            const response = await fetch('/farmstory/user/email.do?email=' + encodeURIComponent(value));
             const data = await response.json();
 
             if(data.count > 0){
@@ -278,46 +278,51 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 
-    /* 이메일 인증코드 확인 */
-    document.getElementById('btnConfirm').addEventListener('click', async function(e){
-        e.preventDefault();
+	/* 이메일 인증코드 확인 */
+	document.getElementById('btnConfirm').addEventListener('click', async function(e){
+	    e.preventDefault();
 
-        const code = form.code.value.trim();
+	    const code = form.code.value.trim();
 
-        if(code === ''){
-            emailResult.innerText = '인증코드를 입력하세요.';
-            emailResult.style.color = 'red';
-            isEmailOk = false;
-            return;
-        }
+	    console.log('입력한 인증코드:', code);
 
-        const formData = new FormData();
-        formData.append('code', code);
+	    if(code === ''){
+	        emailResult.innerText = '인증코드를 입력하세요.';
+	        emailResult.style.color = 'red';
+	        isEmailOk = false;
+	        return;
+	    }
 
-        try {
-            const response = await fetch('/farmstory/user/check.do', {
-                method: 'POST',
-                body: formData
-            });
+	    const params = new URLSearchParams();
+	    params.append('code', code);
 
-            const data = await response.json();
+	    try {
+	        const response = await fetch('/farmstory/user/email.do', {
+	            method: 'POST',
+	            headers: {
+	                'Content-Type': 'application/x-www-form-urlencoded'
+	            },
+	            body: params
+	        });
 
-            if(data.count > 0){
-                emailResult.innerText = '인증코드가 잘못되었습니다.';
-                emailResult.style.color = 'red';
-                isEmailOk = false;
-            }else{
-                emailResult.innerText = '이메일이 인증되었습니다.';
-                emailResult.style.color = 'green';
-                isEmailOk = true;
-            }
+	        const data = await response.json();
 
-        } catch(err) {
-            emailResult.innerText = '인증 확인 중 오류가 발생했습니다.';
-            emailResult.style.color = 'red';
-            isEmailOk = false;
-        }
-    });
+	        if(data.count === 0){
+	            emailResult.innerText = '이메일이 인증되었습니다.';
+	            emailResult.style.color = 'green';
+	            isEmailOk = true;
+	        }else{
+	            emailResult.innerText = '인증코드가 일치하지 않습니다.';
+	            emailResult.style.color = 'red';
+	            isEmailOk = false;
+	        }
+
+	    } catch(err) {
+	        emailResult.innerText = '인증 확인 중 오류가 발생했습니다.';
+	        emailResult.style.color = 'red';
+	        isEmailOk = false;
+	    }
+	});
 
     /* 휴대폰 중복 확인 */
     form.phone.addEventListener('focusout', async function(){
