@@ -79,14 +79,16 @@
                                 <th>날짜</th>
                                 <th>조회</th>
                             </tr>
-                            <c:forEach var
-                            <tr>
-                                <td>1</td>
-                                <td class="post-title"><a href="./chef-post-view.html">나도요리사 게시물입니다.[3]</a></td>
-                                <td>길동이</td>
-                                <td>20-05-12</td>
-                                <td>12</td>
-                            </tr>
+                            <c:forEach var="dto" items="${dtoList}">
+	                            <tr>
+	                                <td>${pageStart}</td>
+	                                <td class="post-title"><a href="./chef-post-view.html">${dto.content}[${dto.commentCount}]</a></td>
+	                                <td>${dto.nickname}</td>
+	                                <td>${dto.writtenAt}</td>
+	                                <td>${dto.viewCount}</td>
+	                            </tr>
+	                            <c:set var="pageStart" value="${pageStart-1}"/>
+                            </c:forEach>
                         </table>
                         <div>
                             <div class="pagination">

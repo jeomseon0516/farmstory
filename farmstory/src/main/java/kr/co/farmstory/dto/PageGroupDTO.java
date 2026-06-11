@@ -1,0 +1,19 @@
+package kr.co.farmstory.dto;
+
+public class PageGroupDTO {
+	private int start;
+	private int end;
+	
+	public PageGroupDTO(int start, int end) {
+		this.start = start;
+		this.end = end;
+	}
+	
+	public int getStart() {
+		return start;
+	}
+	
+	public int getEnd() {
+		return end;
+	}
+}
