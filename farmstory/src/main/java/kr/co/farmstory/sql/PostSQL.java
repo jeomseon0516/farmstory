@@ -31,17 +31,17 @@ public class PostSQL {
 			+ "JOIN User AS u ON p.writer_id = u.id "
 			+ "LEFT JOIN Comment AS c ON p.id = c.post_id "
 			+ "WHERE p.category=? "
-			+ "AND (p.title LIKE ? OR u.nickname LIKE ? OR p.content LIKE ?) "
+			+ "AND (p.title LIKE ? OR u.nickname LIKE ?) "
 			+ "GROUP BY p.id "
 			+ "ORDER BY p.id DESC "
 			+ "LIMIT ?, 10";
 	
 	public static final String SELECT_COUNT = "SELECT COUNT(id) FROM Post WHERE category=?";
 	
-	public static final String SELECT_COUNT_BY_KEYWORD = "SELECT COUNT(id) FROM Post AS p "
+	public static final String SELECT_COUNT_BY_KEYWORD = "SELECT COUNT(p.id) FROM Post AS p "
 			+ "JOIN User AS u ON p.writer_id = u.id "
 			+ "WHERE p.category=? "
-			+ "AND (p.title LIKE ? OR u.ninknamee LIKE ? OR p.content LIKE ?)";
+			+ "AND (p.title LIKE ? OR u.nickname LIKE ?)";
 	
 	public static final String SELECT = "SELECT p.*, u.nickname FROM Post AS p "
 			+ "JOIN " 

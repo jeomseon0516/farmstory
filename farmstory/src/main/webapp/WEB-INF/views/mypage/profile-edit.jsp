@@ -164,7 +164,6 @@
                         <button type="button" class="btn-cancel" onclick="history.back();">취소</button>
                         <button type="submit" name="mode" value="profile" class="btn-modify">회원수정</button>
                     </div>
-
                 </form>
             </section>
         </article>
