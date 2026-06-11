@@ -18,6 +18,12 @@ public enum CartService {
 		dao.insert(userId, prodId, prodQty);
 	}
 	
+	// Cart 테이블에서 특정 정보 조회
+	public CartDTO search(String userId) {
+		return dao.search(userId);
+	}
+			
+	
 	// Cart 테이블에서 장바구니 정보 조회
 	public List<CartDTO> searchAll(String userId) {
 		return dao.searchAll(userId);

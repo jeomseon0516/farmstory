@@ -8,8 +8,11 @@
         <title>farmstory::market/market-cart</title>
         <script>
         	document.addEventListener('DOMContentLoaded', function() {
+        		
         		const form = document.getElementById('cartForm');
         		const selectAll = document.getElementById('selectAll');
+        		const checkboxes = document.querySelectorAll('.cart-checkbox');
+
         		
         		// 합계 표시 엘리먼트들 타겟팅
         	    const totalQtyEl = document.getElementById('totalQty');
@@ -19,15 +22,79 @@
         	    const totalPointEl = document.getElementById('totalPoint');
         	    const totalOrderPriceEl = document.getElementById('totalOrderPrice');
 
+        		// 천단위 콤마 생성 함수
+        		function formatNumber(num) {
+        			return num.toLocaleString();
+        		}
         		
+        		// 실시간 합계 계산 함수
+        		function updateSummary() {
+        			let totalQty = 0;
+        			let totalOriginalPrice = 0;
+        			let totalDiscountPrice = 0;
+        			let totalPoint = 0;
+        			let totalOrderPrice = 0;
+        			let totalDeliveryFee = 0;
+        			
+        			// 체크된 체크박스들만 순회
+        			const checkedBoxes = document.querySelectorAll('.cart-checkbox:checked');
+        			
+        			checkedBoxes.forEach(checkbox => {
+        				const row = checkbox.closest('tr');
+        			
+        				// data 속성에서 순수 숫자 데이터 추출
+        				const qty = parseInt(row.querySelector('.row-qty').dataset.qty)||0;
+        				const price = parseInt(row.querySelector('.row-price').dataset.price) || 0;
+        				const discountRate = parseInt(row.querySelector('.row-discount').dataset.discountRate) || 0;
+        				const point = parseInt(row.querySelector('.row-point').dataset.point) || 0;
+        				
+        				// 숨겨진 hidden input의 value에서 배송비 추출
+        				const deliveryCost = parseInt(row.querySelector('.row-delivery-value').value) || 0;
+        				
+        				// 단일 행 계산
+        				const rowOriginalPrice = price * qty;
+        				const rowDiscountPrice = Math.floor(rowOriginalPrice * (discountRate / 100));
+        				const rowPoint = point * qty;
+        				const rowTotalPrice = rowOriginalPrice - rowDiscountPrice;
+        				
+        				// 합계 누적
+        				totalQty += qty;
+        				totalOriginalPrice += rowOriginalPrice;
+        				totalDiscountPrice += rowDiscountPrice;
+        				totalPoint += rowPoint;
+        				totalDeliveryFee += deliveryCost;
+        				totalOrderPrice += rowTotalPrice;
+        			
+        			});
+        			
+        			// 최종 주문 금액 = (상품 원가 총합 - 할인 총합) + 배송비 총합
+        			totalOrderPrice += totalDeliveryFee;
+        			
+        			// 하단 테이블에 실시간 데이터 반영
+        			totalQtyEl.innerText = formatNumber(totalQty);
+        			totalOriginalPriceEl.innerText = formatNumber(totalOriginalPrice) + '원';
+        			totalDiscountPriceEl.innerText = formatNumber(totalDiscountPrice) + '원';
+        			totalDeliveryFeeEl.innerText = formatNumber(totalDeliveryFee) + '원';
+        			totalPointEl.innerText = formatNumber(totalPoint) + 'P';
+        			totalOrderPriceEl.innerText = formatNumber(totalOrderPrice) + '원';
+        			
+        		}
+        		
+        	    
+        	    
         		// 전체 선택 / 해제 기능
         		if(selectAll) {
         			selectAll.addEventListener('change', function() {
-        				const checkboxex = document.querySelectorAll('input[name="selectedItems"]');
         				checkboxex.forEach(cb => cb.checked = selectAll.checked);
+        				updateSummary();
         			});
         			
         		}
+        		
+        		// 각각의 체크박스가 변할 때마다 합계 업데이트
+        		checkboxes.forEach(cb => {
+        			cb.addEventListener('change', updateSummary);
+        		});
         		
         		/*
         			시간 나면 구현 예정
@@ -48,16 +115,19 @@
 	        	*/
         		
         		// [주문하기] 전송 시 유효성 검사
-        		form.addEventListener('submit', function(e) {
-        			const checkedBoxes = document.querySelectorAll('input[name="selectedItems"]:checked');
-        		
-        			if (checkedBoxes.length ===0) {
-        				e.preventDefault();
-        				alert('주문할 상품을 선택해주세요.');
-        			}
+        		if(form) {
+        			form.addEventListener('submit', function(e) {
+        				const checkedBoxes = document.querySelectorAll('input[name="selectedItems"]:checked');
         				
-        		});
+        				if(checkedBoxes.length === 0) {
+        					e.preventDefault();
+        					alert('주문할 상품을 선택해주세요.');
+        				}
+        			});
+        		}
         		
+        		// 페이지 최초 로드 시 함수 호출
+        		updateSummary();
 
         		
         	}); 	//DOMContentLoaded End
@@ -132,7 +202,7 @@
                     <!-- 내용 -->
                     <section>
                         <a href="#">장바구니 전체(10)</a>
-                        <form id="cartFoam" action="#" method="post">
+                        <form id="cartForm" action="/farmstory/market/checkout/checkout.do" method="post">
 	                        <table id="cartTable">
 	                            <tr>
 	                                <th><input type="checkbox" id="selectAll"></th>
@@ -153,7 +223,10 @@
 		                        <c:if test="${cartDtoList != null}">
 		                        	<c:forEach var="dto" items="${cartDtoList}">
 			                            <tr class="cart-row">
-			                                <td><input type="checkbox" name="selectedItems" value="${dto.cartId}" class="cart-checkbox"></td>
+			                                <td>
+			                                	<input type="checkbox" name="selectedItems" value="${dto.cartId}" class="cart-checkbox">
+			                                	<input type="hidden" class="row-delivery-value" value="${dto.prodDeliveryCost}">
+			                                </td>
 			                                <td><img src="/farmstory/images/market_item1.jpg" width="60px" height="60px"></td>
 			                                <td>${dto.prodType}</td>
 			                                <td>${dto.prodName}</td>

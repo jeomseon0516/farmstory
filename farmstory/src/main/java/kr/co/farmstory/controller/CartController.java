@@ -38,7 +38,7 @@ public class CartController extends HttpServlet {
 		// View 참조
 		req.setAttribute("cartDtoList", cartDtoList);
 		
-		// 장보기의 장바구니 페이지 요청
+		// 장보기의 주문하기 페이지 요청
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/market/cart/cart.jsp");
 		dispatcher.forward(req, resp);
 			

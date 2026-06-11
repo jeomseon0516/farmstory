@@ -36,6 +36,39 @@ public class CartDAO extends DBHelper {
 		
 	}
 	
+	public CartDTO search(String userId) {
+		
+		// 반환용 DTO 생성
+		CartDTO dto = null;
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SqlCart.SEARCH_CART);
+			psmt.setInt(1, Integer.parseInt(userId));
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto = new CartDTO();
+				dto.setCartId(rs.getInt(1));
+				dto.setUserId(rs.getString(2));
+				dto.setProdId(rs.getInt(3));
+				dto.setProdQty(rs.getInt(4));
+				dto.setProdName(rs.getString(5));
+				dto.setProdType(rs.getString(6));
+				dto.setProdPrice(rs.getInt(7));
+				dto.setProdPoint(rs.getInt(8));
+				dto.setProdDiscount(rs.getInt(9));
+				dto.setProdDeliveryCost(rs.getInt(10));
+				dto.setProdListImageFileId(rs.getInt(11));
+				dto.setProdTotalPrice((int)(dto.getProdPrice() * ((100.0 - dto.getProdDiscount())/100)) * dto.getProdQty());
+			}
+			closeAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dto;
+	}
+	
 	public List<CartDTO> searchAll(String userId) {
 		
 		List<CartDTO> cartDtoList = new ArrayList<>();
