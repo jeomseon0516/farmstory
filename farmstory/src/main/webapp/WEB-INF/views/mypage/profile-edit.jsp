@@ -17,58 +17,12 @@
 <body>
 <div id="container">
 
-    <!-- 헤더 -->
-    <header>
-        <a href="#" class="logo"><img src="/farmstory/images/logo.png" alt="메인로고"></a>
-
-        <p>
-            <a href="#">HOME</a>
-            <a href="#">로그인</a>
-            <a href="#">회원가입</a>
-            <a href="#">관리자</a>
-            <a href="#">고객센터</a>
-        </p>
-
-        <img class="text" src="/farmstory/images/head_txt_img.png" alt="3만원이상 무료배송">
-
-        <ul class="gnb">
-            <li><a href="#">팜스토리소개</a></li>
-            <li><a href="#">장보기</a></li>
-            <li><a href="#">농작물이야기</a></li>
-            <li><a href="#">이벤트</a></li>
-            <li><a href="#">커뮤니티</a></li>
-        </ul>
-    </header>
-
-    <!-- 서브 배너 -->
-    <section class="sub-banner">
-        <img src="/farmstory/images/myinfo/myinfo_top_tit.png">
-    </section>
-
-    <!-- 메인 -->
+    <%@ include file="/WEB-INF/views/global/_header.jsp" %>
+    <%@ include file="/WEB-INF/views/global/_global-sub-banner.jsp" %>
     <main>
-        <!-- 서브 사이드 바 -->
-        <aside class="sub-sidebar-aside">
-            <img src="/farmstory/images/myinfo/myinfo_menu_tit.png">
-            <ul>
-                <li><a href="/farmstory/mypage/cart/cart.do"><img src="/farmstory/images/myinfo/myinfo_menu1.png"></a></li>
-                <li><a href="/farmstory/mypage/order-list/order-list.do"><img src="/farmstory/images/myinfo/myinfo_menu2.png"></a></li>
-                <li><a href="/farmstory/mypage/profile-edit.do"><img src="/farmstory/images/myinfo/myinfo_menu3_ov.png"></a></li>
-            </ul>
-        </aside>
-
-        <!-- 메인 내용 -->
+        <%@ include file="/WEB-INF/views/global/_global-aside.jsp" %>
         <article class="main-content">
-            <div class="main-content-header">
-                <img src="/farmstory/images/myinfo/myinfo_nav_tit3.png">
-
-                <section class="sub_nav_tit">
-                    <nav>
-                        <span>HOME > 나의정보 ></span>
-                        <span class="sub_nav_select"> 정보수정</span>
-                    </nav>
-                </section>
-            </div>
+            <%@ include file="/WEB-INF/views/global/_main-content-header.jsp" %>
 
             <section class="profile-edit">
                 <form action="/farmstory/mypage/profile-edit.do" method="post">
@@ -169,18 +123,7 @@
         </article>
     </main>
 
-    <!-- 푸터 -->
-    <footer>
-        <img src="/farmstory/images/footer_logo.png">
-        <div>
-            <p>(주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br>
-                등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
-                대표 : 김철학 / 이메일 : chhak0503@gmail.com / 전화 : 01) 234-5678 / 부산광역시 부산진구 부전동 123
-            </p>
-            <p>copyrightⓒ 김철학(개발에반하다) All rights reserved.</p>
-            <p>farmstory ver1.0.1</p>
-        </div>
-    </footer>
+    <%@ include file="/WEB-INF/views/global/_footer.jsp" %>
 </div>
 
 <c:if test="${param.success eq '1'}">

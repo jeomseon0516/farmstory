@@ -1,50 +1,26 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 <meta charset="UTF-8">
-<title>farmstory::crops-story/crops-story-post-view</title>
+<title>farmstory::post/post-view</title>
 </head>
-<link rel="stylesheet" href="/global-style/reset.css">
-<link rel="stylesheet" href="/global-style/global-header.css">
-<link rel="stylesheet" href="/global-style/global-footer.css">
-<link rel="stylesheet" href="/global-style/global-main-style.css">
-<link rel="stylesheet" href="/global-style/global-post-view.css">
+<link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
+<link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
+<link rel="stylesheet" href="/farmstory/css/global-style/global-footer.css">
+<link rel="stylesheet" href="/farmstory/css/global-style/global-main-style.css">
+<link rel="stylesheet" href="/farmstory/css/post/post-view.css">
 
 <body>
 	<div id="container">
 		<%@ include file="/WEB-INF/views/global/_header.jsp"%>
-
-
-		<section class="sub-banner">
-			<img src="/images/sub_top_tit5.png" alt="Community">
-		</section>
+		<%@ include file="/WEB-INF/views/global/_global-sub-banner.jsp" %>
 		<main>
-			<aside class="sub-sidebar-aside">
-				<img src="/images/sub_aside_cate5_tit.png" alt="Community 커뮤니티">
-				<ul>
-					<li><a href="../notice/notice-post-list.html"><img
-							src="/images/sub_cate5_lnb1.png" alt="공지사항"></a></li>
-					<li><a href="../menu/menu-post-list.html"><img
-							src="/images/sub_cate5_lnb2.png" alt="오늘의식단"></a></li>
-					<li><a href="../chef/chef-post-list.html"><img
-							src="/images/sub_cate5_lnb3_ov.png" alt="나도요리사"></a></li>
-					<li><a href="../qna/qna-post-list.html"><img
-							src="/images/sub_cate5_lnb4.png" alt="1:1고객문의"></a></li>
-					<li><a href="../faq/faq-post-list.html"><img
-							src="/images/sub_cate5_lnb5.png" alt="자주묻는질문"></a></li>
-				</ul>
-			</aside>
+			<%@ include file="/WEB-INF/views/global/_global-aside.jsp" %>
 			<article class="main-content">
-				<header class="main-content-header">
-					<img src="/images/sub_nav_tit_cate5_tit3.png" alt="농작물이야기">
-					<section class="sub_nav_tit">
-						<nav>
-							<span>HOME > 커뮤니티 ></span> <span class="sub_nav_select">나도요리사</span>
-						</nav>
-					</section>
-				</header>
+				<%@ include file="/WEB-INF/views/global/_main-content-header.jsp" %>
 				<section>
 					<h2 class="post-header-text">글보기</h2>
 					<table border="0" class="main-content-table">

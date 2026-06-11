@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <header>
 	<!-- 로고 -->
@@ -27,9 +27,9 @@
 	<!-- 메인 메뉴(GNB) -->
 	<ul class="gnb">
 		<li><a href="#">팜스토리소개</a></li>
-		<li><a href="#">장보기</a></li>
-		<li><a href="/farmstory/post/list.do?category=CROPS_STORY">농작물이야기</a></li>
+		<li><a href="/farmstory/market/cart/cart.do?menu=Cart&category=CART">장보기</a></li>
+		<li><a href="/farmstory/post/list.do?menu=CropsStory&category=CROPS_STORY">농작물이야기</a></li>
 		<li><a href="#">이벤트</a></li>
-		<li><a href="/farmstory/post/list.do?category=COMMUNITY">커뮤니티</a></li>
+		<li><a href="/farmstory/post/list.do?menu=Community&category=COMMUNITY">커뮤니티</a></li>
 	</ul>
 </header>

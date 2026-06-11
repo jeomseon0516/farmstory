@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,41 +14,12 @@
     <link rel="stylesheet" href="/farmstory/css/mypage/order-list.css">
     <body>
         <div id="container">
-            <!-- 헤더 -->
             <%@ include file="/WEB-INF/views/global/_header.jsp" %>
-
-
-            <!-- 서브 배너 -->
-            <section class="sub-banner">
-                <img src="/farmstory/images/myinfo/myinfo_top_tit.png">
-            </section>
-
-            <!-- 메인 -->
+            <%@ include file="/WEB-INF/views/global/_global-sub-banner.jsp" %>
             <main>
-                <!-- 서브 사이드 바 -->
-                <aside class="sub-sidebar-aside">
-                    <img src="/farmstory/images/myinfo/myinfo_menu_tit.png">
-                    <ul>
-                        <li><a href="/farmstory/mypage/cart.do"><img src="/farmstory/images/myinfo/myinfo_menu1.png"></a></li>
-                        <li><a href="/farmstory/mypage/order-list/order-list.do"><img src="/farmstory/images/myinfo/myinfo_menu2_ov.png"></a></li>
-                        <li><a href="/farmstory/mypage/profile-edit/profile-edit.do"><img src="/farmstory/images/myinfo/myinfo_menu3.png"></a></li>
-                    </ul>
-                </aside>
-
-                <!-- 메인 내용 -->
+                <%@ include file="/WEB-INF/views/global/_global-aside.jsp" %>
                 <article class="main-content">
-                    <!-- 메인 컨텐츠 헤더 -->
-                    <div class="main-content-header">
-                        <img src="/farmstory/images/myinfo/myinfo_nav_tit2.png">
-
-                        <!-- 서브 내비게이션 타이틀 -->
-                        <section class="sub_nav_tit">
-                            <nav>
-                                <span>HOME > 나의정보 </span>
-                                <span class="sub_nav_select">> 주문내역</span>
-                            </nav>
-
-                        </section>
+                    <%@ include file="/WEB-INF/views/global/_main-content-header.jsp" %>
 
                     </div>
 

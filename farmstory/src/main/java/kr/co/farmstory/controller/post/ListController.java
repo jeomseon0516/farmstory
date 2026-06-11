@@ -51,7 +51,6 @@ public class ListController extends HttpServlet {
 		req.setAttribute("pageStart", pageStart);
 		req.setAttribute("pageGroupDTO", pageGroupDTO);
 		req.setAttribute("keyword", keyword);
-		req.setAttribute("category", category);
 		
 		System.out.println(dtoList);
 		

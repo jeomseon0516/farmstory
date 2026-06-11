@@ -37,7 +37,7 @@ public class RegisterController extends HttpServlet {
         UserDTO dto = new UserDTO();
 
         dto.setId(req.getParameter("id"));
-        dto.setPass(req.getParameter("pass"));
+        dto.setPassword(req.getParameter("pass"));
         dto.setName(req.getParameter("name"));
         dto.setNickname(req.getParameter("nickname"));
         dto.setEmail(req.getParameter("email"));
