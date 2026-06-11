@@ -146,28 +146,12 @@
     <link rel="stylesheet" href="/farmstory/css/market/checkout/checkout.css">
     <body>
         <div id="container">
-            <!-- 헤더 -->
             <%@ include file="/WEB-INF/views/global/_header.jsp" %>
-
-
-            <!-- 서브 배너 -->
-            <section class="sub-banner">
-                <img src="/farmstory/images/sub_top_tit2.png">
-            </section>
-
-            <!-- 메인 -->
+            <%@ include file="/WEB-INF/views/global/_global-sub-banner.jsp" %>
             <main>
-                <!-- 서브 사이드 바 -->
-                <aside class="sub-sidebar-aside">
-                    <img src="/farmstory/images/sub_aside_cate2_tit.png">
-                    <ul>
-                        <li><a href="/farmstory/market/product-list/product-list.do"><img src="/farmstory/images/sub_cate2_lnb1_ov.png"></a></li>
-                    </ul>
-                </aside>
-
-                <!-- 메인 내용 -->
+                <%@ include file="/WEB-INF/views/global/_global-aside.jsp" %>
                 <article class="main-content">
-                    <!-- 메인 컨텐츠 헤더 -->
+                    <%@ include file="/WEB-INF/views/global/_main-content-header.jsp" %>
                     <div class="main-content-header">
                         <img src="/farmstory/images/sub_nav_tit_cate2_tit1.png">
 

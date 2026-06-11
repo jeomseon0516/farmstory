@@ -1,43 +1,26 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
         <meta charset="UTF-8">
-        <title>farmstory::qna/qna-post-view</title>
+        <title>farmstory::event/calendar</title>
     </head>
-    <link rel="stylesheet" href="/global-style/reset.css">
-    <link rel="stylesheet" href="/global-style/global-header.css">
-    <link rel="stylesheet" href="/global-style/global-footer.css">
-    <link rel="stylesheet" href="/global-style/global-main-style.css">
-    <link rel="stylesheet" href="./calendar.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-header.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-footer.css">
+    <link rel="stylesheet" href="/farmstory/css/global-style/global-main-style.css">
+    <link rel="stylesheet" href="/farmstory/css/event/calendar/calendar.css">
 
     <body>
         <div id="container">
             <%@ include file="/WEB-INF/views/global/_header.jsp" %>
-
-
-            <section class="sub-banner">
-                <img src="/farmstroy/images/sub_top_tit4.png" alt="Event">
-            </section>
+            <%@ include file="/WEB-INF/views/global/_global-sub-banner.jsp" %>
             <main>
-                <aside class="sub-sidebar-aside">
-                    <img src="/farmstroy/images/sub_aside_cate4_tit.png" alt="Event 이벤트">
-
-                    <ul>
-                        <li><a href="calendar.html"><img src="/farmstroy/images/sub_cate4_lnb1_ov.png" alt="이벤트"></a></li>
-                    </ul>
-                </aside>
+                <%@ include file="/WEB-INF/views/global/_global-aside.jsp" %>
                 <article class="main-content">
-                    <header class="main-content-header">
-                        <img src="/farmstroy/images/sub_nav_tit_cate5_tit4.png" alt="1:1고객문의">
-                        <section class="sub_nav_tit">
-                            <nav>
-                                <span>HOME > 이벤트 ></span>
-                                <span class="sub_nav_select">이벤트</span>
-                            </nav>
-                        </section>
-                    </header>
+                    <%@ include file="/WEB-INF/views/global/_main-content-header.jsp" %>
                     <section>
                         <div class="calender-head-info">
                             <h2 class="calendar-header-text">September 2024</h2>
