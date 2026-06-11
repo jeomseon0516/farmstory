@@ -71,8 +71,11 @@ public class PostDAO {
 		try (Connection conn = ConnectionProvider.getConnection();
 			 PreparedStatement psmt = conn.prepareStatement(PostSQL.SELECT_COUNT_BY_KEYWORD)) {
 			
+			String likeKeyword = "%" + keyword + "%";
+			
 			psmt.setString(1, category);
-			psmt.setString(2, "%" + keyword + "%");
+			psmt.setString(2, likeKeyword);
+			psmt.setString(3, likeKeyword);
 			
 			try(ResultSet rs = psmt.executeQuery()) {
 				if(rs.next()) {
@@ -122,6 +125,13 @@ public class PostDAO {
 		try(Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement psmt = conn.prepareStatement(PostSQL.SELECT_ALL_FOR_LIST_SEARCH)) {
 
+			String likeKeyword = "%" + keyword + "%";
+			
+			psmt.setString(1, category);
+			psmt.setString(2, likeKeyword);
+			psmt.setString(3, likeKeyword);
+			psmt.setInt(4, offset);
+			
 			try (ResultSet rs = psmt.executeQuery()) {
 				
 				while (rs.next()) {

@@ -23,29 +23,8 @@
 <div id="container">
 
     <!-- 헤더 -->
-    <header>
-        <a href="#" class="logo">
-            <img src="/farmstory/images/logo.png" alt="메인로고">
-        </a>
+    <%@ include file="/WEB-INF/views/global/_header.jsp" %>
 
-        <p>
-            <a href="/farmstory/main/main.do">HOME</a> |
-            <a href="/farmstory/user/login.do">로그인</a> |
-            <a href="/farmstory/user/register.do">회원가입</a> |
-            <a href="#">관리자</a> |
-            <a href="#">고객센터</a>
-        </p>
-
-        <img class="text" src="/farmstory/images/head_txt_img.png" alt="3만원이상 무료배송">
-
-        <ul class="gnb">
-            <li><a href="/farmstory/intro/greeting/greeting.do">팜스토리소개</a></li>
-            <li><a href="/farmstory/market/product-list/product-list.do">장보기</a></li>
-            <li><a href="#">농작물이야기</a></li>
-            <li><a href="#">이벤트</a></li>
-            <li><a href="#">커뮤니티</a></li>
-        </ul>
-    </header>
 
     <!-- 메인 -->
     <main>
@@ -155,20 +134,8 @@
     </main>
 
     <!-- 푸터 -->
-    <footer>
-        <img src="/farmstory/images/footer_logo.png">
+    <%@ include file="/WEB-INF/views/global/_footer.jsp" %>
 
-        <div>
-            <p>
-                (주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br>
-                등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
-                대표 : 김철학 / 이메일 : chhak0503@gmail.com / 전화 : 01) 234-5678 / 부산광역시 부산진구 부전동 123
-            </p>
-
-            <p>copyrightⓒ 김철학(개발에반하다) All rights reserved.</p>
-            <p>farmstory ver1.0.1</p>
-        </div>
-    </footer>
 
 </div>
 </body>

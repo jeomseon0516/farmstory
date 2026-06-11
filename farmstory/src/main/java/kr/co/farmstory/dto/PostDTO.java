@@ -13,8 +13,21 @@ public class PostDTO {
 	private String nickname;
 	private int commentCount;
 	private String writtenAt;
-	private List<PostFileDTO> postFileList;
+	private List<PostFileDTO> files;
+	private List<CommentDTO> comments;
 	
+	public List<PostFileDTO> getFiles() {
+		return files;
+	}
+	public void setFiles(List<PostFileDTO> files) {
+		this.files = files;
+	}
+	public List<CommentDTO> getComments() {
+		return comments;
+	}
+	public void setComments(List<CommentDTO> comments) {
+		this.comments = comments;
+	}
 	public int getId() {
 		return id;
 	}
@@ -78,12 +91,11 @@ public class PostDTO {
 	public void setIpAddress(String ipAddress) {
 		this.ipAddress = ipAddress;
 	}
-	
 	@Override
 	public String toString() {
 		return "PostDTO [id=" + id + ", writerId=" + writerId + ", category=" + category + ", title=" + title
 				+ ", content=" + content + ", viewCount=" + viewCount + ", ipAddress=" + ipAddress + ", nickname="
-				+ nickname + ", commentCount=" + commentCount + ", writtenAt=" + writtenAt + ", postFileList="
-				+ postFileList + "]";
+				+ nickname + ", commentCount=" + commentCount + ", writtenAt=" + writtenAt + ", files=" + files
+				+ ", comments=" + comments + "]";
 	}
 }

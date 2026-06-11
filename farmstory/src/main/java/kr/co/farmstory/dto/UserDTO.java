@@ -94,14 +94,11 @@ public class UserDTO {
 	public void setIpAddress(String ipAddress) {
 		this.ipAddress = ipAddress;		
 	}
-	
 	@Override
 	public String toString() {
 		return "UserDTO [id=" + id + ", pass=" + pass + ", name=" + name + ", nickname=" + nickname + ", email=" + email
-				+ ", zipCode=" + zipCode + ", address=" + address + ", detailAddress=" + detailAddress + ", phone="
-				+ phone + ", createdAt=" + createdAt + ", deletedAt=" + deletedAt + ", ipAddress=" + ipAddress + "]";
+				+ ", zipCode=" + zipCode + ", role=" + role + ", address=" + address + ", detailAddress="
+				+ detailAddress + ", phone=" + phone + ", createdAt=" + createdAt + ", deletedAt=" + deletedAt
+				+ ", ipAddress=" + ipAddress + "]";
 	}
-	
-	
-	
 }
