@@ -42,6 +42,18 @@ public class FindController extends HttpServlet {
             view = "/WEB-INF/views/user/find/password.jsp";
 
         } else if(path.equals("/user/find/password-change.do")) {
+        	
+        	HttpSession session = req.getSession();
+        	UserDTO foundUser = (UserDTO) session.getAttribute("foundUser");
+        			
+        		System.out.println("패스워드변경 doget");
+        		System.out.println("foundUser : " + foundUser);
+        		
+        		if(foundUser == null) {
+        			resp.sendRedirect(req.getContextPath()+"/user/find/password.do");
+        			return;
+        			}
+        	
             view = "/WEB-INF/views/user/find/password-change.jsp";
         }
 
@@ -60,7 +72,8 @@ public class FindController extends HttpServlet {
             String name = req.getParameter("name");
             String email = req.getParameter("email");
             String code = req.getParameter("code");
-
+            
+            
             HttpSession session = req.getSession();
 
             String sessionCode = (String) session.getAttribute("sessCode");
@@ -68,7 +81,7 @@ public class FindController extends HttpServlet {
             if(sessionCode != null && sessionCode.equals(code)) {
 
             	UserDTO foundUser = service.findId(name, email);
-            	System.out.println(foundUser);
+            	            	            	
             	session.setAttribute("foundUser", foundUser);
 
                 resp.sendRedirect(req.getContextPath() + "/user/find/id-result.do");
@@ -89,6 +102,11 @@ public class FindController extends HttpServlet {
             String id = req.getParameter("id");
             String email = req.getParameter("email");
             String code = req.getParameter("code");
+            
+            System.out.println("========== 비밀번호찾기 ==========");
+            System.out.println("id = " + id);
+            System.out.println("email = " + email);
+            System.out.println("code = " + code);
 
             HttpSession session = req.getSession();
 
@@ -97,7 +115,9 @@ public class FindController extends HttpServlet {
             if(sessionCode != null && sessionCode.equals(code)) {
 
                 UserDTO foundUser = service.findPassword(id, email);
-
+                
+                System.out.println(foundUser);
+                
                 if(foundUser != null) {
                     session.setAttribute("foundUser", foundUser);
 

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -81,19 +82,20 @@
                         <th>등록일</th>
                     </tr>
                     </thead>
-
-                    <tbody>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>#샘플사진#</td>
-                        <td>1011</td>
-                        <td>사과 500g</td>
-                        <td>과일</td>
-                        <td>4,000원</td>
-                        <td>100</td>
-                        <td>2023-01-01</td>
-                    </tr>
-                    </tbody>
+						<tbody>
+					    <c:forEach var="product" items="${products}">
+					        <tr>
+					            <td><input type="checkbox" name="chk" value="${product.prodId}"></td>
+					            <td>샘플사진</td>
+					            <td>${product.prodId}</td>
+					            <td>${product.prodName}</td>
+					            <td>${product.prodType}</td>
+					            <td>${product.prodPrice}원</td>
+					            <td>${product.prodStock}</td>
+					            <td>등록일</td>
+					        </tr>
+					    </c:forEach>
+						</tbody>
                 </table>
 
             </article>
@@ -101,7 +103,7 @@
         </section>
 
     </main>
-
+ 
 
     <!-- 푸터 -->
     <footer>

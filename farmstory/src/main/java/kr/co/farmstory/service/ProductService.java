@@ -22,4 +22,9 @@ public enum ProductService {
 	public ProductDTO findById(String prodId) {
 		return dao.select(prodId);
 	}
+		
+	// 상품 등록
+	public void insert(ProductDTO dto) {
+		dao.insert(dto);
+	}		
 }

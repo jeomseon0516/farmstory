@@ -11,7 +11,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kr.co.farmstory.dto.CartDTO;
+import kr.co.farmstory.dto.OrderDTO;
+import kr.co.farmstory.dto.OrderItemDTO;
 import kr.co.farmstory.service.CartService;
+import kr.co.farmstory.service.OrderService;
 
 @WebServlet(urlPatterns = {"/market/checkout/checkout.do", "/market/checkout/order.do"})
 public class OrderController extends HttpServlet {
@@ -20,6 +23,7 @@ public class OrderController extends HttpServlet {
 	
 	// 서비스 가져오기
 	private CartService cartService = CartService.INSTANCE;
+	private OrderService orderService = OrderService.INSTANCE;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -64,8 +68,76 @@ public class OrderController extends HttpServlet {
 		// 결제 눌러서 주문하기
 		if(reqUri.endsWith("/market/checkout/order.do")) {
 			
+			// 자바스크립트로 계산하여 hidden으로 넘긴 데이터 받기 (숫자 형태)
+		    int totalProdPrice     = Integer.parseInt(req.getParameter("totalProdPrice"));
+		    int prodCount          = Integer.parseInt(req.getParameter("prodCount"));
+		    int totalProdDeliveryFee = Integer.parseInt(req.getParameter("totalProdDeliveryFee"));
+		    int totalUsedPoint     = Integer.parseInt(req.getParameter("totalUsedPoint"));
+		    int totalOrderPrice    = Integer.parseInt(req.getParameter("totalOrderPrice"));
+		    
+		    // 사용자가 직접 폼에 입력한 텍스트 및 라디오 데이터 받기
+		    String receiverName       = req.getParameter("receiverName");
+		    String receiverHp         = req.getParameter("receiverHp");
+		    String receiverZip        = req.getParameter("receiverZip");
+		    String receiverAddr       = req.getParameter("receiverAddr");
+		    String receiverDetailAddr = req.getParameter("receiverDetailAddr");
+		    String payment            = req.getParameter("payment");
+		    String etc                = req.getParameter("etc");
+		    
+		    // product 정보 받기
+		    String[] prodIds = req.getParameterValues("orderProdId");
+		    String[] prodPrices = req.getParameterValues("orderProdPrice");
+		    String[] prodDiscounts = req.getParameterValues("orderProdDiscount");
+		    String[] prodQtys = req.getParameterValues("orderProdQty");
+		    
+		    List<OrderItemDTO> orderItemDto = new ArrayList<>();
+		    
+		    if (prodIds != null) {
+		        for (int i = 0; i < prodIds.length; i++) {
+		            OrderItemDTO item = new OrderItemDTO();
+		            
+		            item.setProdId(Integer.parseInt(prodIds[i]));
+		            item.setProdPrice(Integer.parseInt(prodPrices[i]));
+		            item.setProdDiscount(Integer.parseInt(prodDiscounts[i]));
+		            item.setProdQty(Integer.parseInt(prodQtys[i]));
+		            
+
+
+		            // 리스트에 추가
+		            orderItemDto.add(item);
+		        }
+		    }
+		    
+		    
+		    // System.out.println("결제 총 금액: " + totalOrderPrice + "원, 수령인: " + receiverName);
+		    
+		    // OrderService 호출하기
+		    OrderDTO dto = new OrderDTO();
+		    dto.setUserId("abc");  // 아직 미구현
+		    dto.setTotProdPrice(totalProdPrice);
+		    dto.setTotProdQty(prodCount);
+		    dto.setTotDeliveryCost(totalProdDeliveryFee);
+		    dto.setReceiverName(receiverName);
+		    dto.setReceiverHp(receiverHp);
+		    dto.setUsedPoint(totalUsedPoint);
+		    dto.setTotPrice(totalOrderPrice);
+		    dto.setReceiverZip(receiverZip);
+		    dto.setReceiverAddr(receiverAddr);
+		    dto.setReceiverDetailAddr(receiverDetailAddr);
+		    dto.setPayment(payment);
+		    dto.setEtc(etc);
+		    
+			int orderId = orderService.insert(dto);
 			
+			System.out.println(orderItemDto);
 			
+			// OrderItemService 호출하기
+			for(OrderItemDTO itemDto : orderItemDto) {
+				orderService.insert(orderId, itemDto);
+			}
+
+			
+			resp.sendRedirect("/farmstory/main/main.do");
 		}
 		
 		

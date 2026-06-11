@@ -85,4 +85,31 @@ public class ProductDAO extends DBHelper {
 		}
 		return dto;
 	}
+	// 상품 등록
+	public void insert(ProductDTO dto) {
+			
+			try {
+				conn = getConnection();
+				psmt = conn.prepareStatement(SqlProduct.INSERT_PRODUCT);
+				
+				psmt.setString(1, dto.getProdName());
+				psmt.setString(2, dto.getProdType());
+				psmt.setInt(3, dto.getProdPrice());
+				psmt.setInt(4, dto.getProdPoint());
+				psmt.setInt(5, dto.getProdDiscount());
+				psmt.setInt(6, dto.getProdDeliveryCost());
+				psmt.setInt(7, dto.getProdStock());
+				psmt.setInt(8, dto.getProdListImageFileId());
+				psmt.setInt(9, dto.getProdInfoImageFileId());
+				psmt.setInt(10, dto.getProdDescriptionImageFileId());
+				psmt.setString(11, dto.getProdRemark());
+				
+				psmt.executeUpdate();
+				
+				closeAll();
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 }
