@@ -82,7 +82,7 @@ public enum CategoryOption {
 	),
 	
 	QNA(
-		"1:1",
+		"1:1고객문의",
 		"/farmstory/post/list.do?menu=Community&category=QNA",
 		"/farmstory/images/sub_cate5_lnb4.png",
 		"/farmstory/images/sub_cate5_lnb4_ov.png",

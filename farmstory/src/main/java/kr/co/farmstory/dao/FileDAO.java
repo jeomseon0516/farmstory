@@ -17,7 +17,7 @@ public enum FileDAO {
 		FileDTO dto = null;
 
 		try (Connection conn = ConnectionProvider.getConnection();
-				PreparedStatement psmt = conn.prepareStatement(FileSQL.SELECT)) {
+			 PreparedStatement psmt = conn.prepareStatement(FileSQL.SELECT)) {
 
 			psmt.setString(1, id);
 

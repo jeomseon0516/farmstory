@@ -8,7 +8,10 @@ public class CommentSQL {
 			+ "ip_address=?"; 
 
 	public static final String SELECT_COMMENT = "SELECT * FROM Comment WHERE id=?";
-	public static final String SELECT_ALL_COMMENT = "SELECT * FROM Comment WHERE post_id=?";
+	public static final String SELECT_ALL_COMMENT = "SELECT c.*, u.nickname FROM Comment AS c"
+			+ "JOIN User AS u ON u.id = c.writer_id "
+			+ "WHERE c.post_id=?";
+	
 	public static final String UPDATE_COMMENT = "UPDATE Comment SET " 
 			+ "content=? "
 			+ "WHERE id=?";

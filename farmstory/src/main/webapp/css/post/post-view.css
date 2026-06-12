@@ -1,4 +1,5 @@
 
+
 .post-header-text {
     margin-bottom: 6px;
 }
@@ -95,6 +96,10 @@
 
 .comment-text {
     padding: 10px;
+    width: 100%;
+	outline: none;
+	border: none;
+	background: transparent;
 }
 
 .comment-button-area {
@@ -140,4 +145,19 @@
     background-color: #3B545E;
     border: 1px solid #3B3C3F;
     box-sizing: border-box;
+    
+}
+
+.main-content-table .view-field {
+	width: 100%;
+	outline: none;
+	border: none;
+	background: transparent;
+}
+
+.main-content-table .view-content {
+	width: 100%;
+	outline: none;
+	border: none;
+	background: transparent;
 }

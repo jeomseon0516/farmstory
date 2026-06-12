@@ -26,18 +26,27 @@
 					<table border="0" class="main-content-table">
 						<tr>
 							<th>제목</th>
-							<td><input type="text" name="title" value="${postDTO.title}" readonly/></td>
+							<td><input class="view-field" type="text" name="title" value="${postDTO.title}" readonly/></td>
 						</tr>
 						<tr>
 							<th>파일</th>
 							<td>
-								<!-- <a href="#"></a> -->
+								<c:choose>
+									<c:when test="${postDTO.files.size() gt 0}">
+										<c:forEach var="postFileDTO" items="${postDTO.files}">
+											<p><a href="/farmstory/post/fileDownload.do?menu=${menu}&category=${category}&fileId=${postFileDTO.fileId}&postFileId=${postFileDTO.id}">${postFileDTO.file.originalName}</a>&nbsp;<span>${postFileDTO.downloadCount}</span>회 다운로드</p>
+										</c:forEach>
+									</c:when>
+									<c:otherwise>
+										등록된 파일이 없습니다.
+									</c:otherwise>
+								</c:choose>
 							</td>
 						</tr>
 						<tr>
 							<th>내용</th>
 							<td>
-								<p>나도요리사 예시글입니다.</p>
+								<textarea class="view-content">${postDTO.content}</textarea>
 							</td>
 						</tr>
 					</table>
@@ -47,22 +56,30 @@
 					</div>
 					<section class="comments comment-box">
 						<h3 class="comment-header">댓글목록</h3>
-						<ul class="comment-list">
-							<li class="comment-item">
-								<article class="comment-content">
-									<p class="comment-info">2024-05-20 길동이</p>
-									<p class="comment-text">댓글 샘플 입니다.</p>
-									<div class="comment-button-area">
-										<a href="#">삭제</a> <a href="#">수정</a>
-									</div>
-								</article>
-							</li>
-						</ul>
-						<p>등록된 댓글이 없습니다.</p>
+						<c:choose>
+							<c:when test="${postDTO.comments.size() gt 0}">
+								<ul class="comment-list">
+									<c:forEach var="commentDTO" items="${postDTO.comments}">
+										<li class="comment-item">
+											<article class="comment-content">
+												<p class="comment-info">${commentDTO.writtenAt.substring(0, 10)} ${commentDTO.nickname}</p>
+												<textarea class="comment-text">${commentDTO.content}</textarea>
+												<div class="comment-button-area">
+													<a href="#">삭제</a> <a href="#">수정</a>
+												</div>
+											</article>
+										</li>
+									</c:forEach>
+								</ul>
+							</c:when>
+							<c:otherwise>
+								<p>등록된 댓글이 없습니다.</p>
+							</c:otherwise>
+						</c:choose>
 					</section>
 					<section class="comment-write comment-box">
 						<h3 class="comment-header">댓글쓰기</h3>
-						<form action="#">
+						<form action="/post/comment">
 							<textarea class="comment-write-textarea"></textarea>
 							<div class="comment-write-button-area">
 								<button type="button">취소</button>

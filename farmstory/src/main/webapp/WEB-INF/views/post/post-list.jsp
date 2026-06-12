@@ -43,7 +43,7 @@
 	                                	<a href="/farmstory/post/view.do?menu=${menu}&category=${category}&id=${dto.id}&page=${currentPage}${not empty keyword ? '&keyword='.concat(keyword) : ''}">
 	                                		${dto.title}[${dto.commentCount}]
 	                                	</a>
-	                                	</td>
+	                                </td>
 	                                <td>${dto.nickname}</td>
 	                                <td>${dto.writtenAt.substring(0, 16)}</td>
 	                                <td>${dto.viewCount}</td>
