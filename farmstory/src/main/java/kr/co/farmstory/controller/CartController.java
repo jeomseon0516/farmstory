@@ -9,10 +9,12 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import kr.co.farmstory.dto.CartDTO;
+import kr.co.farmstory.dto.UserDTO;
 import kr.co.farmstory.service.CartService;
 
-@WebServlet(urlPatterns = {"/market/cart/cart.do"})
+@WebServlet(urlPatterns = {"/market/cart/cart.do", "/mypage/cart.do"})
 public class CartController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -22,31 +24,63 @@ public class CartController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String reqUri = req.getRequestURI();
 		
-		// 파라미터 수신
-		String userId = "1";
-		String prodId = req.getParameter("prodId");
-		String prodQty = req.getParameter("prodQty");
-		
-		// 장바구니에 추가된 상품 정보 카트 테이블에 넣기
-		service.insert(userId, prodId, prodQty);
-		
-		// 장바구니 정보 조회하기
-		List<CartDTO> cartDtoList = service.searchAll(userId);
-		System.out.println(cartDtoList);
-		
-		// View 참조
-		req.setAttribute("cartDtoList", cartDtoList);
-		
-		// 장보기의 주문하기 페이지 요청
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/market/cart/cart.jsp");
-		dispatcher.forward(req, resp);
+		if(reqUri.endsWith("/market/cart/cart.do")) {
+			// 정보 받기
+			HttpSession session = req.getSession();
+			String userId = null;
+			if (session.getAttribute("sessUser") instanceof UserDTO userDTO) {
+				userId = userDTO.getId();
+			}
 			
-	
+			// 장바구니 정보 조회하기
+			List<CartDTO> cartDtoList = service.searchAll(userId);
+			System.out.println(cartDtoList);
+			
+			// View 참조
+			req.setAttribute("cartDtoList", cartDtoList);
+			
+			// 장보기의 주문하기 페이지 요청
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/mypage/cart.jsp");
+			dispatcher.forward(req, resp);
+		}
+		
+		if(reqUri.endsWith("/mypage/cart/cart.do")) {
+			// 정보 받기
+			HttpSession session = req.getSession();
+			String userId = null;
+			if (session.getAttribute("sessUser") instanceof UserDTO userDTO) {
+				userId = userDTO.getId();
+			}
+			
+			// 장바구니 정보 조회하기
+			List<CartDTO> cartDtoList = service.searchAll(userId);
+			System.out.println(cartDtoList);
+			
+			// View 참조
+			req.setAttribute("cartDtoList", cartDtoList);
+			
+			// 장보기의 주문하기 페이지 요청
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/market/cart/cart.jsp");
+			dispatcher.forward(req, resp);
+		}
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+			// 파라미터 수신
+			String userId = req.getParameter("userId");
+			String prodId = req.getParameter("prodId");
+			String prodQty = req.getParameter("prodQty");
+			
+			// 장바구니에 추가된 상품 정보 카트 테이블에 넣기
+			service.insert(userId, prodId, prodQty);
+			
+			
+			
+			resp.sendRedirect("/farmstory/market/cart/cart.do?menu=Cart&category=CART");
+	
 	}
 
 }

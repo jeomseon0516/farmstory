@@ -301,11 +301,14 @@
 	                                    <td>
 	                                    	<span id="totalOrderPrice">0원</span>
 	                                    	<input type="hidden" id="hiddenTotalOrderPrice" name="totalOrderPrice" value="0">
+	                                    	<input type="hidden" name="hiddenUserId" value="${sessionScope.sessUser.id}">
 	                                    </td>
 	                                </tr>
 	
 	                            </table>
 	                            <button type="submit" id="btnSubmitOrder">주문하기</button>
+	                            <input type="hidden" name="menu" value="${menu}">
+	                            <input type="hidden" name="category" value="${category}">
 	                        </div>
                         </form>
                     </section>

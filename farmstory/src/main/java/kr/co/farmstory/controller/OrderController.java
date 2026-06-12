@@ -74,6 +74,7 @@ public class OrderController extends HttpServlet {
 		    int totalProdDeliveryFee = Integer.parseInt(req.getParameter("totalProdDeliveryFee"));
 		    int totalUsedPoint     = Integer.parseInt(req.getParameter("totalUsedPoint"));
 		    int totalOrderPrice    = Integer.parseInt(req.getParameter("totalOrderPrice"));
+		    String userId = req.getParameter("hiddenUserId");
 		    
 		    // 사용자가 직접 폼에 입력한 텍스트 및 라디오 데이터 받기
 		    String receiverName       = req.getParameter("receiverName");
@@ -113,7 +114,7 @@ public class OrderController extends HttpServlet {
 		    
 		    // OrderService 호출하기
 		    OrderDTO dto = new OrderDTO();
-		    dto.setUserId("abc");  // 아직 미구현
+		    dto.setUserId(userId);
 		    dto.setTotProdPrice(totalProdPrice);
 		    dto.setTotProdQty(prodCount);
 		    dto.setTotDeliveryCost(totalProdDeliveryFee);
