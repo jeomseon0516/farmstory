@@ -15,7 +15,7 @@
 			<c:otherwise>
 				<a href="/farmstory/user/logout.do">로그아웃</a> |
 				<c:if test="${sessionScope.sessUser.role eq 'ADMIN'}">
-					<a href="/farmstory/admin/dashboard.do">관리자</a> | 
+					<a href="${pageContext.request.contextPath}/admin/dashboard.do">관리자</a> |
 				</c:if>
 			</c:otherwise>
 		</c:choose>

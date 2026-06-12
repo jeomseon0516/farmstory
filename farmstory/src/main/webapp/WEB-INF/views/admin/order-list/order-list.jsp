@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>farmstory::admin/order-list</title>
 
-    <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
-    <link rel="stylesheet" href="/farmstory/css/admin/order-list/order-list.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/global-style/reset.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin/order-list/order-list.css">
 </head>
 
 <body>
@@ -15,16 +16,15 @@
 
     <!-- 헤더 -->
     <header>
-        <a href="./dashboard.html">
-            <img src="./images/admin/admin_logo.jpg" alt="logo">
+        <a href="${pageContext.request.contextPath}/admin/dashboard.do">
+            <img src="${pageContext.request.contextPath}/images/admin/admin_logo.jpg" alt="logo">
         </a>
 
         <div class="top-menu">
-            <a href="#">HOME | </a> 
-            <a href="#">로그아웃 | </a> 
+            <a href="${pageContext.request.contextPath}/main/main.do">HOME | </a> 
+            <a href="${pageContext.request.contextPath}/user/logout.do">로그아웃 | </a> 
             <a href="#">고객센터</a>
         </div>
-        
     </header>
 
     <!-- 메인 -->
@@ -33,34 +33,44 @@
         <!-- 좌측 메뉴 -->
         <aside>
 
-            <h3>주요기능</h3>
+            <h3>
+                <a href="${pageContext.request.contextPath}/admin/dashboard.do" class="main-menu-title">주요기능</a>
+            </h3>
 
             <div class="menu">
                 <span>상품관리</span>
                 <ul>
-                    <li><a href="#">ㄴ 상품목록</a></li>
-                    <li><a href="#">ㄴ 상품등록</a></li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/admin/productList.do">ㄴ 상품목록</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/admin/productRegister.do">ㄴ 상품등록</a>
+                    </li>
                 </ul>
             </div>
 
             <div class="menu">
                 <span>주문관리</span>
                 <ul>
-                    <li><a href="#">ㄴ 주문목록</a></li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/admin/orderList.do">ㄴ 주문목록</a>
+                    </li>
                 </ul>
             </div>
 
             <div class="menu">
                 <span>회원관리</span>
                 <ul>
-                    <li><a href="#">ㄴ 회원목록</a></li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/admin/userList.do">ㄴ 회원목록</a>
+                    </li>
                 </ul>
             </div>
 
         </aside>
 
 
-        <!--우측 컨텐츠 -->
+        <!-- 우측 컨텐츠 -->
         <section>
 
             <div class="content-title">
@@ -86,20 +96,34 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>
-                            <input type="checkbox">
-                        </td>
-                        <td>1011</td>
-                        <td>사과 500g</td>
-                        <td>4,000원</td>
-                        <td>2</td>
-                        <td>3,000원</td>
-                        <td>11,000원</td>
-                        <td>김유신</td>
-                        <td>2023-01-01<br>13:06:14</td>
-                        <td>[상세확인]</td>
-                    </tr>
+                    <c:choose>
+                        <c:when test="${empty orders}">
+                            <tr>
+                                <td colspan="10">등록된 주문이 없습니다.</td>
+                            </tr>
+                        </c:when>
+
+                        <c:otherwise>
+                            <c:forEach var="order" items="${orders}">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="chk" value="${order.orderId}">
+                                    </td>
+                                    <td>${order.orderId}</td>
+                                    <td>${order.prodName}</td>
+                                    <td>${order.totProdPrice}원</td>
+                                    <td>${order.totProdQty}</td>
+                                    <td>${order.totDeliveryCost}원</td>
+                                    <td>${order.totPrice}원</td>
+                                    <td>${order.receiverName}</td>
+                                    <td>${order.createdAt}</td>
+                                    <td>
+                                        <a href="#">[상세확인]</a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </c:otherwise>
+                    </c:choose>
                 </tbody>
             </table>
 

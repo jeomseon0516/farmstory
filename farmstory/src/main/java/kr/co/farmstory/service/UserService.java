@@ -3,6 +3,9 @@ package kr.co.farmstory.service;
 import kr.co.farmstory.dao.UserDAO;
 import kr.co.farmstory.dto.UserDTO;
 
+import java.util.List;
+
+
 public enum UserService {
 	
 	// 싱글톤! 
@@ -56,5 +59,11 @@ public enum UserService {
 	public void updateUserProfile(UserDTO dto) {
 	    dao.updateUserProfile(dto);
 	}
+	
+	// 전체 회원 목록 조회 - 관리자 메인 회원현황용
+	public List<UserDTO> findAll() {
+	    return dao.selectAll();
 
+	}
+	
 }

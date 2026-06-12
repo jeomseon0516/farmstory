@@ -14,10 +14,18 @@ public enum OrderService {
 	// DAO 가져오기
 	private OrderDAO orderDao = OrderDAO.getInstance();
 	
+	
+	// 전체 주문 목록 조회 - 관리자 메인 주문현황용
+	public List<OrderDTO> findAll() {
+		return orderDao.selectAll();
+	}
+	
+	
 	// Order 테이블에 주문 입력
 	public int insert(OrderDTO dto) {
-		 return orderDao.insert(dto);
+		return orderDao.insert(dto);
 	}
+	
 	
 	// OrderItem 테이블에 입력
 	public void insert(int orderId, OrderItemDTO orderItemDto) {

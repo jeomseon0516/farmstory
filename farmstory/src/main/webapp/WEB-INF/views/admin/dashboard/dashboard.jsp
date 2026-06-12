@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -35,29 +36,36 @@
 
             <h3>주요기능</h3>
 
-            <div class="menu">
-                <span>상품관리</span>
-                <ul>
-                    <li><a href="#">ㄴ 상품목록</a></li>
-                    <li><a href="#">ㄴ 상품등록</a></li>
-                </ul>
-            </div>
-
-            <div class="menu">
-                <span>주문관리</span>
-                <ul>
-                    <li><a href="#">ㄴ 주문목록</a></li>
-                </ul>
-            </div>
-
-            <div class="menu">
-                <span>회원관리</span>
-                <ul>
-                    <li><a href="#">ㄴ 회원목록</a></li>
-                </ul>
-            </div>
-
-        </aside>
+		    <div class="menu">
+		        <span>상품관리</span>
+		        <ul>
+		            <li>
+		                <a href="${pageContext.request.contextPath}/admin/productList.do">ㄴ 상품목록</a>
+		            </li>
+		            <li>
+		                <a href="${pageContext.request.contextPath}/admin/productRegister.do">ㄴ 상품등록</a>
+		            </li>
+		        </ul>
+		    </div>
+		
+		    <div class="menu">
+		        <span>주문관리</span>
+		        <ul>
+		            <li>
+		                <a href="${pageContext.request.contextPath}/admin/orderList.do">ㄴ 주문목록</a>
+		            </li>
+		        </ul>
+		    </div>
+		
+		    <div class="menu">
+		        <span>회원관리</span>
+		        <ul>
+		            <li>
+		                <a href="${pageContext.request.contextPath}/admin/userList.do">ㄴ 회원목록</a>
+		            </li>
+		        </ul>
+		    </div>
+		</aside>
 
         <!-- 우측 컨텐츠 -->
         <section>
@@ -69,7 +77,7 @@
 
                 <div class="table-title">
                     <span>상품현황</span>
-                    <a href="#">+ 더보기</a>
+                    <a href="${pageContext.request.contextPath}/admin/productList.do">+ 더보기</a>
                 </div>
 
                 <table>
@@ -85,30 +93,16 @@
                     </thead>
 
                     <tbody>
-                    <tr>
-                        <td>1011</td>
-                        <td>사과 500g</td>
-                        <td>과일</td>
-                        <td>4,000원</td>
-                        <td>100</td>
-                        <td>2023-01-01</td>
-                    </tr>
-                    <tr>
-                        <td>1011</td>
-                        <td>사과 500g</td>
-                        <td>과일</td>
-                        <td>4,000원</td>
-                        <td>100</td>
-                        <td>2023-01-01</td>
-                    </tr>
-                    <tr>
-                        <td>1011</td>
-                        <td>사과 500g</td>
-                        <td>과일</td>
-                        <td>4,000원</td>
-                        <td>100</td>
-                        <td>2023-01-01</td>
-                    </tr>
+						<c:forEach var="product" items="${products}" begin="0" end="2">
+						    <tr>
+						        <td>${product.prodId}</td>
+						        <td>${product.prodName}</td>
+						        <td>${product.prodType}</td>
+						        <td>${product.prodPrice}원</td>
+						        <td>${product.prodStock}</td>
+						        <td>${product.createdAt.substring(0, 10)}</td>
+						    </tr>
+						</c:forEach>
                     </tbody>
                 </table>
 
@@ -137,38 +131,18 @@
                     </thead>
 
                     <tbody>
-                    <tr>
-                        <td>1011</td>
-                        <td>사과 500g</td>
-                        <td>4,000원</td>
-                        <td>2개</td>
-                        <td>3,000원</td>
-                        <td>8,000원</td>
-                        <td>홍길동</td>
-                        <td>2023-01-01</td>
-                    </tr>
-
-                    <tr>
-                        <td>1011</td>
-                        <td>사과 500g</td>
-                        <td>4,000원</td>
-                        <td>2개</td>
-                        <td>3,000원</td>
-                        <td>8,000원</td>
-                        <td>홍길동</td>
-                        <td>2023-01-01</td>
-                    </tr>
-
-                    <tr>
-                        <td>1011</td>
-                        <td>사과 500g</td>
-                        <td>4,000원</td>
-                        <td>2개</td>
-                        <td>3,000원</td>
-                        <td>8,000원</td>
-                        <td>홍길동</td>
-                        <td>2023-01-01</td>
-                    </tr>
+						<c:forEach var="order" items="${orders}" begin="0" end="2">
+						    <tr>
+						        <td>${order.orderId}</td>
+						        <td>${order.prodName}</td>
+						        <td>${order.totProdPrice}원</td>
+						        <td>${order.totProdQty}개</td>
+						        <td>${order.totDeliveryCost}원</td>
+						        <td>${order.totPrice}원</td>
+						        <td>${order.receiverName}</td>
+						        <td>${order.createdAt.substring(0, 10)}</td>
+						    </tr>
+						</c:forEach>
                     </tbody>
                 </table>
 
@@ -196,35 +170,17 @@
                     </thead>
 
                     <tbody>
-                    <tr>
-                        <td>a011</td>
-                        <td>김유신</td>
-                        <td>유신123</td>
-                        <td>010-1234-1001</td>
-                        <td>yusin@naver.com</td>
-                        <td>2</td>
-                        <td>2023-01-01</td>
-                    </tr>
-
-                        <tr>
-                        <td>a011</td>
-                        <td>김유신</td>
-                        <td>유신123</td>
-                        <td>010-1234-1001</td>
-                        <td>yusin@naver.com</td>
-                        <td>2</td>
-                        <td>2023-01-01</td>
-                    </tr>
-
-                        <tr>
-                        <td>a011</td>
-                        <td>김유신</td>
-                        <td>유신123</td>
-                        <td>010-1234-1001</td>
-                        <td>yusin@naver.com</td>
-                        <td>2</td>
-                        <td>2023-01-01</td>
-                    </tr>
+				        <c:forEach var="user" items="${users}" begin="0" end="2">
+				            <tr>
+				                <td>${user.id}</td>
+				                <td>${user.name}</td>
+				                <td>${user.nickname}</td>
+				                <td>${user.phone}</td>
+				                <td>${user.email}</td>
+				                <td>${user.role}</td>
+				                <td>${user.createdAt.substring(0, 10)}</td>
+				            </tr>
+				        </c:forEach>
                     </tbody>
                 </table>
 
