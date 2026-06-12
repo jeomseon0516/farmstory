@@ -26,7 +26,7 @@
 		alt="3만원이상 무료배송">
 	<!-- 메인 메뉴(GNB) -->
 	<ul class="gnb">
-		<li><a href="#">팜스토리소개</a></li>
+		<li><a href="/farmstory/intro/greeting/greeting.do?menu=Introduction&category=GREETING">팜스토리소개</a></li>
 		<li><a href="/farmstory/market/product-list/product-list.do?menu=Cart&category=CART">장보기</a></li>
 		<li><a href="/farmstory/post/list.do?menu=CropsStory&category=CROPS_STORY">농작물이야기</a></li>
 		<li><a href="#">이벤트</a></li>
