@@ -7,6 +7,7 @@ public class CommentDTO {
 	private String content;
 	private String ipAddress;
 	private String writtenAt;
+	private String nickname;
 	
 	public int getId() {
 		return id;
@@ -44,10 +45,15 @@ public class CommentDTO {
 	public void setWrittenAt(String writtenAt) {
 		this.writtenAt = writtenAt;
 	}
-	
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 	@Override
 	public String toString() {
 		return "CommentDTO [id=" + id + ", postId=" + postId + ", writerId=" + writerId + ", content=" + content
-				+ ", ipAddress=" + ipAddress + ", writtenAt=" + writtenAt + "]";
+				+ ", ipAddress=" + ipAddress + ", writtenAt=" + writtenAt + ", nickname=" + nickname + "]";
 	}
 }

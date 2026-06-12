@@ -44,8 +44,8 @@ public class PostSQL {
 			+ "AND (p.title LIKE ? OR u.nickname LIKE ?)";
 	
 	public static final String SELECT = "SELECT p.*, u.nickname FROM Post AS p "
-			+ "JOIN " 
-			+ "WHERE id=?";
+			+ "JOIN User AS u ON p.writer_id = u.id " 
+			+ "WHERE p.id=?";
 	
 	public static final String INSERT = "INSERT INTO Post SET "
 			+ "writer_id=?,"
@@ -56,7 +56,7 @@ public class PostSQL {
 	
 	public static final String INCREASE_VIEW_COUNT = "UPDATE Post SET "
 			+ "view_count=view_count+1 "
-			+ "WHERE post_id=?";
+			+ "WHERE id=?";
 	
 	public static final String UPDATE = "UPDATE Post SET "
 			+ "title=?,"

@@ -59,6 +59,7 @@ public class CommentDAO {
 					dto.setWriterId(rs.getString(3));
 					dto.setIpAddress(rs.getString(4));
 					dto.setWrittenAt(rs.getString(5));
+					dto.setNickname(rs.getString(6));
 				}
 			}
 		} catch (Exception e) {

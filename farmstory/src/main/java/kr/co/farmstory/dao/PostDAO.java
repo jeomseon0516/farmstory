@@ -133,7 +133,6 @@ public class PostDAO {
 			psmt.setInt(4, offset);
 			
 			try (ResultSet rs = psmt.executeQuery()) {
-				
 				while (rs.next()) {
 					PostDTO dto = new PostDTO();
 					dto.setId(rs.getInt(1));
