@@ -9,30 +9,49 @@
         <script>
         	document.addEventListener('DOMContentLoaded', function(){
         		
-        		// 합계 가격 계산
-        		const price = document.getElementById('prodPrice');
-        		const qty = document.getElementById('prodQty');
-        		const totalPrice = document.getElementById('totalPrice');
-    			const qtyValue = qty.value;
-    			const priceValue = price.innerText;
-    			const totalPriceValue = qtyValue * priceValue;
-    			const cartLink = document.getElementById('cartLink');
-    			
-    			const baseUrl = "/farmstory/market/cart/cart.do?prodId=${dto.prodId}"
-    					
-   				totalPrice.innerText = totalPriceValue + '원';
-    			cartLink.href = baseUrl + "&prodQty=" + qtyValue;
-    			
+        		// 요소 가져오기
+        		const priceElement = document.getElementById('prodPrice');
+        		const qtyInput = document.getElementById('prodQty');
+        		const totalPriceElement = document.getElementById('totalPrice');
+        		const productForm = document.getElementById('productForm');
         		
-        		qty.addEventListener('input', function(e){
-        			const qtyValue = qty.value;
-        			const priceValue = price.innerText;
-        			const totalPriceValue = qtyValue * priceValue;
-        			console.log(qtyValue);
-        			
-        			totalPrice.innerText = totalPriceValue + '원';
-        			cartLink.href = baseUrl + "&prodQty=" + qtyValue;
-        		});
+        		const price = parseInt(priceElement.innerText);
+        		
+        		// 합계 가격 계산 함수
+        		function updateTotalPrice() {
+        			const qty = parseInt(qtyInput.value) || 1;
+        			const total = price * qty;
+        			totalPriceElement.innerText = total.toLocaleString() + '원';
+        		}
+        		
+        		// 초기 합계 게산
+        		updateTotalPrice();
+        		
+        		// 수량 변경 시 이벤트
+        		qtyInput.addEventListener('change', updateTotalPrice);
+        		
+   				// [장바구니], [바로구매] 버튼 클릭 시 Form의 Action 변경 처리
+   				const btnCart = document.getElementById('btnCart');
+   				const btnOrder = document.getElementById('btnOrder');
+   				
+   				if(btnCart) {
+   					btnCart.addEventListener('click', function(e) {
+   						// 필요하다면 action 경로를 장바구니용 서블릿으로 변경
+   						productForm.action = "/farmstory/market/cart/cart.do";
+   						productForm.method = "post";
+   					});
+   				}
+   				
+   				if(btnOrder) {
+   					btnOrder.addEventListener('click', function(e) {
+   						// 바로구매 클릭 시 다른 경로로 발송하고 싶다면 여기를 수정
+   						productForm.action = "/farmstory/market/checkout/checkout.do";
+   						productForm.method = "post";
+   					
+   					});
+   				}
+    			
+
         		
         	});	//DOMContendLoaded End
         
@@ -57,37 +76,45 @@
                     <section>
                         <h3>기본정보</h3>
                         <!-- 상품정보 -->
-                        <div class="item_information">
-                            <img src="/farmstory/images/market_item_thumb.jpg">
-                            <table>
-                                <tr>
-                                    <td>상품명</td>
-                                    <td>${dto.prodName}</td>
-                                </tr>
-                                <tr>
-                                    <td>상품코드</td>
-                                    <td>${dto.prodId}<p>${dto.prodId}<p></td>
-                                </tr>
-                                <tr>
-                                    <td>배송비</td>
-                                    <td>${dto.prodDeliveryCost}원<span> 3만원 이상 무료배송</span></td>
-                                </tr>
-                                <tr>
-                                    <td>판매가격</td>
-                                    <td ><span id="prodPrice">${dto.prodPrice}</span>원</td>
-                                </tr>
-                                <tr>
-                                    <td>구매수량</td>
-                                    <td><input type="number" id="prodQty" value="1" min="1"></td>
-                                </tr>
-                                <tr>
-                                    <td>합계</td>
-                                    <td id="totalPrice"></td>
-                                </tr>
-                            </table>
-                            <a href="#">바로구매</a>
-                            <a href="/farmstory/market/cart/cart.do?prodId=${dto.prodId}&prodQty=1" id="cartLink">장바구니</a>
-                        </div>
+                        <form id="productForm" action="/farmstory/market/cart/cart.do" method="post">
+                        	
+                        	<input type="hidden" name="menu" value="${menu}">
+                        	<input type="hidden" name="category" value="${category}">
+                        	<input type="hidden" name="userId" value="${sessionScope.sessUser.id}">
+                        	<input type="hidden" name="prodId" value="${dto.prodId}">
+                        
+	                        <div class="item_information">
+	                            <img src="/farmstory/images/market_item_thumb.jpg">
+	                            <table>
+	                                <tr>
+	                                    <td>상품명</td>
+	                                    <td>${dto.prodName}</td>
+	                                </tr>
+	                                <tr>
+	                                    <td>상품코드</td>
+	                                    <td><p>${dto.prodId}<p></td>
+	                                </tr>
+	                                <tr>
+	                                    <td>배송비</td>
+	                                    <td>${dto.prodDeliveryCost}원<span> 3만원 이상 무료배송</span></td>
+	                                </tr>
+	                                <tr>
+	                                    <td>판매가격</td>
+	                                    <td ><span id="prodPrice">${dto.prodPrice}</span>원</td>
+	                                </tr>
+	                                <tr>
+	                                    <td>구매수량</td>
+	                                    <td><input type="number" id="prodQty" name="prodQty" value="1" min="1"></td>
+	                                </tr>
+	                                <tr>
+	                                    <td>합계</td>
+	                                    <td id="totalPrice"></td>
+	                                </tr>
+	                            </table>
+	                            <button type="submit" id="btnOrder">바로구매</button>
+	                            <button type="submit" id="btnCart">장바구니</button>
+	                        </div>
+                        </form>
                         <h3>상품설명</h3>
                         <img src="/farmstory/images/market_detail_sample.jpg">
                         <h3>배송정보</h3>

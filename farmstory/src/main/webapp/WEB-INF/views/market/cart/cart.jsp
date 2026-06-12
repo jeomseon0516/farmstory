@@ -220,7 +220,8 @@
 	
 	                            </table>
 	                            <button type="submit" id="btnOrder">주문하기</button>
-	                            
+	                            <input type="hidden" name="menu" value="${menu}">
+	                            <input type="hidden" name="category" value="${category}">
 	                        </div>
 	                	</form>
                     </section>

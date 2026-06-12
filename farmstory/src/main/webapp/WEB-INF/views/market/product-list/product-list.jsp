@@ -35,9 +35,9 @@
 	                        </tr>
 	                        <c:forEach var="dto" items="${dtoList}">
 		                        <tr class="table_content">
-		                            <td><a href="/farmstory/market/product-view/product-view.do?prodId=${dto.prodId}"><img src="/farmstory/images/market_item1.jpg" width="80px" height="80px"></a></td>
-		                            <td><a href="/farmstory/market/product-view/product-view.do?prodId=${dto.prodId}">${dto.prodType}</a></td>
-		                            <td><a href="/farmstory/market/product-view/product-view.do?prodId=${dto.prodId}">${dto.prodName}</a></td>
+		                            <td><a href="/farmstory/market/product-view/product-view.do?menu=${menu}&category=${category}&prodId=${dto.prodId}"><img src="/farmstory/images/market_item1.jpg" width="80px" height="80px"></a></td>
+		                            <td><a href="/farmstory/market/product-view/product-view.do?menu=${menu}&category=${category}&prodId=${dto.prodId}">${dto.prodType}</a></td>
+		                            <td><a href="/farmstory/market/product-view/product-view.do?menu=${menu}&category=${category}&prodId=${dto.prodId}">${dto.prodName}</a></td>
 		                            <td>${dto.prodDiscount}%</td>
 		                            <td>${dto.prodPoint}p</td>
 		                            <td><p>${dto.prodPrice - Math.round(dto.prodPrice * dto.prodDiscount / 100)}원</p><p>${dto.prodPrice}원</p></td>
