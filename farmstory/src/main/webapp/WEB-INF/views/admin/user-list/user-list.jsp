@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>farmstory::admin/user-list</title>
 
-    <link rel="stylesheet" href="/farmstory/css/global-style/reset.css">
-    <link rel="stylesheet" href="/farmstory/css/admin/user-list/user-list.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/global-style/reset.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin/user-list/user-list.css">
 </head>
 
 <body>
@@ -15,16 +16,15 @@
 
     <!-- 헤더 -->
     <header>
-        <a href="./dashboard.html">
-            <img src="/farmstory/images/admin/admin_logo.jpg" alt="logo">
+        <a href="${pageContext.request.contextPath}/admin/dashboard.do">
+            <img src="${pageContext.request.contextPath}/images/admin/admin_logo.jpg" alt="logo">
         </a>
 
         <div class="top-menu">
-            <a href="#">HOME | </a> 
-            <a href="#">로그아웃 | </a> 
+            <a href="${pageContext.request.contextPath}/main/main.do">HOME | </a> 
+            <a href="${pageContext.request.contextPath}/user/logout.do">로그아웃 | </a> 
             <a href="#">고객센터</a>
         </div>
-        
     </header>
 
     <!-- 메인 -->
@@ -33,27 +33,37 @@
         <!-- 좌측 메뉴 -->
         <aside>
 
-            <h3>주요기능</h3>
+            <h3>
+                <a href="${pageContext.request.contextPath}/admin/dashboard.do" class="main-menu-title">주요기능</a>
+            </h3>
 
             <div class="menu">
                 <span>상품관리</span>
                 <ul>
-                    <li><a href="#">ㄴ 상품목록</a></li>
-                    <li><a href="#">ㄴ 상품등록</a></li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/admin/productList.do">ㄴ 상품목록</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/admin/productRegister.do">ㄴ 상품등록</a>
+                    </li>
                 </ul>
             </div>
 
             <div class="menu">
                 <span>주문관리</span>
                 <ul>
-                    <li><a href="#">ㄴ 주문목록</a></li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/admin/orderList.do">ㄴ 주문목록</a>
+                    </li>
                 </ul>
             </div>
 
             <div class="menu">
                 <span>회원관리</span>
                 <ul>
-                    <li><a href="#">ㄴ 회원목록</a></li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/admin/userList.do">ㄴ 회원목록</a>
+                    </li>
                 </ul>
             </div>
 
@@ -70,59 +80,47 @@
 
                 <table>
                     <thead>
-                    <tr>
-                        <th><input type="checkbox"></th>
-                        <th>아이디</th>
-                        <th>이름</th>
-                        <th>별명</th>
-                        <th>이메일</th>
-                        <th>휴대폰</th>
-                        <th>등급</th>
-                        <th>가입일</th>
-                        <th>확인</th>
-                    </tr>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>아이디</th>
+                            <th>이름</th>
+                            <th>별명</th>
+                            <th>이메일</th>
+                            <th>휴대폰</th>
+                            <th>등급</th>
+                            <th>가입일</th>
+                            <th>확인</th>
+                        </tr>
                     </thead>
 
                     <tbody>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>a101</td>
-                        <td>김유신</td>
-                        <td>유신101</td>
-                        <td>yusin101@naver.com</td>
-                        <td>010-1234-1001</td>
-                        <td>2</td>
-                        <td>2023-01-01 13:06:14</td>
-                        <td>[상세확인]</td>
-                    </tr>
-                    </tbody>
+                        <c:choose>
+                            <c:when test="${empty users}">
+                                <tr>
+                                    <td colspan="9">등록된 회원이 없습니다.</td>
+                                </tr>
+                            </c:when>
 
-                    <tbody>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>a101</td>
-                        <td>김춘추</td>
-                        <td>춘추102</td>
-                        <td>chunchu102@naver.com</td>
-                        <td>010-1234-1002</td>
-                        <td>2</td>
-                        <td>2023-01-02 13:06:14</td>
-                        <td>[상세확인]</td>
-                    </tr>
-                    </tbody>
-
-                    <tbody>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>a101</td>
-                        <td>장보고</td>
-                        <td>보고103</td>
-                        <td>bogo103@naver.com</td>
-                        <td>010-1234-1003</td>
-                        <td>2</td>
-                        <td>2023-01-03 13:06:14</td>
-                        <td>[상세확인]</td>
-                    </tr>
+                            <c:otherwise>
+                                <c:forEach var="user" items="${users}">
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="chk" value="${user.id}">
+                                        </td>
+                                        <td>${user.id}</td>
+                                        <td>${user.name}</td>
+                                        <td>${user.nickname}</td>
+                                        <td>${user.email}</td>
+                                        <td>${user.phone}</td>
+                                        <td>${user.role}</td>
+                                        <td>${user.createdAt}</td>
+                                        <td>
+                                            <a href="#">[상세확인]</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                            </c:otherwise>
+                        </c:choose>
                     </tbody>
                 </table>
 

@@ -4,6 +4,9 @@ import kr.co.farmstory.dto.UserDTO;
 import kr.co.farmstory.sql.SqlUser;
 import kr.co.farmstory.util.DBHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserDAO extends DBHelper {
 	
 	// 싱글톤 객체 생성 - 계속 객체 안만들어서 좋음
@@ -139,6 +142,7 @@ public class UserDAO extends DBHelper {
 				dto.setNickname(rs.getString("nickname"));
 				dto.setEmail(rs.getString("email"));
 				dto.setPhone(rs.getString("phone"));
+				dto.setRole(rs.getString("role"));
 			    dto.setZipCode(rs.getString("zip_code"));
 			    dto.setAddress(rs.getString("address"));
 			    dto.setDetailAddress(rs.getString("detail_address"));
@@ -261,6 +265,43 @@ public class UserDAO extends DBHelper {
 	        e.printStackTrace();
 	    }   
 	    
+	}
+	
+	
+	// 전체 회원 목록 조회 - 관리자 메인 회원현황용
+	public List<UserDTO> selectAll() {
+		
+		List<UserDTO> users = new ArrayList<>();
+		
+		try {
+			conn = getConnection();
+			
+			String sql = "SELECT * FROM `User` ORDER BY created_at DESC";
+			
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				UserDTO dto = new UserDTO();
+				
+				dto.setId(rs.getString("id"));
+				dto.setName(rs.getString("name"));
+				dto.setNickname(rs.getString("nick"));
+				dto.setPhone(rs.getString("hp"));
+				dto.setEmail(rs.getString("email"));
+				dto.setRole(rs.getString("role"));
+				dto.setCreatedAt(rs.getString("created_at"));
+				
+				users.add(dto);
+			}
+			
+			closeAll();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return users;
 	}
 	
 	

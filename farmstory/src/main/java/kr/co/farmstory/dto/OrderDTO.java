@@ -17,6 +17,11 @@ public class OrderDTO {
 	private String ReceiverDetailAddr;
 	private String payment;
 	private String etc;
+	// 관리자 메인 주문현황 출력용
+	private String prodName;
+	private String createdAt;
+	
+	
 	public int getOrderId() {
 		return orderId;
 	}
@@ -101,6 +106,23 @@ public class OrderDTO {
 	public void setEtc(String etc) {
 		this.etc = etc;
 	}
+	
+	public String getProdName() {
+		return prodName;
+	}
+
+	public void setProdName(String prodName) {
+		this.prodName = prodName;
+	}
+
+	public String getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
+	
 	@Override
 	public String toString() {
 		return "OrderDTO [orderId=" + orderId + ", userId=" + userId + ", totProdPrice=" + totProdPrice

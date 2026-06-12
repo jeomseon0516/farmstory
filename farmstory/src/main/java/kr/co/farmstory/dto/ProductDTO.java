@@ -15,6 +15,10 @@ public class ProductDTO {
 	private int prodInfoImageFileId;
 	private int prodDescriptionImageFileId;
 	private String prodRemark;
+	// 상품목록 이미지 저장 파일명
+	private String prodListImageStoredName;
+	// 등록일
+	private String createdAt;
 	
 	
 	
@@ -22,74 +26,113 @@ public class ProductDTO {
 	public String getProdType() {
 		return prodType;
 	}
+	
 	public int getProdListImageFileId() {
 		return prodListImageFileId;
 	}
+	
 	public void setProdListImageFileId(int prodListImageFileId) {
 		this.prodListImageFileId = prodListImageFileId;
 	}
+	
 	public int getProdInfoImageFileId() {
 		return prodInfoImageFileId;
 	}
+	
 	public void setProdInfoImageFileId(int prodInfoImageFileId) {
 		this.prodInfoImageFileId = prodInfoImageFileId;
 	}
+	
 	public int getProdDescriptionImageFileId() {
 		return prodDescriptionImageFileId;
 	}
+	
 	public void setProdDescriptionImageFileId(int prodDescriptionImageFileId) {
 		this.prodDescriptionImageFileId = prodDescriptionImageFileId;
+	}	
+	
+	public String getProdListImageStoredName() {
+		return prodListImageStoredName;
 	}
+
+	public void setProdListImageStoredName(String prodListImageStoredName) {
+		this.prodListImageStoredName = prodListImageStoredName;
+	}
+	
 	public String getProdRemark() {
 		return prodRemark;
 	}
+	
 	public void setProdRemark(String prodRemark) {
 		this.prodRemark = prodRemark;
 	}
+	
 	public void setProdType(String prodType) {
 		this.prodType = prodType;
 	}
+	
 	public int getProdId() {
 		return prodId;
 	}
+	
 	public void setProdId(int prodId) {
 		this.prodId = prodId;
 	}
+	
 	public String getProdName() {
 		return prodName;
 	}
+	
 	public void setProdName(String prodName) {
 		this.prodName = prodName;
 	}
+	
 	public int getProdPrice() {
 		return prodPrice;
 	}
+	
 	public void setProdPrice(int prodPrice) {
 		this.prodPrice = prodPrice;
 	}
+	
 	public int getProdPoint() {
 		return prodPoint;
 	}
+	
 	public void setProdPoint(int prodPoint) {
 		this.prodPoint = prodPoint;
 	}
+	
 	public int getProdDiscount() {
 		return prodDiscount;
 	}
+	
 	public void setProdDiscount(int prodDiscount) {
 		this.prodDiscount = prodDiscount;
 	}
+	
 	public int getProdDeliveryCost() {
 		return prodDeliveryCost;
 	}
+	
 	public void setProdDeliveryCost(int prodDeliveryCost) {
 		this.prodDeliveryCost = prodDeliveryCost;
 	}
+	
 	public int getProdStock() {
 		return prodStock;
 	}
+	
 	public void setProdStock(int prodStock) {
 		this.prodStock = prodStock;
+	}
+	
+	public String getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
 	}
 	
 	@Override
@@ -98,7 +141,8 @@ public class ProductDTO {
 				+ prodPrice + ", prodPoint=" + prodPoint + ", prodDiscount=" + prodDiscount + ", prodDeliveryCost="
 				+ prodDeliveryCost + ", prodStock=" + prodStock + ", prodListImageFileId=" + prodListImageFileId
 				+ ", prodInfoImageFileId=" + prodInfoImageFileId + ", prodDescriptionImageFileId="
-				+ prodDescriptionImageFileId + ", prodRemark=" + prodRemark + "]";
+				+ prodDescriptionImageFileId + ", prodRemark=" + prodRemark + ", createdAt=" 
+				+ createdAt+ ", prodListImageStoredName=" + prodListImageStoredName +" ]";
 	}
 	
 	
