@@ -15,7 +15,8 @@ import kr.co.farmstory.option.MenuOption;
 @WebFilter({
 	"/market/*", 
 	"/post/*",
-	"/event/*"
+	"/event/*",
+	"/intro/*"
 })
 public class BoardLayoutFilter implements Filter {
 	@Override
