@@ -10,7 +10,7 @@
 		<c:choose>
 			<c:when test="${empty sessionScope.sessUser}">
 				<a href="/farmstory/user/login.do">로그인</a> | 
-				<a href="/farmstory/user/register.do">회원가입</a> |
+				<a href="/farmstory/user/terms.do">회원가입</a> |
 			</c:when>
 			<c:otherwise>
 				<a href="/farmstory/user/logout.do">로그아웃</a> |

@@ -79,8 +79,11 @@
 					</section>
 					<section class="comment-write comment-box">
 						<h3 class="comment-header">댓글쓰기</h3>
-						<form action="/post/comment">
-							<textarea class="comment-write-textarea"></textarea>
+						<form action="/farmstory/post/commentRegister.do" method="post">
+							<input type="hidden" name="postId" value="${postDTO.id}"/>
+							<input type="hidden" name="menu" value="${menu}"/>
+							<input type="hidden" name="category" value="${category}"/>
+							<textarea class="comment-write-textarea" name="content"></textarea>
 							<div class="comment-write-button-area">
 								<button type="button">취소</button>
 								<input type="submit" value="작성완료">
