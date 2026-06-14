@@ -19,7 +19,7 @@ public enum CategoryOption {
 	
 	CART(
 		"장보기",
-		"/farmstory/market/cart/cart.do?menu=Cart",
+		"/farmstory/market/cart/cart.do?menu=Cart&category=CART",
 		"/farmstory/images/sub_cate2_lnb1.png",
 		"/farmstory/images/sub_cate2_lnb1_ov.png",
 		"/farmstory/images/sub_nav_tit_cate2_tit1.png"
